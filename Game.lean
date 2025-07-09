@@ -1,7 +1,7 @@
-import Game.Levels.DemoWorld
+import Game.Levels.MyWorld
 
 -- Here's what we'll put on the title screen
-Title "Hello World Game"
+Title "My Game"
 Introduction
 "
 This text appears on the starting page where one selects the world/level to play.
