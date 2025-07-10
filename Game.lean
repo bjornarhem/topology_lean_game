@@ -1,4 +1,4 @@
-import Game.Levels.MyWorld
+import Game.Levels.Functions
 
 -- Here's what we'll put on the title screen
 Title "My Game"

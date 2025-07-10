@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul  9 15:57:47 2025\n"
+"POT-Creation-Date: Thu Jul 10 11:29:40 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -20,27 +20,64 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game.Levels.MyWorld.L01_hello
-msgid "Hello World"
+#: Game.Levels.Functions.L01_functions
+msgid "Intro to functions"
 msgstr ""
 
-#: Game.Levels.MyWorld.L01_hello
+#: Game.Levels.Functions.L01_functions
 msgid "A message shown at the beginning of the level. Use it to explain any new concepts."
 msgstr ""
 
-#: Game.Levels.MyWorld.L01_hello
-msgid "The exercise statement in natural language using latex: $\\iff$."
+#: Game.Levels.Functions.L01_functions
+msgid "Show that if $x = y$, then $f(x) = f(y)$."
 msgstr ""
 
-#: Game.Levels.MyWorld.L01_hello
+#: Game.Levels.Functions.L01_functions
+msgid "You can use the `subst` tactic to replace `x` with `y`."
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid "Now you can use `rfl` to finish the proof. Recall that `rfl` means that the left-hand side and right-hand side of the equation are definitionally equal."
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
 msgid "The message shown when the level is completed"
 msgstr ""
 
-#: Game.Levels.MyWorld
-msgid "My First World"
+#: Game.Levels.Functions.L02_image
+msgid "Images of functions"
 msgstr ""
 
-#: Game.Levels.MyWorld
+#: Game.Levels.Functions.L02_image
+msgid "If $f \\colon X \\to Y$ and $A \\in X$, then the image of $A$ under $f$ is the set\n"
+"$f(A) = \\{ f(x) \\mid x \\in A \\}$. In lean, this is denoted `f '' A` or `image f A`."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "Show that $f(A ∪ B) = f(A) ∪ f(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "You can use the `ext` tactic to prove that two sets are equal."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "To show that $y$ is in the left-hand side, you need to show that $y$ is in $f(A ∪ B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "You can use the `or_iff_not_imp_left` lemma to split the proof into two cases."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "The message shown when the level is completed"
+msgstr ""
+
+#: Game.Levels.Functions
+msgid "Functions"
+msgstr ""
+
+#: Game.Levels.Functions
 msgid "This introduction text is shown when one first enters a world."
 msgstr ""
 
