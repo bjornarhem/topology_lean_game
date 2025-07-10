@@ -24,14 +24,20 @@ Statement {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) �
       exact ⟨x, h, rfl⟩
     . right
       exact ⟨x, h, rfl⟩
-  . rintro (⟨x, hx, rfl⟩ | ⟨x, hx, rfl⟩)
-    . exact ⟨x, Or.inl hx, rfl⟩
-    . exact ⟨x, Or.inr hx, rfl⟩
+  rintro h
+  cases h
+  . rcases h_1 with ⟨ x, hx, rfl ⟩
+    exact ⟨x, Or.inl hx, rfl⟩
+  . rcases h_1 with ⟨ x, hx, rfl ⟩
+    exact ⟨x, Or.inr hx, rfl⟩
+  -- . rintro (⟨x, hx, rfl⟩ | ⟨x, hx, rfl⟩)
+  --   . exact ⟨x, Or.inl hx, rfl⟩
+  --   . exact ⟨x, Or.inr hx, rfl⟩
 
 Conclusion "
 The message shown when the level is completed
 "
 
 NewDefinition Set.image
-NewTactic cases rintro apply ext exact right left
+NewTactic cases rintro apply ext exact right left rcases
 NewTheorem Iff.intro Or.inl Or.inr
