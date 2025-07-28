@@ -11,33 +11,22 @@ $f(A) = \\{ f(x) \\mid x \\in A \\}$. In lean, this is denoted `f '' A` or `imag
 
 open Set
 
-/-- Show that $f(A ∪ B) = f(A) ∪ f(B)$. -/
-Statement {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) ∪ (f '' B) := by
-  Hint "You can use the `ext` tactic to prove that two sets are equal."
-  ext y
-  Hint "To show that $y$ is in the left-hand side, you need to show that $y$ is in $f(A ∪ B)$."
-  apply Iff.intro
-  . rintro ⟨x, hx, rfl⟩
-    Hint "You can use `cases` to split the proof into two cases."
-    cases hx
-    . left
-      exact ⟨x, h, rfl⟩
-    . right
-      exact ⟨x, h, rfl⟩
-  rintro h
-  cases h
-  . rcases h_1 with ⟨ x, hx, rfl ⟩
-    exact ⟨x, Or.inl hx, rfl⟩
-  . rcases h_1 with ⟨ x, hx, rfl ⟩
-    exact ⟨x, Or.inr hx, rfl⟩
-  -- . rintro (⟨x, hx, rfl⟩ | ⟨x, hx, rfl⟩)
-  --   . exact ⟨x, Or.inl hx, rfl⟩
-  --   . exact ⟨x, Or.inr hx, rfl⟩
+/-- Show that if A ⊆ B, then $f(A) ⊆ f(B)$. -/
+Statement {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f '' A ⊆ f '' B := by
+  /- TODO: let the user reference this theorem later -/
+  Hint "Let's star by choosing an element `y` in the left-hand side, using `intro`."
+  intro y
+  Hint "TODO: explain rintro for working with images."
+  rintro ⟨x, hxA, rfl⟩
+  Hint "TODO: recall the keyword `have`"
+  have hxB : x ∈ B := h hxA
+  Hint "TODO: give hint for using `exact`"
+  exact ⟨x, hxB, rfl⟩
+
 
 Conclusion "
-The message shown when the level is completed
+Level completed!
 "
 
 NewDefinition Set.image
-NewTactic cases rintro apply ext exact right left rcases
-NewTheorem Iff.intro Or.inl Or.inr
+NewTactic intro
