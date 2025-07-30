@@ -1,8 +1,8 @@
 import Game.Metadata
 
 World "Functions"
-Level 2
-Title "Images of functions"
+Level 3
+Title "Image of union"
 
 Introduction "
 In this level, we will prove that the image of the union of two sets is equal to the union of their images.
@@ -10,30 +10,32 @@ In this level, we will prove that the image of the union of two sets is equal to
 
 open Set
 
+namespace function
+
 /-- Show that $f(A ∪ B) = f(A) ∪ f(B)$. -/
 Statement ImageUnion {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) ∪ (f '' B) := by
   Hint "Recall that you can use the `ext` tactic to prove that two sets are equal."
   ext y
-  Hint "You can use Iff.intro to split the goal into two subgoals."
+  Hint "You can apply Iff.intro to split the goal into two subgoals."
   apply Iff.intro
 
-  Hint "As in the last level, you can use `rintro` here."
+  Hint "As in the previous level, you can use `intro` followed by `rcases` here."
   intro h
   rcases h with ⟨x, hx, rfl⟩
-  /- TODO: use rcases instead of rintro. explain it. -/
-  /- rintro ⟨x, hx, rfl⟩ -/
-  Hint "You can use `cases hx` to split the proof into two cases."
+  Hint "You can use `cases {hx}` to split the proof into two cases."
   cases hx
-  Hint "Recall the syntax `exact ⟨x, h, rfl⟩` to finish the proof in each case."
+  Hint "The tactics `left` and `right` can be useful here."
   left
+  Hint "Recall the syntax `exact ⟨{x}, {h}, rfl⟩` to finish the proof in each case."
   exact ⟨x, h, rfl⟩
   right
   exact ⟨x, h, rfl⟩
 
-  Hint "..."
+  Hint "The second subgoal can be solved similarly."
   intro h
   cases h
   rcases h_1 with ⟨ x, hx, rfl ⟩
+  Hint "The theorems `Or.inl` and `Or.inr` can be useful here."
   exact ⟨x, Or.inl hx, rfl⟩
   rcases h_1 with ⟨ x, hx, rfl ⟩
   exact ⟨x, Or.inr hx, rfl⟩
@@ -41,6 +43,3 @@ Statement ImageUnion {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) =
 Conclusion "
 Level completed!
 "
-
-NewTactic rcases
-NewTheorem Iff.intro Or.inl Or.inr

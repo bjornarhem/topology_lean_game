@@ -17,7 +17,8 @@ Statement {X Y : Type} (f : X → Y) (x y : X) (h : x = y) : f x = f y := by
   rfl
 
 Conclusion "
-Level completed!
+Level 1
 "
 
-NewTactic subst rfl intro exact obtain use apply cases left right ext
+NewTactic subst rfl intro exact obtain use apply cases left right ext «have»
+NewTheorem Iff.intro Or.inl Or.inr

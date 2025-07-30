@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 30 13:53:06 2025\n"
+"POT-Creation-Date: Wed Jul 30 17:13:39 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -41,7 +41,7 @@ msgid "Now you can use `rfl` to finish the proof. Recall that `rfl` means that t
 msgstr ""
 
 #: Game.Levels.Functions.L01_functions
-msgid "Level completed!"
+msgid "Level 1"
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
@@ -50,14 +50,14 @@ msgstr ""
 
 #: Game.Levels.Functions.L02_image
 msgid "If $f \\colon X \\to Y$ and $A \\in X$, then the image of $A$ under $f$ is the set\n"
-"$f(A) = \\{ f(x) \\mid x \\in A \\}$. In lean, this is denoted `f '' A` or `image f A`.\n"
+"$f(A) = \\{ f(x) \\mid x \\in A \\}$. In Lean, this is denoted `f '' A` or `image f A`.\n"
 "\n"
-"A hypothesis `y ∈ f '' A ` decomposes as a triple ⟨x, hxA, rfl⟩, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.\n"
-"In this level, we will use the `rintro` tactic to decompose such hypotheses. The `rintro` tactic is a combination of `intro` and `rfl`, which allows us to introduce variables and patterns in one step.\n"
-"Whenever you introduce a hypothesis of the form `y ∈ f '' A`, you can write `rintro ⟨x, hxA, rfl⟩` to immediately decompose it into its components.\n"
+"A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.\n"
+"In this level, we will use the `rcases` tactic to decompose such hypotheses.\n"
+"Whenever you have a hypothesis of the form `h : y ∈ f '' A`, you can write `rcase h with ⟨x, hxA, rfl⟩` to decompose it into its components.\n"
 "To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle, respectively.\n"
 "\n"
-"We start by proving a property of images: if $A ⊆ B$, then $f(A) ⊆ f(B)$."
+"In this level, we prove the following property of images: If $A ⊆ B$, then $f(A) ⊆ f(B)$."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
@@ -69,25 +69,29 @@ msgid "Let's star by choosing an element `y` in the left-hand side, using `intro
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "Use `rintro` to introduce the hypothesis `y ∈ f '' A` and decompose it into a triple ⟨x, hxA, rfl⟩."
+msgid "As usual when proving an implication, we can begin with `intro H`."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "You can use the keyword `have` to create the hypothesis `x ∈ B`."
+msgid "Use `rcases` to decompose the hypothesis `«{y}» ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "You can now complete the proof using `exact ⟨ x, hxB, rfl ⟩`."
+msgid "You can use the keyword `have` to create the hypothesis `«{x}» ∈ B`."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "You can now complete the proof using `exact ⟨ «{x}», «{hxB}», rfl ⟩`."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
 msgid "Well done!\n"
-"If you don't want to use `rintro`, you can also apply the theorem `Set.mem_image`.\n"
+"If you don't want to use `rcases`, you can also apply the theorem `Set.mem_image`.\n"
 "The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "Images of functions"
+msgid "Image of union"
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -107,7 +111,7 @@ msgid "You can use Iff.intro to split the goal into two subgoals."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "As in the last level, you can use `rintro` here."
+msgid "As in the previous level, you can use `intro` followed by `rcases` here."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -119,7 +123,7 @@ msgid "Recall the syntax `exact ⟨x, h, rfl⟩` to finish the proof in each cas
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "..."
+msgid "The second subgoal can be solved similarly."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
