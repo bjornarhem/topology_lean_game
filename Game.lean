@@ -1,11 +1,10 @@
 import Game.Levels.Functions
 
 -- Here's what we'll put on the title screen
-Title "My Game"
+Title "The topology game"
 Introduction
 "
-This text appears on the starting page where one selects the world/level to play.
-You can use markdown.
+Welcome to the topology game!
 "
 
 Info "

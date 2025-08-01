@@ -8,7 +8,8 @@ import Game.Levels.Functions.L07_preimage_intersection
 import Game.Levels.Functions.L08_preimage_complement
 /- import Game.Levels.Functions.L09_image_preimage
 import Game.Levels.Functions.L10_preimage_image
-import Game.Levels.Functions.L11_preimage_composition -/
+import Game.Levels.Functions.L11_composition
+import Game.Levels.Functions.L12_composition_preimage -/
 
 World "Functions"
 Title "Functions"
