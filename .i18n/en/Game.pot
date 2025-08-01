@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug  1 14:23:35 2025\n"
+"POT-Creation-Date: Fri Aug  1 12:45:21 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -42,6 +42,22 @@ msgstr ""
 
 #: Game.Levels.Functions.L01_functions
 msgid "Level 1"
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid ""
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid ""
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid ""
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid ""
 msgstr ""
 
 #: Game.Levels.Functions.L01_functions
@@ -231,6 +247,65 @@ msgstr ""
 msgid "Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\\-1` followed by `'`, or write  `Set.preimage f A`."
 msgstr ""
 
+#: Game.Levels.Functions.L06_preimage_union
+msgid "Preimage of union"
+msgstr ""
+
+#: Game.Levels.Functions.L06_preimage_union
+msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
+msgstr ""
+
+#: Game.Levels.Functions.L06_preimage_union
+msgid "Show that $f^{-1}(A ∪ B) = f^{-1}(A) ∪ f^{-1}(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L06_preimage_union
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Preimage of intersection"
+msgstr ""
+
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
+msgstr ""
+
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Show that $f^{-1}(A ∩ B) = f^{-1}(A) ∩ f^{-1}(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "Image of complement"
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "In this level, we prove that $f^{-1}(A^c) = f^{-1}(A)^c$,\n"
+"where $A^c$ is the complement of $A$ in the universe of discourse.\n"
+"In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written \\^c.\n"
+"Recall that `x ∈ Aᶜ ↔ x ∉ A`."
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "Show that $f^{-1}(A^c) = f^{-1}(A)^c$."
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "In this level, it can be useful to use `rw [Set.mem_compl_iff]` or `rw [Set.mem_compl_iff] at h` to rewrite at statement `a ∈ Sᶜ` to `a ∉ S`."
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "Another useful technique is to use `by_contra` to do a proof by contradiction."
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "Level completed!"
+msgstr ""
+
 #: Game.Levels.Functions
 msgid "Functions"
 msgstr ""
@@ -240,12 +315,11 @@ msgid "This module contains exercises related to functions, images, and preimage
 msgstr ""
 
 #: Game
-msgid "My Game"
+msgid "The topology game"
 msgstr ""
 
 #: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use markdown."
+msgid "Welcome to the topology game!"
 msgstr ""
 
 #: Game

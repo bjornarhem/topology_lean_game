@@ -21,6 +21,11 @@ Level 1
 "
 
 NewTactic subst rfl intro exact obtain use apply cases left right ext «have» by_contra push_neg rewrite
+
+TheoremDoc Iff.intro as "Iff.intro" in "Logic"
+TheoremDoc Or.inl as "Or.inl" in "Logic"
+TheoremDoc Or.inr as "Or.inr" in "Logic"
+TheoremDoc And.intro as "And.intro" in "Logic"
 NewTheorem Iff.intro Or.inl Or.inr And.intro Set.mem_inter_iff Set.mem_union Set.mem_compl_iff
 
 /-- Intersection of sets. To enter the symbol `∩`, type `\cap` of `\inter`. -/
