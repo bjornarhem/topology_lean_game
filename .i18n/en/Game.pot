@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 30 17:13:39 2025\n"
+"POT-Creation-Date: Fri Aug  1 14:23:35 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -42,6 +42,18 @@ msgstr ""
 
 #: Game.Levels.Functions.L01_functions
 msgid "Level 1"
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid "Intersection of sets. To enter the symbol `∩`, type `\\cap` of `\\inter`."
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid "Intersection of sets. To enter the symbol `∪` type `\\cup` or `\\union`."
+msgstr ""
+
+#: Game.Levels.Functions.L01_functions
+msgid "Complement of a set. To enter the symbol `ᶜ`, type `\\^c` or `\\compl`."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
@@ -90,6 +102,14 @@ msgid "Well done!\n"
 "The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`."
 msgstr ""
 
+#: Game.Levels.Functions.L02_image
+msgid "$y$ is in $f(A)$ if and only if there exists a $x \\in A$ such that $f(x) = y$."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "Image of a set under a function. Can be written as `f '' A` or `Set.image f A`."
+msgstr ""
+
 #: Game.Levels.Functions.L03_image_union
 msgid "Image of union"
 msgstr ""
@@ -107,7 +127,7 @@ msgid "Recall that you can use the `ext` tactic to prove that two sets are equal
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "You can use Iff.intro to split the goal into two subgoals."
+msgid "You can apply Iff.intro to split the goal into two subgoals."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -115,11 +135,15 @@ msgid "As in the previous level, you can use `intro` followed by `rcases` here."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "You can use `cases hx` to split the proof into two cases."
+msgid "You can use `cases «{hx}»` to split the proof into two cases."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "Recall the syntax `exact ⟨x, h, rfl⟩` to finish the proof in each case."
+msgid "The tactics `left` and `right` can be useful here."
+msgstr ""
+
+#: Game.Levels.Functions.L03_image_union
+msgid "Recall the syntax `exact ⟨«{x}», «{h}», rfl⟩` to finish the proof in each case."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -127,7 +151,84 @@ msgid "The second subgoal can be solved similarly."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
+msgid "The theorems `Or.inl` and `Or.inr` can be useful here."
+msgstr ""
+
+#: Game.Levels.Functions.L03_image_union
 msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Image of intersection"
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid ""
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "This level can be solved in a similar way to the previous one. You can start by introducing an element with `intro y`."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Now, `intro h` will introduce a hypothesis `h : «{y}» ∈ «{f}» '' («{A}» ∩ «{B}»)` and change you goal to `«{y}» ∈ «{f}»'' «{A}» ∩ «{y}» ∈ «{f}»'' «{B}»`."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Recall that for two sets `A` and `B`, `a ∈ A ∩ B` is equivalent to `a ∈ A ∧ a ∈ B`. Some useful techniques: `apply And.intro` will split the goal into two subgoals. For a hypothesis `h : a ∈ S ∩ T`, `h.left` gives you a proof of `a ∈ S` and `h.right` gives you a proof of `a ∈ T`."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Preimages of functions"
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "In this level, we introduce preimages of functions.\n"
+"The preimage of a set $A$ under a function $f$ is the set of all elements in the domain of $f$ that map to elements in $A$.\n"
+"In Lean, this is denoted `f ⁻¹' A`, which can be typed as `\\-1` followed by `'`, or written as `Set.preimage f A`.\n"
+"\n"
+"The theorem `Set.mem_preimage` states that an element $x$ is in the preimage of $A$ under $f$ if and only if $f(x)$ is in $A$.\n"
+"You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of the form `x ∈ f ⁻¹' A` into `f x ∈ A`."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Let's start by choosing an element `x` in the left-hand side, using `intro`."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "As usual when proving an implication, we can begin with `intro H`."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Try `rewrite [Set.mem_preimage] at «{H}»`, followed by `rewrite [Set.mem_preimage]`."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Recall that `«{h}» : A ⊆ B` is a proof that `a ∈ A` implies `a ∈ B`. You can use this to finish the level."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "$x$ is in $f^{-1}(A)$ if and only if $f(x) \\in A$."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\\-1` followed by `'`, or write  `Set.preimage f A`."
 msgstr ""
 
 #: Game.Levels.Functions

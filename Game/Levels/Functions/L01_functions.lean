@@ -20,5 +20,16 @@ Conclusion "
 Level 1
 "
 
-NewTactic subst rfl intro exact obtain use apply cases left right ext «have»
-NewTheorem Iff.intro Or.inl Or.inr
+NewTactic subst rfl intro exact obtain use apply cases left right ext «have» by_contra push_neg rewrite
+NewTheorem Iff.intro Or.inl Or.inr And.intro Set.mem_inter_iff Set.mem_union Set.mem_compl_iff
+
+/-- Intersection of sets. To enter the symbol `∩`, type `\cap` of `\inter`. -/
+DefinitionDoc Set.inter as "∩"
+
+/-- Intersection of sets. To enter the symbol `∪` type `\cup` or `\union`. -/
+DefinitionDoc Set.union as "∪"
+
+/-- Complement of a set. To enter the symbol `ᶜ`, type `\^c` or `\compl`. -/
+DefinitionDoc Set.compl as "ᶜ"
+
+NewDefinition Set.inter Set.union Set.compl

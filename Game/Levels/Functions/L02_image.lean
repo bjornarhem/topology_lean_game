@@ -22,7 +22,6 @@ namespace function
 
 /-- If A ⊆ B, then $f(A) ⊆ f(B)$. -/
 Statement ImageSubset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f '' A ⊆ f '' B := by
-  /- TODO: let the user reference this theorem later -/
   Hint "Let's star by choosing an element `y` in the left-hand side, using `intro`."
   intro y
   Hint "As usual when proving an implication, we can begin with `intro H`."
@@ -41,6 +40,13 @@ If you don't want to use `rcases`, you can also apply the theorem `Set.mem_image
 The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`.
 "
 
-NewDefinition Set.image
 NewTactic rcases
+
+/-- $y$ is in $f(A)$ if and only if there exists a $x \in A$ such that $f(x) = y$. -/
+TheoremDoc Set.mem_image as "Set.mem_image" in "function"
+
 NewTheorem Set.mem_image
+
+/-- Image of a set under a function. Can be written as `f '' A` or `Set.image f A`. -/
+DefinitionDoc Set.image as "f '' A"
+NewDefinition Set.image
