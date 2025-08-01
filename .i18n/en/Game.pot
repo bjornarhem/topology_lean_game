@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug  1 14:58:46 2025\n"
+"POT-Creation-Date: Fri Aug  1 17:38:08 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -303,6 +303,86 @@ msgid "Another useful technique is to use `by_contra` to do a proof by contradic
 msgstr ""
 
 #: Game.Levels.Functions.L08_preimage_complement
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L09_image_preimage
+msgid "Image of preimage"
+msgstr ""
+
+#: Game.Levels.Functions.L09_image_preimage
+msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
+msgstr ""
+
+#: Game.Levels.Functions.L09_image_preimage
+msgid "Show that $f(f^{-1}(A)) \\subseteq A $."
+msgstr ""
+
+#: Game.Levels.Functions.L09_image_preimage
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L10_preimage_image
+msgid "Preimage of image"
+msgstr ""
+
+#: Game.Levels.Functions.L10_preimage_image
+msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
+msgstr ""
+
+#: Game.Levels.Functions.L10_preimage_image
+msgid "Show that $A \\subseteq f^{-1}(f(A))$."
+msgstr ""
+
+#: Game.Levels.Functions.L10_preimage_image
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "Composition of functions"
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "In this level, we introduce the composition of functions.\n"
+"The composition of two functions $f : X 	o Y$ and $g : Y 	o Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.\n"
+"\n"
+"In Lean, the composition of functions is denoted by `g ∘ f` or `Function.comp g f`.\n"
+"To write the `∘` symbol, you can type `\\circ` in the editor."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "Show that $(g \\circ f)(A) = g(f(A))$."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as `g (f x)`."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "TODO: Docstring for g ∘ f"
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "$(g \\\\circ f) (x) = g(f(x))$"
+msgstr ""
+
+#: Game.Levels.Functions.L12_composition_preimage
+msgid "Preimage of composition"
+msgstr ""
+
+#: Game.Levels.Functions.L12_composition_preimage
+msgid "The final level in this world!"
+msgstr ""
+
+#: Game.Levels.Functions.L12_composition_preimage
+msgid "Show that $(g \\circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$."
+msgstr ""
+
+#: Game.Levels.Functions.L12_composition_preimage
 msgid "Level completed!"
 msgstr ""
 
