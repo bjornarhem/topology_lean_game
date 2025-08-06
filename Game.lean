@@ -9,12 +9,10 @@ Welcome to the topology game!
 "
 
 Info "
-Here you can put additional information about the game. It is accessible
-from the starting through the drop-down menu.
+In this game, you learn to work with topological spaces in Lean.
 
-For example: Game version, Credits, Link to Github and Zulip, etc.
-
-Use markdown.
+Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.
+You can learn this, for example, by playing the first worlds in the Set Theory Game.
 "
 
 /-! Information to be displayed on the servers landing page. -/
