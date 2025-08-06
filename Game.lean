@@ -1,4 +1,5 @@
 import Game.Levels.Functions
+import Game.Levels.Spaces
 
 -- Here's what we'll put on the title screen
 Title "The topology game"

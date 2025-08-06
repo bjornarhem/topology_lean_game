@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug  1 17:38:08 2025\n"
+"POT-Creation-Date: Sat Aug  2 12:13:46 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -392,6 +392,88 @@ msgstr ""
 
 #: Game.Levels.Functions
 msgid "This module contains exercises related to functions, images, and preimages."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Introduction to topological spaces"
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "In this level, we introduce the `TopologicalSpace` typeclass.\n"
+"The statement `TopologicalSpace X` means that `X` is a topological space.\n"
+"\n"
+"The `TopologicalSpace` typeclass is defined as follows:\n"
+"\n"
+"```\n"
+"class TopologicalSpace (X : Type u) where\n"
+"  protected IsOpen : Set X → Prop\n"
+"  protected isOpen_univ : IsOpen univ\n"
+"  protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)\n"
+"  protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)\n"
+"```\n"
+"\n"
+"The `IsOpen` predicate is used to determine whether a set is open in the topological space.\n"
+"You can treat it as a function: given `h : TopologicalSpace X` and `U : Set X`,\n"
+"the expression `h.IsOpen U` returns `true` if `U` is open and `false` otherwise.\n"
+"\n"
+"The other three lines are the axioms of a topological space.\n"
+"You can treat them as theorems: If `U` and `V` are open set in `X`,\n"
+"and you have hypotheses `hU : h.IsOpen U` and `hV : h.IsOpen V`,\n"
+"then `h.isOpen_inter U V hU hV` is a proof of `h.IsOpen (U ∩ V)`.\n"
+"\n"
+"Note that It's not explcitly stated in the axioms that the empty set is open,\n"
+"because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
+"We will prove this in a later level!\n"
+"\n"
+"We start with a warm-up exercise."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Show that if $U, V$ and $W$ are open sets in $X$, then $U ∩ V ∩ W$ is open."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Start by introducing three hypotheses, with `intro hU hV hW`."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Now, you can use `«{h}».isOpen_inter` to prove that the intersection of two open sets is open. For example, try `have hUV := h.isOpen_inter «{U}» «{V}» «{hU}» «{hV}»`."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Finish by using `«{h}».isOpen_inter` again. You might need to rewrite using `Set.inter_assoc` and/or `Set.inter_comm`."
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Spaces.L01_spaces
+msgid "The `TopologicalSpace` typeclass is defined as follows:\n"
+"\n"
+"```\n"
+"class TopologicalSpace (X : Type u) where\n"
+"  protected IsOpen : Set X → Prop\n"
+"  protected isOpen_univ : IsOpen univ\n"
+"  protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)\n"
+"  protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)\n"
+"```\n"
+"\n"
+"The `IsOpen` predicate is used to determine whether a set is open in the topological space.\n"
+"You can treat it as a function: `IsOpen U` returns `true` if `U` is open and `false` otherwise.\n"
+"\n"
+"The other three lines are the axioms of a topological space.\n"
+"You can treat them as theorems: If `U` and `V` are open set in `X`,\n"
+"and you have hypotheses `hU : IsOpen U` and `hV : IsOpen V`,\n"
+"then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`."
+msgstr ""
+
+#: Game.Levels.Spaces
+msgid "Spaces"
+msgstr ""
+
+#: Game.Levels.Spaces
+msgid "This module introduces the basics of topological spaces."
 msgstr ""
 
 #: Game
