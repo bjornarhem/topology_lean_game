@@ -6,6 +6,11 @@ Title "The topology game"
 Introduction
 "
 Welcome to the topology game!
+
+In this game, you learn to work with topological spaces in Lean.
+
+Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.
+You can learn this, for example, by playing the first worlds in the Set Theory Game.
 "
 
 Info "
