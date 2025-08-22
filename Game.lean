@@ -1,5 +1,6 @@
 import Game.Levels.Functions
 import Game.Levels.Spaces
+import Game.Levels.Continuous
 
 -- Here's what we'll put on the title screen
 Title "The topology game"
@@ -26,6 +27,9 @@ CaptionShort "Game Template"
 CaptionLong "You should use this game as a template for your own game and add your own levels."
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
+
+Dependency Spaces → Continuous
+Dependency Functions → Continuous
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame

@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat Aug  2 12:13:46 2025\n"
+"POT-Creation-Date: Fri Aug 22 14:17:49 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -421,6 +421,9 @@ msgid "In this level, we introduce the `TopologicalSpace` typeclass.\n"
 "and you have hypotheses `hU : h.IsOpen U` and `hV : h.IsOpen V`,\n"
 "then `h.isOpen_inter U V hU hV` is a proof of `h.IsOpen (U ∩ V)`.\n"
 "\n"
+"Note also that it Lean, it often suffices to write `IsOpen U` instead of `h.IsOpen U`.\n"
+"This is because Lean can often infer the topological space from the type of `U`.\n"
+"\n"
 "Note that It's not explcitly stated in the axioms that the empty set is open,\n"
 "because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
 "We will prove this in a later level!\n"
@@ -468,6 +471,22 @@ msgid "The `TopologicalSpace` typeclass is defined as follows:\n"
 "then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`."
 msgstr ""
 
+#: Game.Levels.Spaces.L02_closed
+msgid "Closed sets"
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "TODO: explain"
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "Show that if $U$ and $V$ are closed sets in $X$, then $U ∪ V$ is closed."
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "In this level, you can use `Set.compl_union` to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
+msgstr ""
+
 #: Game.Levels.Spaces
 msgid "Spaces"
 msgstr ""
@@ -476,21 +495,70 @@ msgstr ""
 msgid "This module introduces the basics of topological spaces."
 msgstr ""
 
+#: Game.Levels.Continuous.L01_continuous
+msgid "Introduction to continuous functions"
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "TODO: explain\n"
+"remember: explain hf.isOpen_preimage"
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "If $f \\\\colon X \\\\to Y$ and $U \\\\subset Y$ is closed, then $f^{-1}(U)$ is closed."
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "TODO"
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "Composition of continuous functions"
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "TODO: explain\n"
+"talk about continuous_def"
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "TODO: write statement"
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Continuous
+msgid "Continuous functions"
+msgstr ""
+
+#: Game.Levels.Continuous
+msgid "This module introduces the basics of continuous functions."
+msgstr ""
+
 #: Game
 msgid "The topology game"
 msgstr ""
 
 #: Game
-msgid "Welcome to the topology game!"
+msgid "Welcome to the topology game!\n"
+"\n"
+"In this game, you learn to work with topological spaces in Lean.\n"
+"\n"
+"Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.\n"
+"You can learn this, for example, by playing the first worlds in the Set Theory Game."
 msgstr ""
 
 #: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
+msgid "In this game, you learn to work with topological spaces in Lean.\n"
 "\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
-"\n"
-"Use markdown."
+"Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.\n"
+"You can learn this, for example, by playing the first worlds in the Set Theory Game."
 msgstr ""
 
 #: Game
