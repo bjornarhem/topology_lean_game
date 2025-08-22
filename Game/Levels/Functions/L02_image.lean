@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L01_functions
 
 World "Functions"
 Level 2
@@ -18,7 +18,10 @@ In this level, we prove the following property of images: If $A ⊆ B$, then $f(
 
 open Set
 
-namespace function
+/--
+If A ⊆ B, then $f(A) ⊆ f(B)$.
+-/
+TheoremDoc ImageSubset as "ImageSubset" in "function"
 
 /-- If A ⊆ B, then $f(A) ⊆ f(B)$. -/
 Statement ImageSubset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f '' A ⊆ f '' B := by

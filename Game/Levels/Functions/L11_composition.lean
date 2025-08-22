@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L10_preimage_image
 
 World "Functions"
 Level 11
@@ -14,7 +14,8 @@ To write the `∘` symbol, you can type `\\circ` in the editor.
 
 open Set
 
-namespace function
+/-- The theorem $(g \circ f)(A) = g(f(A))$. -/
+TheoremDoc ImageComposition as "ImageComposition" in "function"
 
 /-- Show that $(g \circ f)(A) = g(f(A))$. -/
 Statement ImageComposition {X Y : Type} (A : Set X) (f : X → Y) (g : Y → Z) : (g ∘ f) '' (A) = g '' (f '' A)  := by

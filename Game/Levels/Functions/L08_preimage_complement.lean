@@ -1,8 +1,8 @@
-import Game.Metadata
+import Game.Levels.Functions.L07_preimage_intersection
 
 World "Functions"
 Level 8
-Title "Image of complement"
+Title "Preimage of complement"
 
 Introduction "
 In this level, we prove that $f^{-1}(A^c) = f^{-1}(A)^c$,
@@ -13,7 +13,12 @@ Recall that `x ∈ Aᶜ ↔ x ∉ A`.
 
 open Set
 
-namespace function
+--namespace function
+
+/--
+The theorem $f^{-1}(A^c) = f^{-1}(A)^c$
+-/
+TheoremDoc PreimageComplement as "PreimageComplement" in "function"
 
 /-- Show that $f^{-1}(A^c) = f^{-1}(A)^c$. -/
 Statement PreimageComplement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (Aᶜ) = (f ⁻¹' A)ᶜ := by

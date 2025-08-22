@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L02_image
 
 World "Functions"
 Level 3
@@ -10,7 +10,8 @@ In this level, we will prove that the image of the union of two sets is equal to
 
 open Set
 
-namespace function
+/-- The theorem $f(A ∪ B) = f(A) ∪ f(B)$. -/
+TheoremDoc ImageUnion as "ImageUnion" in "function"
 
 /-- Show that $f(A ∪ B) = f(A) ∪ f(B)$. -/
 Statement ImageUnion {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) ∪ (f '' B) := by

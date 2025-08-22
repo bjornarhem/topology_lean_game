@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L04_image_intersection
 
 World "Functions"
 Level 5
@@ -15,7 +15,8 @@ You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of 
 
 open Set
 
-namespace function
+/-- If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$. -/
+TheoremDoc PreimageSubset as "PreimageSubset" in "function"
 
 /-- If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$. -/
 Statement PreimageSubset {X Y : Type} (A B : Set Y) (f : X → Y) (h : A ⊆ B) : f ⁻¹' A ⊆ f ⁻¹' B := by

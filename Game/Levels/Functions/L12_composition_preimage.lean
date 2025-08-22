@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L11_composition
 
 World "Functions"
 Level 12
@@ -10,7 +10,8 @@ The final level in this world!
 
 open Set
 
-namespace function
+/-- The theorem $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
+TheoremDoc PreimageComposition as "PreimageComposition" in "function"
 
 /-- Show that $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
 Statement PreimageComposition {X Y : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by

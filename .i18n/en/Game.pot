@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug 22 14:17:49 2025\n"
+"POT-Creation-Date: Fri Aug 22 17:46:09 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -93,6 +93,10 @@ msgid "If A ⊆ B, then $f(A) ⊆ f(B)$."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
+msgid "If A ⊆ B, then $f(A) ⊆ f(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
 msgid "Let's star by choosing an element `y` in the left-hand side, using `intro`."
 msgstr ""
 
@@ -132,6 +136,10 @@ msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
 msgid "In this level, we will prove that the image of the union of two sets is equal to the union of their images."
+msgstr ""
+
+#: Game.Levels.Functions.L03_image_union
+msgid "The theorem $f(A ∪ B) = f(A) ∪ f(B)$."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -187,6 +195,10 @@ msgid "Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$."
 msgstr ""
 
 #: Game.Levels.Functions.L04_image_intersection
+msgid "Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
 msgid "This level can be solved in a similar way to the previous one. You can start by introducing an element with `intro y`."
 msgstr ""
 
@@ -213,6 +225,10 @@ msgid "In this level, we introduce preimages of functions.\n"
 "\n"
 "The theorem `Set.mem_preimage` states that an element $x$ is in the preimage of $A$ under $f$ if and only if $f(x)$ is in $A$.\n"
 "You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of the form `x ∈ f ⁻¹' A` into `f x ∈ A`."
+msgstr ""
+
+#: Game.Levels.Functions.L05_preimage
+msgid "If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$."
 msgstr ""
 
 #: Game.Levels.Functions.L05_preimage
@@ -256,6 +272,10 @@ msgid "In this level, there's no hints. Try to solve it using what you've learne
 msgstr ""
 
 #: Game.Levels.Functions.L06_preimage_union
+msgid "The theorem $f^{-1}(A ∪ B) = f^{-1}(A) ∪ f^{-1}(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L06_preimage_union
 msgid "Show that $f^{-1}(A ∪ B) = f^{-1}(A) ∪ f^{-1}(B)$."
 msgstr ""
 
@@ -272,6 +292,10 @@ msgid "In this level, there's no hints. Try to solve it using what you've learne
 msgstr ""
 
 #: Game.Levels.Functions.L07_preimage_intersection
+msgid "The theorem $f^{-1}(A ∩ B) = f^{-1}(A) ∩ f^{-1}(B)$."
+msgstr ""
+
+#: Game.Levels.Functions.L07_preimage_intersection
 msgid "Show that $f^{-1}(A ∩ B) = f^{-1}(A) ∩ f^{-1}(B)$."
 msgstr ""
 
@@ -280,7 +304,7 @@ msgid "Level completed!"
 msgstr ""
 
 #: Game.Levels.Functions.L08_preimage_complement
-msgid "Image of complement"
+msgid "Preimage of complement"
 msgstr ""
 
 #: Game.Levels.Functions.L08_preimage_complement
@@ -288,6 +312,10 @@ msgid "In this level, we prove that $f^{-1}(A^c) = f^{-1}(A)^c$,\n"
 "where $A^c$ is the complement of $A$ in the universe of discourse.\n"
 "In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written \\^c.\n"
 "Recall that `x ∈ Aᶜ ↔ x ∉ A`."
+msgstr ""
+
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "The theorem $f^{-1}(A^c) = f^{-1}(A)^c$"
 msgstr ""
 
 #: Game.Levels.Functions.L08_preimage_complement
@@ -315,6 +343,10 @@ msgid "In this level, there's no hints. Try to solve it using what you've learne
 msgstr ""
 
 #: Game.Levels.Functions.L09_image_preimage
+msgid "The theorem $f(f^{-1}(A)) \\subseteq A $."
+msgstr ""
+
+#: Game.Levels.Functions.L09_image_preimage
 msgid "Show that $f(f^{-1}(A)) \\subseteq A $."
 msgstr ""
 
@@ -328,6 +360,10 @@ msgstr ""
 
 #: Game.Levels.Functions.L10_preimage_image
 msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
+msgstr ""
+
+#: Game.Levels.Functions.L10_preimage_image
+msgid "The theorem $A \\subseteq f^{-1}(f(A))$."
 msgstr ""
 
 #: Game.Levels.Functions.L10_preimage_image
@@ -348,6 +384,10 @@ msgid "In this level, we introduce the composition of functions.\n"
 "\n"
 "In Lean, the composition of functions is denoted by `g ∘ f` or `Function.comp g f`.\n"
 "To write the `∘` symbol, you can type `\\circ` in the editor."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "The theorem $(g \\circ f)(A) = g(f(A))$."
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
@@ -376,6 +416,10 @@ msgstr ""
 
 #: Game.Levels.Functions.L12_composition_preimage
 msgid "The final level in this world!"
+msgstr ""
+
+#: Game.Levels.Functions.L12_composition_preimage
+msgid "The theorem $(g \\circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$."
 msgstr ""
 
 #: Game.Levels.Functions.L12_composition_preimage

@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Functions.L03_image_union
 
 World "Functions"
 Level 4
@@ -10,7 +10,8 @@ Introduction "
 
 open Set
 
-namespace function
+/-- Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
+TheoremDoc ImageIntersection as "ImageIntersection" in "function"
 
 /-- Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
 Statement ImageIntersection {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∩ B) ⊆ (f '' A) ∩ (f '' B) := by
