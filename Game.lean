@@ -1,3 +1,10 @@
+-- From the Set theory game
+import Game.Levels.Subset
+import Game.Levels.Comp
+import Game.Levels.Inter
+import Game.Levels.Union
+
+-- Created by me
 import Game.Levels.Functions
 import Game.Levels.Spaces
 import Game.Levels.Continuous
@@ -28,8 +35,8 @@ CaptionLong "You should use this game as a template for your own game and add yo
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
 
-Dependency Spaces → Continuous
-Dependency Functions → Continuous
+Dependency Intersection → Union
+Dependency Union → Spaces
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame

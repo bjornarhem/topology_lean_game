@@ -31,6 +31,7 @@ Statement ImageSubset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f
   intro H
   Hint "Use `rcases` to decompose the hypothesis `{y} ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
   rcases H with ⟨x, hxA, rfl⟩
+  --obtain ⟨x, hxA, rfl⟩ := H
   Hint "You can use the keyword `have` to create the hypothesis `{x} ∈ B`."
   have hxB : x ∈ B := h hxA
   Hint "You can now complete the proof using `exact ⟨ {x}, {hxB}, rfl ⟩`."
@@ -43,7 +44,7 @@ If you don't want to use `rcases`, you can also apply the theorem `Set.mem_image
 The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`.
 "
 
-NewTactic rcases
+-- NewTactic rcases
 
 /-- $y$ is in $f(A)$ if and only if there exists a $x \in A$ such that $f(x) = y$. -/
 TheoremDoc Set.mem_image as "Set.mem_image" in "function"

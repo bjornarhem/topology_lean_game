@@ -10,7 +10,7 @@ Introduction "
 
 open Set
 
-/-- Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
+/-- The theorem $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
 TheoremDoc ImageIntersection as "ImageIntersection" in "function"
 
 /-- Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/

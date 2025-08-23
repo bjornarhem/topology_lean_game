@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Spaces.L01_spaces
 
 World "Spaces"
 Level 2

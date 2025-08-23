@@ -1,4 +1,4 @@
-import Game.Metadata
+import Game.Levels.Union
 
 World "Spaces"
 Level 1
@@ -87,4 +87,5 @@ then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`.
 DefinitionDoc TopologicalSpace as "TopologicalSpace"
 NewDefinition TopologicalSpace
 
-NewTheorem Set.inter_assoc Set.inter_comm Set.union_assoc Set.union_comm
+-- TODO: check that stuff still works
+--NewTheorem Set.inter_assoc Set.inter_comm Set.union_assoc Set.union_comm
