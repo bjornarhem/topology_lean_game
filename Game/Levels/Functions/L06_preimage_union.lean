@@ -19,18 +19,18 @@ Statement PreimageUnion {X Y : Type} (A B : Set Y) (f : X → Y) : f ⁻¹' (A �
   apply Iff.intro
 
   intro h
-  cases h
+  rcases h
   apply Or.inl
-  exact h_1
+  exact h
   apply Or.inr
-  exact h_1
+  exact h
 
   intro h
-  cases h
+  rcases h
   apply Or.inl
-  exact h_1
+  exact h
   apply Or.inr
-  exact h_1
+  exact h
 
 Conclusion "
 Level completed!

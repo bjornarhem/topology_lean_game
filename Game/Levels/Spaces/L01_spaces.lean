@@ -46,7 +46,7 @@ Statement {X : Type} [h : TopologicalSpace X] (U V W : Set X) : (IsOpen U) → (
   intro hU hV hW
   Hint "Now, you can use `{h}.isOpen_inter` to prove that the intersection of two open sets is open. For example, try `have hUV := h.isOpen_inter {U} {V} {hU} {hV}`."
   have hUV := h.isOpen_inter U V hU hV
-  Hint "Finish by using `{h}.isOpen_inter` again. You might need to rewrite using `Set.inter_assoc` and/or `Set.inter_comm`."
+  Hint "Finish by using `{h}.isOpen_inter` again. You might need to rewrite using `inter_assoc` and/or `inter_comm`."
   have hUVW := h.isOpen_inter (U ∩ V) W hUV hW
   exact hUVW
 
@@ -86,6 +86,3 @@ then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`.
 -/
 DefinitionDoc TopologicalSpace as "TopologicalSpace"
 NewDefinition TopologicalSpace
-
--- TODO: check that stuff still works
---NewTheorem Set.inter_assoc Set.inter_comm Set.union_assoc Set.union_comm

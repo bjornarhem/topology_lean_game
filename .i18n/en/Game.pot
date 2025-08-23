@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat Aug 23 13:42:18 2025\n"
+"POT-Creation-Date: Sat Aug 23 14:29:09 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1449,10 +1449,6 @@ msgstr ""
 msgid "Level 1"
 msgstr ""
 
-#: Game.Levels.Functions.L01_functions
-msgid "Test"
-msgstr ""
-
 #: Game.Levels.Functions.L02_image
 msgid "Images of functions"
 msgstr ""
@@ -1462,8 +1458,8 @@ msgid "If $f \\colon X \\to Y$ and $A \\in X$, then the image of $A$ under $f$ i
 "$f(A) = \\{ f(x) \\mid x \\in A \\}$. In Lean, this is denoted `f '' A` or `image f A`.\n"
 "\n"
 "A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.\n"
-"In this level, we will use the `rcases` tactic to decompose such hypotheses.\n"
-"Whenever you have a hypothesis of the form `h : y ∈ f '' A`, you can write `rcase h with ⟨x, hxA, rfl⟩` to decompose it into its components.\n"
+"In this level, we will use the `obtain` tactic to decompose such hypotheses.\n"
+"Whenever you have a hypothesis of the form `h : y ∈ f '' A`, you can write `obtain ⟨x, hxA, rfl⟩ := h` to decompose it into its components.\n"
 "To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle, respectively.\n"
 "\n"
 "In this level, we prove the following property of images: If $A ⊆ B$, then $f(A) ⊆ f(B)$."
@@ -1486,7 +1482,7 @@ msgid "As usual when proving an implication, we can begin with `intro H`."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "Use `rcases` to decompose the hypothesis `«{y}» ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
+msgid "Use `obtain` to decompose the hypothesis `«{y}» ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
@@ -1499,8 +1495,15 @@ msgstr ""
 
 #: Game.Levels.Functions.L02_image
 msgid "Well done!\n"
-"If you don't want to use `rcases`, you can also apply the theorem `Set.mem_image`.\n"
+"If you don't want to use `obtain`, you can also apply the theorem `Set.mem_image`.\n"
 "The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`."
+msgstr ""
+
+#: Game.Levels.Functions.L02_image
+msgid "If you have a hypothesis `y ∈ f '' A `, obtain ⟨x, hxA, rfl⟩ := h`\n"
+"will introduce a new object `x`, a proof `hxA` that `x ∈ A`, and will rewrite `y` into `f x`.\n"
+"\n"
+"To write the symbols `⟨` and `⟩`, you can write \\\\langle and \\\\rangle or \\\\< and \\\\>."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
@@ -1536,11 +1539,11 @@ msgid "You can apply Iff.intro to split the goal into two subgoals."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "As in the previous level, you can use `intro` followed by `rcases` here."
+msgid "As in the previous level, you can use `intro` followed by `obtain` here."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
-msgid "You can use `cases «{hx}»` to split the proof into two cases."
+msgid "You can use `rcases «{hx}»` to split the proof into two cases."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -1764,7 +1767,10 @@ msgid "In this level, we introduce the composition of functions.\n"
 "The composition of two functions $f : X 	o Y$ and $g : Y 	o Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.\n"
 "\n"
 "In Lean, the composition of functions is denoted by `g ∘ f` or `Function.comp g f`.\n"
-"To write the `∘` symbol, you can type `\\circ` in the editor."
+"To write the `∘` symbol, you can type `\\circ` in the editor.\n"
+"\n"
+"In this level, we also introduce a new tactic, `use`, which is useful when working with images of functions.\n"
+"If your goal is `y ∈ f '' A`, `use x` will change the goal to `x ∈ A` and `f x = y`."
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
@@ -1780,11 +1786,29 @@ msgid "The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
+msgid "Try 'rewrite [Function.comp_apply]'."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "Now, you can use `use` to finish the subgoal. Try `use «{f}» «{x}»`."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "Now, you can use `use` to finish the subgoal. Try `use «{x}»`."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
 msgid "Level completed!"
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
-msgid "TODO: Docstring for g ∘ f"
+msgid "If your goal is `y ∈ f '' A`, `use x` will change the goal to `x ∈ A` and `f x = y`."
+msgstr ""
+
+#: Game.Levels.Functions.L11_composition
+msgid "The composition of two functions $f : X \\to Y$ and $g : Y \\to Z$ is a function $g \\\\circ f : X \\\\to Z$ defined by $(g \\\\circ f)(x) = g(f(x))$ for all $x \\\\in X$.\n"
+"\n"
+"The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as `g (f x)`."
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
@@ -1869,7 +1893,7 @@ msgid "Now, you can use `«{h}».isOpen_inter` to prove that the intersection of
 msgstr ""
 
 #: Game.Levels.Spaces.L01_spaces
-msgid "Finish by using `«{h}».isOpen_inter` again. You might need to rewrite using `Set.inter_assoc` and/or `Set.inter_comm`."
+msgid "Finish by using `«{h}».isOpen_inter` again. You might need to rewrite using `inter_assoc` and/or `inter_comm`."
 msgstr ""
 
 #: Game.Levels.Spaces.L01_spaces
@@ -2034,15 +2058,13 @@ msgid "Welcome to the topology game!\n"
 "\n"
 "In this game, you learn to work with topological spaces in Lean.\n"
 "\n"
-"Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.\n"
-"You can learn this, for example, by playing the first worlds in the Set Theory Game."
+"Some of the worlds in this game are from the Set Theory Game, created by Daniel J. Velleman."
 msgstr ""
 
 #: Game
 msgid "In this game, you learn to work with topological spaces in Lean.\n"
 "\n"
-"Before playing this game, it is recommended to have at least some knowledge of Lean tactics and sets in Lean.\n"
-"You can learn this, for example, by playing the first worlds in the Set Theory Game."
+"Some of the worlds in this game are from the Set Theory Game, created by Daniel J. Velleman."
 msgstr ""
 
 #: Game

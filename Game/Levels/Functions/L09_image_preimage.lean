@@ -17,7 +17,7 @@ TheoremDoc ImagePreimage as "ImagePreimage" in "function"
 Statement ImagePreimage {X Y : Type} (A : Set Y) (f : X → Y) : f '' (f ⁻¹' (A)) ⊆ A  := by
   intro y
   intro h
-  rcases h with ⟨x, hx, rfl⟩
+  obtain ⟨x, hx, rfl⟩ := h
   exact hx
 
 

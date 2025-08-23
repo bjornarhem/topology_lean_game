@@ -7,7 +7,6 @@ Title "Intro to functions"
 Introduction "
 Let's warm up with the following simple exercise.
 "
-/- TODO: write that we assume familiarity with the keywords from the set theory game. -/
 
 /-- Show that if $x = y$, then $f(x) = f(y)$. -/
 Statement {X Y : Type} (f : X → Y) (x y : X) (h : x = y) : f x = f y := by

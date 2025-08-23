@@ -20,7 +20,7 @@ Statement ImageIntersection {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A �
   Hint "Now, `intro h` will introduce a hypothesis `h : {y} ∈ {f} '' ({A} ∩ {B})` and change you goal to `{y} ∈ {f}'' {A} ∩ {y} ∈ {f}'' {B}`."
   intro h
   Hint "Recall that for two sets `A` and `B`, `a ∈ A ∩ B` is equivalent to `a ∈ A ∧ a ∈ B`. Some useful techniques: `apply And.intro` will split the goal into two subgoals. For a hypothesis `h : a ∈ S ∩ T`, `h.left` gives you a proof of `a ∈ S` and `h.right` gives you a proof of `a ∈ T`."
-  rcases h with ⟨x, hxAB, rfl⟩
+  obtain ⟨x, hxAB, rfl⟩ := h
   apply And.intro
   exact ⟨x, hxAB.left, rfl⟩
   exact ⟨x, hxAB.right, rfl⟩
