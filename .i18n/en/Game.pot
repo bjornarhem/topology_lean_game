@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug 22 17:46:09 2025\n"
+"POT-Creation-Date: Sat Aug 23 12:49:10 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -520,7 +520,12 @@ msgid "Closed sets"
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
-msgid "TODO: explain"
+msgid "In this level we introduce closed sets.\n"
+"In Lean, the predicate `IsClosed` asserts that a set is closed.\n"
+"If U is a set in a topological space X, then `IsClosed U` is defined as `IsOpen Uᶜ`,\n"
+"where `Uᶜ` is the complement of U.\n"
+"\n"
+"You can use the theorem `isOpen_compl_iff` to rewrite `IsClosed U` as `IsOpen Uᶜ`, and vice versa."
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
@@ -529,6 +534,14 @@ msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
 msgid "In this level, you can use `Set.compl_union` to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "You can use `rw [← isOpen_compl_iff]` to rewrite `IsClosed U` as `IsOpen Uᶜ`."
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "$U^c$ is open if and only if $U$ is closed."
 msgstr ""
 
 #: Game.Levels.Spaces
@@ -544,8 +557,14 @@ msgid "Introduction to continuous functions"
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous
-msgid "TODO: explain\n"
-"remember: explain hf.isOpen_preimage"
+msgid "In this world, we introduce continuous functions.\n"
+"In Lean, the predicate `Continuous` asserts that a function is continuous.\n"
+"Given a proposition `h : Continuous f`, you can use `h.isOpen_preimage` to prove that the preimage of an open set is open.\n"
+"\n"
+"Let's warm up by proving that the continuous preimage of a closed set is closed.\n"
+"\n"
+"In this level, you can use the theorem `PreimageComplement`, which you proved in the functions world,\n"
+"to rewrite `f⁻¹' (Uᶜ)` as `(f⁻¹' U)ᶜ`."
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous
@@ -553,11 +572,34 @@ msgid "If $f \\\\colon X \\\\to Y$ and $U \\\\subset Y$ is closed, then $f^{-1}(
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous
+msgid "As always, start with `intro h`."
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "Recall the theorem `isOpen_compl_iff`. You can rewrite the statements in terms of open sets by writing `rw [← isOpen_compl_iff]` and `rw [← isOpen_compl_iff] at «{h}»`."
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing `rw [← PreimageComplement]`."
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
+msgid "Now you can use `«{hf}».isOpen_preimage` to finish the proof."
+msgstr ""
+
+#: Game.Levels.Continuous.L01_continuous
 msgid "Level completed!"
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous
-msgid "TODO"
+msgid "The typeclass `Continuous` is defined as follows:\n"
+"\n"
+"```\n"
+"class Continuous {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) where\n"
+"  isOpen_preimage : ∀ {U : Set Y}, IsOpen U → IsOpen (f ⁻¹' U)\n"
+"```\n"
+"\n"
+"If you have hypotheses `hf : Continuous f` and `hU : isOpen U`, then `hf.isOpen_preimage U hU` is a proof of `isOpen (f ⁻¹' U)`."
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
@@ -565,16 +607,33 @@ msgid "Composition of continuous functions"
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
-msgid "TODO: explain\n"
-"talk about continuous_def"
+msgid "In this level, we prove that the composition of continuous functions is continuous.\n"
+"\n"
+"We introduce the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open."
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
-msgid "TODO: write statement"
+msgid "The composition of continuous functions is continuous."
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "In this level, you can use the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open. Try using `rw [continuous_def]`."
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "In this level, you can use the theorem `PreimageComposition`, which you proved in the functions world."
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "Again, you can use `«{hf}».isOpen_preimage` and `«{hg}».isOpen_preimage` to finish the proof."
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
 msgid "Level completed!"
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "A function is continuous if and only if the preimage of every open set is open."
 msgstr ""
 
 #: Game.Levels.Continuous
