@@ -13,10 +13,11 @@ We introduce the theorem `continuous_def`, which states that a function is conti
 open TopologicalSpace Set
 namespace continuous
 
-/-- The composition of continuous functions is continuous. -/
+/-- The composition of two continuous functions is continuous. -/
 Statement {X Y Z : Type} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z] (f : X → Y) (g : Y → Z) (hf: Continuous f) (hg : Continuous g) : Continuous (g ∘ f) := by
   Hint "In this level, you can use the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open. Try using `rw [continuous_def]`."
   rw [continuous_def]
+  Hint "Now, try `intro U hU` to introduce an open set."
   intro U hU
   Hint "In this level, you can use the theorem `PreimageComposition`, which you proved in the functions world."
   rw [PreimageComposition]
