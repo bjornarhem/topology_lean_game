@@ -1,4 +1,4 @@
-import Game.Levels.Union
+import Game.Levels.Combo
 
 World "Spaces"
 Level 1

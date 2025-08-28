@@ -3,6 +3,7 @@ import Game.Levels.Subset
 import Game.Levels.Comp
 import Game.Levels.Inter
 import Game.Levels.Union
+import Game.Levels.Combo
 
 -- Created by me
 import Game.Levels.Functions

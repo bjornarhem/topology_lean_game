@@ -1,5 +1,8 @@
 import Game.Levels.Spaces.L01_spaces
 
+open Set TopologicalSpace
+namespace STG4
+
 World "Spaces"
 Level 2
 Title "Closed sets"
@@ -15,11 +18,12 @@ You can use the theorem `isOpen_compl_iff` to rewrite `IsClosed U` as `IsOpen U�
 
 /-- Show that if $U$ and $V$ are closed sets in $X$, then $U ∪ V$ is closed. -/
 Statement {X : Type} [h : TopologicalSpace X] (U V : Set X) : (IsClosed U) → (IsClosed V) → IsClosed (U ∪ V) := by
-  Hint "In this level, you can use `Set.compl_union` to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
+  Hint "In this level, you can use the theorem `compl_union`, that you proved in Combination World, to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
   Hint "You can use `rw [← isOpen_compl_iff]` to rewrite `IsClosed U` as `IsOpen Uᶜ`."
   intro hU hV
   rw [← isOpen_compl_iff]
-  rw [Set.compl_union]
+  Hint "Here it would be a good idea to use the theorem `compl_union`."
+  rw [compl_union]
   rw [← isOpen_compl_iff] at hU hV
 
   apply h.isOpen_inter
@@ -29,4 +33,4 @@ Statement {X : Type} [h : TopologicalSpace X] (U V : Set X) : (IsClosed U) → (
 /-- $U^c$ is open if and only if $U$ is closed. -/
 TheoremDoc isOpen_compl_iff as "isOpen_compl_iff" in "topology"
 
-NewTheorem Set.compl_union isOpen_compl_iff
+NewTheorem isOpen_compl_iff

@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat Aug 23 14:29:09 2025\n"
+"POT-Creation-Date: Thu Aug 28 19:08:38 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1425,6 +1425,65 @@ msgid "If `A` and `B` are sets, then the *union* of `A` and `B`, denoted\n"
 "In this world you'll prove some basic properties of unions of sets."
 msgstr ""
 
+#: Game.Levels.Combo.L01compunion
+msgid "Complement of a union"
+msgstr ""
+
+#: Game.Levels.Combo.L01compunion
+msgid "There is more than one way to do the proof in this level.  Since the proof involves complements of\n"
+"sets, negative statements will arise in the course of the proof.  This suggests two possible techniques.\n"
+"You may be able to use the `push_neg` tactic to reexpress some negative statements as equivalent\n"
+"positive statements.  And you may find proof by contradiction useful."
+msgstr ""
+
+#: Game.Levels.Combo.L01compunion
+msgid "For any sets `A` and `B`, `compl_union A B` is a proof of the\n"
+"statement `(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ`.  In Mathlib, the name of this theorem is `Set.compl_union`."
+msgstr ""
+
+#: Game.Levels.Combo.L01compunion
+msgid "For any sets $A$ and $B$, $(A \\cup B)^c = A^c \\cap B^c$."
+msgstr ""
+
+#: Game.Levels.Combo.L02compint
+msgid "Complement of an intersection"
+msgstr ""
+
+#: Game.Levels.Combo.L02compint
+msgid "Of course, you could start the proof in this level with either `ext x` or `apply Subset.antisymm`.\n"
+"But there is a shorter solution: you can use\n"
+"the theorem from the previous level (`compl_union`) to prove the\n"
+"theorem in this level.\n"
+"\n"
+"The trick to get started on this proof is to rewrite `Aᶜ ∪ Bᶜ` as `(Aᶜ ∪ Bᶜ)ᶜᶜ`.  As you\n"
+"know, `compl_compl (Aᶜ ∪ Bᶜ)` is a proof of the theorem `(Aᶜ ∪ Bᶜ)ᶜᶜ = Aᶜ ∪ Bᶜ`, and therefore\n"
+"`rewrite [compl_compl (Aᶜ ∪ Bᶜ)]` could be used to rewrite `(Aᶜ ∪ Bᶜ)ᶜᶜ` as `Aᶜ ∪ Bᶜ`; but we\n"
+"want to go in the opposite direction, rewriting `Aᶜ ∪ Bᶜ` as `(Aᶜ ∪ Bᶜ)ᶜᶜ`. To do that, use\n"
+"`rewrite [← compl_compl (Aᶜ ∪ Bᶜ)]`. (To enter the left-pointing arrow, type `\\l`.)"
+msgstr ""
+
+#: Game.Levels.Combo.L02compint
+msgid "For any sets `A` and `B`, `compl_inter A B` is a proof of the\n"
+"statement `(A ∩ B)ᶜ = Aᶜ ∪ Bᶜ`.  In Mathlib, the name of this theorem is `Set.compl_inter`."
+msgstr ""
+
+#: Game.Levels.Combo.L02compint
+msgid "For any sets $A$ and $B$, $(A \\cap B)^c = A^c \\cup B^c$."
+msgstr ""
+
+#: Game.Levels.Combo.L02compint
+msgid "Do you see how you can now use the theorem from the previous level?"
+msgstr ""
+
+#: Game.Levels.Combo
+msgid "Combination World"
+msgstr ""
+
+#: Game.Levels.Combo
+msgid "In this world you'll prove theorems combining complements, intersections, and unions.  For\n"
+"the most part, we'll leave you on your own to figure out these proofs."
+msgstr ""
+
 #: Game.Levels.Functions.L01_functions
 msgid "Intro to functions"
 msgstr ""
@@ -2023,6 +2082,10 @@ msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
 msgid "In this level, you can use the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open. Try using `rw [continuous_def]`."
+msgstr ""
+
+#: Game.Levels.Continuous.L02_is_continuous
+msgid "Now, try `intro U hU` to introduce an open set."
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
