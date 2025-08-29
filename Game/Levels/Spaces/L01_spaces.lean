@@ -18,6 +18,9 @@ class TopologicalSpace (X : Type u) where
   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
 ```
 
+It's okay if you don't understand all of this.
+We will only focus on some of it now, and get to the rest in later worlds.
+
 The `IsOpen` predicate is used to determine whether a set is open in the topological space.
 You can treat it as a function: given `h : TopologicalSpace X` and `U : Set X`,
 the expression `h.IsOpen U` returns `true` if `U` is open and `false` otherwise.
@@ -30,7 +33,7 @@ then `h.isOpen_inter U V hU hV` is a proof of `h.IsOpen (U ∩ V)`.
 Note also that it Lean, it often suffices to write `IsOpen U` instead of `h.IsOpen U`.
 This is because Lean can often infer the topological space from the type of `U`.
 
-Note that It's not explcitly stated in the axioms that the empty set is open,
+Observe that It's not explcitly stated in the axioms that the empty set is open,
 because this follows from the fact that a union of open sets is open, applied to the empty union.
 We will prove this in a later level!
 
@@ -77,12 +80,16 @@ class TopologicalSpace (X : Type u) where
 ```
 
 The `IsOpen` predicate is used to determine whether a set is open in the topological space.
-You can treat it as a function: `IsOpen U` returns `true` if `U` is open and `false` otherwise.
+You can treat it as a function: given `h : TopologicalSpace X` and `U : Set X`,
+the expression `h.IsOpen U` returns `true` if `U` is open and `false` otherwise.
 
 The other three lines are the axioms of a topological space.
 You can treat them as theorems: If `U` and `V` are open set in `X`,
-and you have hypotheses `hU : IsOpen U` and `hV : IsOpen V`,
-then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`.
+and you have hypotheses `hU : h.IsOpen U` and `hV : h.IsOpen V`,
+then `h.isOpen_inter U V hU hV` is a proof of `h.IsOpen (U ∩ V)`.
+
+Note also that it Lean, it often suffices to write `IsOpen U` instead of `h.IsOpen U`.
+This is because Lean can often infer the topological space from the type of `U`.
 -/
 DefinitionDoc TopologicalSpace as "TopologicalSpace"
 NewDefinition TopologicalSpace
