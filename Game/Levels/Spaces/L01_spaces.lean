@@ -1,5 +1,9 @@
 import Game.Levels.Combo
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open TopologicalSpace
+open STG4
+
 World "Spaces"
 Level 1
 Title "Introduction to topological spaces"
@@ -39,9 +43,6 @@ We will prove this in a later level!
 
 We start with a warm-up exercise.
 "
-
-open Set TopologicalSpace
-namespace topology
 
 /-- Show that if $U, V$ and $W$ are open sets in $X$, then $U ∩ V ∩ W$ is open. -/
 Statement {X : Type} [h : TopologicalSpace X] (U V W : Set X) : (IsOpen U) → (IsOpen V) → (IsOpen W) → IsOpen (U ∩ V ∩ W) := by

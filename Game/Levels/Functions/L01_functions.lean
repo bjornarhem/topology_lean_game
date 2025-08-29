@@ -1,5 +1,8 @@
 import Game.Levels.Comp
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 1
 Title "Intro to functions"

@@ -1,12 +1,15 @@
 import Game.Levels.Functions.L10_preimage_image
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 11
 Title "Composition of functions"
 
 Introduction "
 In this level, we introduce the composition of functions.
-The composition of two functions $f : X \to Y$ and $g : Y \to Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.
+The composition of two functions $f : X \\to Y$ and $g : Y \\to Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.
 
 In Lean, the composition of functions is denoted by `g ∘ f` or `Function.comp g f`.
 To write the `∘` symbol, you can type `\\circ` in the editor.
@@ -14,8 +17,6 @@ To write the `∘` symbol, you can type `\\circ` in the editor.
 In this level, we also introduce a new tactic, `use`, which is useful when working with images of functions.
 If your goal is `y ∈ f '' A`, `use x` will change the goal to `x ∈ A` and `f x = y`.
 "
-
-open Set
 
 /-- The theorem $(g \circ f)(A) = g(f(A))$. -/
 TheoremDoc ImageComposition as "ImageComposition" in "function"

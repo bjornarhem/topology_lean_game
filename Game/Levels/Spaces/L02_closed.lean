@@ -1,7 +1,8 @@
 import Game.Levels.Spaces.L01_spaces
 
-open Set TopologicalSpace
-namespace STG4
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open TopologicalSpace
+open STG4
 
 World "Spaces"
 Level 2

@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L04_image_intersection
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 5
 Title "Preimages of functions"
@@ -12,8 +15,6 @@ In Lean, this is denoted `f ⁻¹' A`, which can be typed as `\\-1` followed by 
 The theorem `Set.mem_preimage` states that an element $x$ is in the preimage of $A$ under $f$ if and only if $f(x)$ is in $A$.
 You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of the form `x ∈ f ⁻¹' A` into `f x ∈ A`.
 "
-
-open Set
 
 /-- If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$. -/
 TheoremDoc PreimageSubset as "PreimageSubset" in "function"

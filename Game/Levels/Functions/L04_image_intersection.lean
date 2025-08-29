@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L03_image_union
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 4
 Title "Image of intersection"
@@ -7,8 +10,6 @@ Title "Image of intersection"
 Introduction "
 
 "
-
-open Set
 
 /-- The theorem $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
 TheoremDoc ImageIntersection as "ImageIntersection" in "function"

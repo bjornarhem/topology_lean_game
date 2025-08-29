@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L06_preimage_union
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 7
 Title "Preimage of intersection"
@@ -7,8 +10,6 @@ Title "Preimage of intersection"
 Introduction "
 In this level, there's no hints. Try to solve it using what you've learned so far!
 "
-
-open Set
 
 /-- The theorem $f^{-1}(A ∩ B) = f^{-1}(A) ∩ f^{-1}(B)$. -/
 TheoremDoc PreimageIntersection as "PreimageIntersection" in "function"

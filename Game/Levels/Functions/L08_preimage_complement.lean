@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L07_preimage_intersection
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 8
 Title "Preimage of complement"
@@ -7,13 +10,9 @@ Title "Preimage of complement"
 Introduction "
 In this level, we prove that $f^{-1}(A^c) = f^{-1}(A)^c$,
 where $A^c$ is the complement of $A$ in the universe of discourse.
-In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written \\^c.
+In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written `\\^c`.
 Recall that `x ∈ Aᶜ ↔ x ∉ A`.
 "
-
-open Set
-
---namespace function
 
 /--
 The theorem $f^{-1}(A^c) = f^{-1}(A)^c$
@@ -33,7 +32,7 @@ Statement PreimageComplement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (
 
   intro h
   rewrite [mem_compl_iff] at h
-  rewrite [mem_preimage]
+  rewrite [Set.mem_preimage]
   rewrite [mem_compl_iff]
   by_contra h2
   exact h h2

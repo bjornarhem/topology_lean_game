@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L09_image_preimage
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 10
 Title "Preimage of image"
@@ -7,8 +10,6 @@ Title "Preimage of image"
 Introduction "
 In this level, there's no hints. Try to solve it using what you've learned so far!
 "
-
-open Set
 
 /-- The theorem $A \subseteq f^{-1}(f(A))$. -/
 TheoremDoc PreimageImage as "PreimageImage" in "function"

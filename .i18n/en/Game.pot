@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Aug 28 19:08:38 2025\n"
+"POT-Creation-Date: Fri Aug 29 16:45:45 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1753,7 +1753,7 @@ msgstr ""
 #: Game.Levels.Functions.L08_preimage_complement
 msgid "In this level, we prove that $f^{-1}(A^c) = f^{-1}(A)^c$,\n"
 "where $A^c$ is the complement of $A$ in the universe of discourse.\n"
-"In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written \\^c.\n"
+"In Lean, this is denoted `Aᶜ` or `Set.compl A`, and can be written `\\^c`.\n"
 "Recall that `x ∈ Aᶜ ↔ x ∉ A`."
 msgstr ""
 
@@ -1823,7 +1823,7 @@ msgstr ""
 
 #: Game.Levels.Functions.L11_composition
 msgid "In this level, we introduce the composition of functions.\n"
-"The composition of two functions $f : X 	o Y$ and $g : Y 	o Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.\n"
+"The composition of two functions $f : X \\to Y$ and $g : Y \\to Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.\n"
 "\n"
 "In Lean, the composition of functions is denoted by `g ∘ f` or `Function.comp g f`.\n"
 "To write the `∘` symbol, you can type `\\circ` in the editor.\n"
@@ -1920,6 +1920,9 @@ msgid "In this level, we introduce the `TopologicalSpace` typeclass.\n"
 "  protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)\n"
 "```\n"
 "\n"
+"It's okay if you don't understand all of this.\n"
+"We will only focus on some of it now, and get to the rest in later worlds.\n"
+"\n"
 "The `IsOpen` predicate is used to determine whether a set is open in the topological space.\n"
 "You can treat it as a function: given `h : TopologicalSpace X` and `U : Set X`,\n"
 "the expression `h.IsOpen U` returns `true` if `U` is open and `false` otherwise.\n"
@@ -1932,7 +1935,7 @@ msgid "In this level, we introduce the `TopologicalSpace` typeclass.\n"
 "Note also that it Lean, it often suffices to write `IsOpen U` instead of `h.IsOpen U`.\n"
 "This is because Lean can often infer the topological space from the type of `U`.\n"
 "\n"
-"Note that It's not explcitly stated in the axioms that the empty set is open,\n"
+"Observe that It's not explcitly stated in the axioms that the empty set is open,\n"
 "because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
 "We will prove this in a later level!\n"
 "\n"
@@ -1971,12 +1974,16 @@ msgid "The `TopologicalSpace` typeclass is defined as follows:\n"
 "```\n"
 "\n"
 "The `IsOpen` predicate is used to determine whether a set is open in the topological space.\n"
-"You can treat it as a function: `IsOpen U` returns `true` if `U` is open and `false` otherwise.\n"
+"You can treat it as a function: given `h : TopologicalSpace X` and `U : Set X`,\n"
+"the expression `h.IsOpen U` returns `true` if `U` is open and `false` otherwise.\n"
 "\n"
 "The other three lines are the axioms of a topological space.\n"
 "You can treat them as theorems: If `U` and `V` are open set in `X`,\n"
-"and you have hypotheses `hU : IsOpen U` and `hV : IsOpen V`,\n"
-"then `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`."
+"and you have hypotheses `hU : h.IsOpen U` and `hV : h.IsOpen V`,\n"
+"then `h.isOpen_inter U V hU hV` is a proof of `h.IsOpen (U ∩ V)`.\n"
+"\n"
+"Note also that it Lean, it often suffices to write `IsOpen U` instead of `h.IsOpen U`.\n"
+"This is because Lean can often infer the topological space from the type of `U`."
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
@@ -1997,11 +2004,15 @@ msgid "Show that if $U$ and $V$ are closed sets in $X$, then $U ∪ V$ is closed
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
-msgid "In this level, you can use `Set.compl_union` to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
+msgid "In this level, you can use the theorem `compl_union`, that you proved in Combination World, to rewrite ` (U ∪ V)ᶜ` as `Uᶜ ∩ Vᶜ`."
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
 msgid "You can use `rw [← isOpen_compl_iff]` to rewrite `IsClosed U` as `IsOpen Uᶜ`."
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "Here it would be a good idea to use the theorem `compl_union`."
 msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
@@ -2032,7 +2043,7 @@ msgid "In this world, we introduce continuous functions.\n"
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous
-msgid "If $f \\\\colon X \\\\to Y$ and $U \\\\subset Y$ is closed, then $f^{-1}(U)$ is closed."
+msgid "If $f \\colon X \\to Y$ and $U \\subset Y$ is closed, then $f^{-1}(U)$ is closed."
 msgstr ""
 
 #: Game.Levels.Continuous.L01_continuous

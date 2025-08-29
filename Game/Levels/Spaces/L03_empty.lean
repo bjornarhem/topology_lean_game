@@ -1,7 +1,8 @@
 import Game.Levels.Spaces.L01_spaces
 
-open Set TopologicalSpace
-namespace STG4
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open TopologicalSpace
+open STG4
 
 World "Spaces"
 Level 3
@@ -13,7 +14,7 @@ In this level, we introduce the empty set and show that it's open in any topolog
 
 -- TODO: introduce level showing that the empty union is the empty set
 
-/-- Let $X$ be a topological space. Then $\\emptyset \\subseteq X$ is open. -/
+/-- Let $X$ be a topological space. Then $\emptyset \subseteq X$ is open. -/
 Statement {X : Type} [h : TopologicalSpace X] : IsOpen (∅ : Set X) := by
   have h1 := h.isOpen_sUnion ∅
   rw [Set.sUnion_empty] at h1

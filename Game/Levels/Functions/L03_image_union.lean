@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L02_image
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 3
 Title "Image of union"
@@ -7,8 +10,6 @@ Title "Image of union"
 Introduction "
 In this level, we will prove that the image of the union of two sets is equal to the union of their images.
 "
-
-open Set
 
 /-- The theorem $f(A ∪ B) = f(A) ∪ f(B)$. -/
 TheoremDoc ImageUnion as "ImageUnion" in "function"

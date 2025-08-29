@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L01_functions
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 2
 Title "Images of functions"
@@ -15,8 +18,6 @@ To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle, respe
 
 In this level, we prove the following property of images: If $A ⊆ B$, then $f(A) ⊆ f(B)$.
 "
-
-open Set
 
 /--
 If A ⊆ B, then $f(A) ⊆ f(B)$.

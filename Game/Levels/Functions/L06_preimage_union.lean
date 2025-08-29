@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L05_preimage
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 6
 Title "Preimage of union"
@@ -7,8 +10,6 @@ Title "Preimage of union"
 Introduction "
 In this level, there's no hints. Try to solve it using what you've learned so far!
 "
-
-open Set
 
 /-- The theorem $f^{-1}(A ∪ B) = f^{-1}(A) ∪ f^{-1}(B)$. -/
 TheoremDoc PreimageUnion as "PreimageUnion" in "function"

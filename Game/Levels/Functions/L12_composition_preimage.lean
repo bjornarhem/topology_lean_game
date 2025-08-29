@@ -1,5 +1,8 @@
 import Game.Levels.Functions.L11_composition
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open STG4
+
 World "Functions"
 Level 12
 Title "Preimage of composition"
@@ -7,8 +10,6 @@ Title "Preimage of composition"
 Introduction "
 The final level in this world!
 "
-
-open Set
 
 /-- The theorem $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
 TheoremDoc PreimageComposition as "PreimageComposition" in "function"

@@ -1,5 +1,9 @@
 import Game.Levels.Continuous.L01_continuous
 
+open Set (mem_inter_iff mem_union Subset.antisymm)
+open TopologicalSpace
+open STG4
+
 World "Continuous"
 Level 2
 Title "Composition of continuous functions"
@@ -9,9 +13,6 @@ In this level, we prove that the composition of continuous functions is continuo
 
 We introduce the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open.
 "
-
-open TopologicalSpace Set
-namespace continuous
 
 /-- The composition of continuous functions is continuous. -/
 Statement {X Y Z : Type} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z] (f : X → Y) (g : Y → Z) (hf: Continuous f) (hg : Continuous g) : Continuous (g ∘ f) := by
