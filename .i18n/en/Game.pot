@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Aug 29 16:45:45 2025\n"
+"POT-Creation-Date: Sat Aug 30 18:22:46 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1484,6 +1484,630 @@ msgid "In this world you'll prove theorems combining complements, intersections,
 "the most part, we'll leave you on your own to figure out these proofs."
 msgstr ""
 
+#: Game.Levels.FamInter.L01intersub
+msgid "Family intersection is subset"
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "In mathematical writing, the intersection of the family $F$ is usually denoted $\\bigcap F$.\n"
+"In Lean, the intersection of a family `F` is denoted `⋂₀ F`.  (You can enter the symbol\n"
+"`⋂₀` by typing `\\I0`.)\n"
+"\n"
+"Suppose we have `F : Set (Set U)` and `x : U`.  Then `x ∈ ⋂₀ F` means that for every set `t`, if\n"
+"`t` is in `F`, then `x ∈ t`.  To write this statement in Lean, we write `∀ t, t ∈ F → x ∈ t`.\n"
+"Lean abbreviates this statement as `∀ t ∈ F, x ∈ t`.\n"
+"The symbol `∀` is called the *universal quantifier*, and you can enter it in Lean by typing\n"
+"`\\forall`.  Note that `∀ t, t ∈ F → x ∈ t` means `∀ t, (t ∈ F → x ∈ t)`, not\n"
+"`(∀ t, t ∈ F) → x ∈ t`.  In other words, Lean interprets the universal quantifier as applying\n"
+"to the entire rest of the statement.  If you want it to apply to less, you have to\n"
+"use parentheses to indicate that.\n"
+"\n"
+"As with other set theory operations, we have a theorem that expresses this definition.  Lean will\n"
+"recognize `mem_sInter` as a proof of any statement of the form `x ∈ ⋂₀ F ↔ ∀ t ∈ F, x ∈ t`.\n"
+"\n"
+"In this level, you'll try out these ideas."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "`⋂₀ F` is the intersection of the family of sets `F`.  To enter the symbol `⋂₀`, type `\\I0`."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "If `P x` represents a statement about an unspecified object `x`, then `∀ x, P x` means\n"
+"\"for all `x`, `P x` is true\".  To enter the symbol `∀`, type `\\forall`.\n"
+"\n"
+"### If your goal is `∀ x, P x`\n"
+"\n"
+"The tactic `intro t` will introduce a new object `t` into the proof, and set the goal to be `P t`.\n"
+"Be sure to use a variable `t` that is not already being used to stand for some object.\n"
+"\n"
+"### If you have an assumption `h : ∀ x, P x`\n"
+"\n"
+"If `a` stands for some object, then `h a` is a proof of `P a`.  Note that `a` must be the right\n"
+"*type* of object.  For example, if `x` stands for an object in the universe `U`, then `a` must\n"
+"have type `U`; if `x` stands for a set of objects from the universe `U`, then `a` must have\n"
+"type `Set U`."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "Lean will recognize `mem_sInter` as a proof of any statement of the form\n"
+"`x ∈ ⋂₀ F ↔ ∀ t ∈ F, x ∈ t`.  In Mathlib, the name of this theorem is `Set.mem_sInter`."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "Suppose $F$ is a family of sets and $A \\in F$.  Then $\\bigcap F \\subseteq A$."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "As usual, you may find it helpful to use the `rewrite` tactic to write out the\n"
+"definition of `«{x}» ∈ ⋂₀ F`, using the theorem `mem_sInter`."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "Remember that `«{h2}» : ∀ t ∈ F, «{x}» ∈ t` is an abbreviation for\n"
+"`«{h2}» : ∀ t, t ∈ F → «{x}» ∈ t`.  Since `∀` means \"for all\", `«{h2}»` can be applied to any\n"
+"set--that is, we can plug in any set for `t` in `«{h2}»`.\n"
+"In particular, applying it to the set `A`, we can conclude that `A ∈ F → «{x}» ∈ A`.\n"
+"To apply `«{h2}»` to `A`, we just write `«{h2}»` followed by `A`, with a space between them.\n"
+"Thus, your next step can be `have «{h2}»A : A ∈ F → «{x}» ∈ A := «{h2}» A`.  You can save yourself\n"
+"a little typing by writing `have «{h2}»A := «{h2}» A`; Lean will figure out what statement is\n"
+"proven by `«{h2}» A`."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "Since we also have `h1 : A ∈ F`, you can apply `«{h2A}»` to `h1` to prove that `«{x}» ∈ A`.\n"
+"This means that `«{h2A}» h1` is a proof of the goal."
+msgstr ""
+
+#: Game.Levels.FamInter.L01intersub
+msgid "The last two steps could have been combined into one step.  In general, if you have\n"
+"`h1 : A ∈ F` and `h2 : ∀ t ∈ F, P t`, where `P t` is some statement about `t`, then `h2 A`\n"
+"is a proof of `A ∈ F → P A`, and\n"
+"applying that proof to `h1` we conclude that `h2 A h1` is a proof of `P A`.  For example,\n"
+"if you have `h1 : A ∈ F` and `h2 : ∀ t ∈ F, x ∈ t`, then `h2 A h1` is a proof of `x ∈ A`."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "Intersection of larger family is smaller"
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "In this level we have two families of sets, `F` and `G`, with `F ⊆ G`.  That means that\n"
+"`⋂₀ G` is the intersection of a family of sets that includes all the sets in `F`, plus\n"
+"perhaps more sets.  You're going to prove that intersecting this larger collection of sets\n"
+"leads to a smaller result; more precisely, you're going to prove that `⋂₀ G ⊆ ⋂₀ F`.\n"
+"\n"
+"Of course, by now you know how to start a proof that one set is a subset of another."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "Suppose $F$ and $G$ are families of sets and $F \\subseteq G$.\n"
+"Then $\\bigcap G \\subseteq \\bigcap F$."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "As usual, if you're not sure how to proceed then writing\n"
+"out definitions can help."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "Now your goal starts with `∀ t`.  To prove it, you'll need to introduce\n"
+"a set `t` into the proof, using the tactic `intro t`.  Recall that the set `t` is\n"
+"*arbitrary*--that is, `t` could stand for any set--so whatever we prove about `t` will\n"
+"be true for *all* sets `t`."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "Now your goal is an if-then statement; that means `intro` is\n"
+"appropriate again, to introduce `«{t}» ∈ F` as a new assumption."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "It looks like `«{h2}»` could get you to the goal, if only\n"
+"you knew that `«{t}» ∈ G`.  Can you prove that?"
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "You can now combine `«{h2}»` and `«{h4}»` to reach the goal in one step."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "`«{h2}» «{t}» «{h4}»` is now a proof of the goal."
+msgstr ""
+
+#: Game.Levels.FamInter.L02intersubinter
+msgid "You probably used `intro` several times in this proof.  Recall that two `intro` steps in a row\n"
+"can be combined into one step.  Click on `intro` in the list of tactics on the right for\n"
+"further details."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "Intersection of a pair"
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "This level shows that family intersections are a generalization of the intersections\n"
+"we studied in Intersection World.  You'll prove that if `A` and `B` are sets, then\n"
+"`A ∩ B` is equal to the intersection of the family of sets that contains just `A` and\n"
+"`B` and nothing else.\n"
+"\n"
+"We'll need notation for the family of sets consisting of just `A` and `B`; we'll denote\n"
+"this family by `{A, B}`.  And, as usual, we'll need a theorem stating the definition of\n"
+"this notation.  For any `t`, `A`, and `B`, `mem_pair t A B` is a proof of the\n"
+"statement `t ∈ {A, B} ↔ t = A ∨ t = B`."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "If `a` denotes some object, then `{a}` denotes the set whose only element is `a`; such a set\n"
+"is called a *singleton* set.  Similarly, if `a` and `b` denote objects, then `{a, b}` denotes\n"
+"the set whose elements are `a` and `b`, and nothing else.  (Similar notation can be used to\n"
+"denote a set containing any finite list of objects.  All of the objects in the list must\n"
+"have the same type; if the objects have type `U`, then the set has type `Set U`.)\n"
+"\n"
+"There is another way to define sets.  If `P x` is a statement about an\n"
+"unspecified object `x`, then `{x | P x}` denotes the set of all values of `x` that make `P x`\n"
+"come out true.  This is often called *set-builder notation*."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "For any `t`, `A`, and `B`, `mem_pair t A B` is a proof of the statement\n"
+"`t ∈ {A, B} ↔ t = A ∨ t = B`."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "Suppose $A$ and $B$ are sets.  Then $A \\cap B = \\bigcap \\{A, B\\}$."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "Now that you have `«{hA}» : «{t}» = A`, you can use `rewrite [«{hA}»]` to replace `«{t}»` with\n"
+"`A` in the goal."
+msgstr ""
+
+#: Game.Levels.FamInter.L03interpair
+msgid "It would be helpful if you knew that `A ∈ {A, B}`.\n"
+"You can use `have` to assert it."
+msgstr ""
+
+#: Game.Levels.FamInter.L04interunion
+msgid "Intersection of a union of families"
+msgstr ""
+
+#: Game.Levels.FamInter.L04interunion
+msgid "If `F` and `G` are families of sets, what is `⋂₀ (F ∪ G)`?  In this level, you'll find out!"
+msgstr ""
+
+#: Game.Levels.FamInter.L04interunion
+msgid "Suppose $F$ and $G$ are families of sets.  Then\n"
+"$\\bigcap (F \\cup G) = (\\bigcap F) \\cap (\\bigcap G)$."
+msgstr ""
+
+#: Game.Levels.FamInter.L04interunion
+msgid "Here's an approach you might try:  If only you had `hFG : «{t}» ∈ F ∪ G`, then\n"
+"`«{h1}» «{t}» hFG` would prove the goal.  So if you use the tactic `apply «{h1}» «{t}»`, Lean\n"
+"will figure out that `«{h1}» «{t}»` could be applied to a proof of `«{t}» ∈ F ∪ G` to prove\n"
+"the goal, and it will therefore set `«{t}» ∈ F ∪ G` as your goal."
+msgstr ""
+
+#: Game.Levels.FamInter.L05subinter
+msgid "Subset of an intersection"
+msgstr ""
+
+#: Game.Levels.FamInter.L05subinter
+msgid "If `A` is a set and `F` is a family of sets, under what circumstances is it the case\n"
+"that `A ⊆ ⋂₀ F`?  In this level you'll discover the answer to that question."
+msgstr ""
+
+#: Game.Levels.FamInter.L05subinter
+msgid "Suppose $A$ is a set and $F$ is a family of sets.  Then $A$ is a subset of $\\bigcap F$ if\n"
+"and only if $A$ is a subset of every element of $F$."
+msgstr ""
+
+#: Game.Levels.FamInter.L05subinter
+msgid "Notice that the parentheses in the next goal are necessary, to indicate that the universal\n"
+"quantifier applies only to the subset statement.  Without the parentheses, Lean would interpret\n"
+"the universal quantifier as applying to the entire rest of the statement."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Intersection of a family of unions"
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "In this level you'll need a new kind of proof by cases.  For any statement `P`, the\n"
+"tactic `by_cases h : P` will break the proof into two cases.  In the first case, the new\n"
+"assumption `h : P` is added to the list of assumptions, and in second, the new\n"
+"assumption `h : ¬P` is added.  Since `P` must be either true or false, these two cases cover\n"
+"all possibilities."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "The tactic `by_cases h : P` breaks the proof into two cases.  In the first case, the\n"
+"assumption `h : P` is added to the list of assumptions, and in the second case, the\n"
+"assumption `h : ¬P` is added."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Suppose $A$ is a set, $F$ and $G$ are families of sets, and for every set $s$ in $F$,\n"
+"$A \\cup s \\in G$.  Then $\\bigcap G \\subseteq A \\cup (\\bigcap F)$."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Writing out the meaning of the goal will make the proof easier to understand."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "If `«{x}» ∈ A`, then the goal is easy to prove.  This suggests breaking\n"
+"the proof into cases depending on whether or not `«{x}» ∈ A`.  You can do this with the tactic\n"
+"`by_cases hA : «{x}» ∈ A`."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "The first case is the easy one."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "For the second case, which half of the goal do you think you should try to prove?\n"
+"You can use `apply Or.inl` or `apply Or.inr` (or the equivalent tactics `left` or `right`)\n"
+"to specify what goal you're going to prove."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Now use `h1`."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "You haven't used `«{h2}»` yet.  If you don't see how to use it,\n"
+"write out its definition."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Note that you can apply `«{h2}»` to `(A ∪ «{t}»)`.\n"
+"You'll need to include the parentheses around `A ∪ «{t}»` when you do that."
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "Notice that you have contradictory assumptions.  You can prove anything\n"
+"from contradictory assumptions.  Do you see how?"
+msgstr ""
+
+#: Game.Levels.FamInter.L06eltwiseunion
+msgid "You've finished Family Intersection World!  As you might guess, you can also take the union of\n"
+"a family of sets.  Can you guess how to define it?  Continue on to Family Union World to see\n"
+"if your guess is right."
+msgstr ""
+
+#: Game.Levels.FamInter
+msgid "Family Intersection World"
+msgstr ""
+
+#: Game.Levels.FamInter
+msgid "So far the elements of all of our sets have been objects in the universe `U`.  But\n"
+"sets can contain other kinds of objects!  In the next two worlds, we will work with sets whose\n"
+"elements are *sets of objects from `U`*.  We will call these *families of sets* from `U`.  To\n"
+"indicate that `F` is a family of sets from `U`, we write `F : Set (Set U)`.\n"
+"\n"
+"For example, suppose `U` contains the people in a certain club, and we want to form a committee\n"
+"consisting of five members of the club.  The set of all possible committees is a family\n"
+"of sets from `U`.  Each element of this family is a set containing five club members.\n"
+"\n"
+"Families of sets are sets, and everything you've learned about sets applies to families of sets.\n"
+"For example, if you have `F G : Set (Set U)` and `S : Set U`, then `mem_inter_iff S F G` is a proof\n"
+"of the statement `S ∈ F ∩ G ↔ S ∈ F ∧ S ∈ G`.  Similarly, `mem_union S F G` is a proof of\n"
+"`S ∈ F ∪ G ↔ S ∈ F ∨ S ∈ G`, and `mem_compl_iff F S` is a proof of `S ∈ Fᶜ ↔ S ∉ F`.\n"
+"\n"
+"In this world we extend the idea of intersections to families of sets.  If `F` is a family of\n"
+"sets from `U`, then the *intersection* of the family `F` is the set of all objects from `U`\n"
+"that belong to every element of `F`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Proving existential statements"
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "To work with unions of families, we'll need to know how to work with existential statements.\n"
+"If `P x` is a statement about an unspecified object `x`, then `∃ x, P x` means \"there is\n"
+"at least one `x` such that `P x` is true\".  The symbol `∃` is called the\n"
+"*existential quantifier*, and you can enter it in Lean by typing `\\exists`.\n"
+"\n"
+"The easiest way to prove the statement `∃ x, P x` is to specify a value of `x`, and give a\n"
+"proof of `P x` for that value of `x`.  The theorem that allows you to do that is called\n"
+"`Exists.intro`.  If you have `h : P a`, for some object `a`, then `Exists.intro a h` is a\n"
+"proof of the statement `∃ x, P x`.  (The object `a` is sometimes called a *witness* for\n"
+"the existential statement.)  In this level, you'll try out this theorem."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "If `P x` represents a statement about `x`, then `∃ x, P x` means \"there is at least one\n"
+"`x` such that `P x` is true\".  To enter the symbol `∃`, type `\\exists`.\n"
+"\n"
+"### If your goal is `∃ x, P x`\n"
+"\n"
+"If you have `h : P a`, for some object `a`, then `Exists.intro a h` is a proof of `∃ x, P x`,\n"
+"so `exact Exists.intro a h` will close the goal.\n"
+"If you think `P a` is true, but you don't yet have a proof of it, then `apply Exists.intro a`\n"
+"will set `P a` as your goal.  The tactic `use a` does the same thing, but it also tries to\n"
+"prove `P a`; if it doesn't succeed, then it leaves `P a` as a goal for you to prove.\n"
+"\n"
+"### If you have an assumption `h : ∃ x, P x`\n"
+"\n"
+"The tactic `obtain ⟨w, hw⟩ := h` will\n"
+"introduce a new object `w` and a new assumption `hw : P w` into the proof.  To enter the\n"
+"angle brackets `⟨ ⟩`, type either `\\<` and `\\>` or `\\langle` and `\\rangle`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "If `P x` represents a statement about `x` and you have `h : P a`, for some object `a`, then\n"
+"`Exists.intro a h` is a proof of `∃ x, P x`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Suppose $A$ is a set.  Then there is some set $S$ such that $S \\subseteq A$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Your goal says that there is a set that is a subset of `A`.\n"
+"The theorem `Subset.refl` suggests such a set."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Recall that `Subset.refl A` is a proof of `A ⊆ A`.\n"
+"So start your proof with `have h : A ⊆ A := Subset.refl A`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Although `∅` is a reasonable choice for a set that is a subset of `A`, it is difficult\n"
+"to complete the proof with this choice using only methods developed so far in this game.\n"
+"Go back and try a different choice."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "Now you can use `Exists.intro` to complete the proof."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "`Exists.intro A «{h}»` is a proof of the goal, so `exact Exists.intro A «{h}»`\n"
+"will close the goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L01proveexists
+msgid "By the way, another set that would have worked as a witness for the existential goal in this\n"
+"theorem is the empty set, denoted `∅`.  However, to justify the use of that witness you would\n"
+"have had to prove `∅ ⊆ A`.  Since we already have the theorem `Subset.refl`, it was easier to use\n"
+"`A` as the witness.\n"
+"\n"
+"Now that you know how to prove existential statements, you're ready to start working with\n"
+"unions of families."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "Subset of family union"
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "In mathematical writing, the union of the family $F$ is usually denoted $\\bigcup F$.\n"
+"In Lean, the union of a family `F` is denoted `⋃₀ F`.  (You can enter the symbol\n"
+"`⋃₀` by typing `\\U0`.)\n"
+"\n"
+"Suppose we have `F : Set (Set U)` and `x : U`.  Then `x ∈ ⋃₀ F` means that there is at least\n"
+"one set `t` such that `t ∈ F` and `x ∈ t`.  To write this statement in Lean, we write\n"
+"`∃ t, t ∈ F ∧ x ∈ t`.  Lean abbreviates this statement as `∃ t ∈ F, x ∈ t`.\n"
+"\n"
+"As with other set theory operations, we have a theorem that expresses this definition.  Lean will\n"
+"recognize `mem_sUnion` as a proof of any statement of the form `x ∈ ⋃₀ F ↔ ∃ t ∈ F, x ∈ t`.\n"
+"\n"
+"In this level, you'll try out these ideas."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "`⋃₀ F` is the union of the family of sets `F`.  To enter the symbol `⋃₀`, type `\\U0`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "Lean will recognize `mem_sUnion` as a proof of any statement of the form\n"
+"`x ∈ ⋃₀ F ↔ ∃ t ∈ F, x ∈ t`.  In Mathlib, the name of this theorem is `Set.mem_sUnion`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "If your goal is `∃ x, P x`, where `P x` represents some statement about `x`, and `a` is a\n"
+"value that could be assigned to `x`, then the tactic `use a` will\n"
+"set `P a` to be the goal.  It will then see if this new goal follows easily from your\n"
+"assumptions, and if so it will close the goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "Suppose $F$ is a family of sets and $A \\in F$.  Then $A \\subseteq \\bigcup F$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "Remember that the goal `∃ t ∈ F, «{x}» ∈ t` is an abbreviation for\n"
+"`∃ t, t ∈ F ∧ «{x}» ∈ t`.  As we saw in the last level, we can prove this by coming up with\n"
+"a witness--that is, a value for `t` that will make the statement `t ∈ F ∧ «{x}» ∈ t` come out\n"
+"true.  Looking at\n"
+"`h1` and `«{h2}»`, it looks like `t = A` would work.  That suggests a way to proceed:\n"
+"`Exists.intro A hA` would prove the goal, if `hA` were a proof of `A ∈ F ∧ «{x}» ∈ A`.  In\n"
+"other words, if `Exists.intro A` is applied to a proof of `A ∈ F ∧ «{x}» ∈ A`, then it will\n"
+"prove the goal.  So if you use the tactic `apply Exists.intro A`, then Lean will\n"
+"set `A ∈ F ∧ «{x}» ∈ A` as your new goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L02subunion
+msgid "There is another tactic you could have used to complete this proof.  Instead of\n"
+"`apply Exists.intro A`, you could write `use A`.  The `use` tactic is actually a powerful\n"
+"tactic.  Not only does it fill in `A` for `t` in the existential goal, it then tries to\n"
+"complete the proof on its own--and in this case, it would have succeeded!"
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "Union of larger family is larger"
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "In this level we have two families of sets, `F` and `G`, with `F ⊆ G`.  In Family Intersection\n"
+"World, you proved that in this situation, `⋂₀ G ⊆ ⋂₀ F`.  In this level, you'll prove that\n"
+"with family unions, it works the other way: `⋃₀ F ⊆ ⋃₀ G`.\n"
+"\n"
+"We'll need a new tactic for this proof.  An assumption of the form `h : ∃ x, P x` tells you that\n"
+"an object with a certain property exists.  If you have such an assumption, then it is usually\n"
+"helpful to introduce a name for such an object.  You can do this with the `obtain` tactic.  If\n"
+"you write `obtain ⟨w, hw⟩ := h`, then Lean will introduce a new object `w` and a new assumption\n"
+"`hw : P w`.  Thus, the object `w` is a witness for the existential assumption `h`.  Note that\n"
+"in the `obtain` tactic, `w` and `hw` must be enclosed in angle brackets: `⟨ ⟩`.  You can\n"
+"enter these by typing either `\\<` and `\\>` or `\\langle` and `\\rangle`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will\n"
+"introduce a new object `w` and a new assumption `hw : P w` into the proof.  To enter the\n"
+"angle brackets `⟨ ⟩`, type either `\\<` and `\\>` or `\\langle` and `\\rangle`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "Suppose $F$ and $G$ are families of sets and $F \\subseteq G$.\n"
+"Then $\\bigcup F \\subseteq \\bigcup G$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "The assumption `«{h2}»` is now an existential statement.  Thus, `obtain ⟨s, hs⟩ := «{h2}»`\n"
+"will introduce a new object `s` and a new assumption `hs : s ∈ F ∧ «{x}» ∈ s` into the proof.\n"
+"Once the witness `s` has been introduced, the assumption `«{h2}»` becomes redundant, so it is\n"
+"deleted."
+msgstr ""
+
+#: Game.Levels.FamUnion.L03unionsubunion
+msgid "Do you see why `«{s}»` is the value to use as a witness for `t` in the goal?\n"
+"Your next step can be either `apply Exists.intro «{s}»` or `use «{s}»`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L04unionpair
+msgid "Union of a pair"
+msgstr ""
+
+#: Game.Levels.FamUnion.L04unionpair
+msgid "In this level, you'll show that, as with intersections, family unions generalize the\n"
+"unions we studied in Union World."
+msgstr ""
+
+#: Game.Levels.FamUnion.L04unionpair
+msgid "Suppose $A$ and $B$ are sets.  Then $A \\cup B = \\bigcup \\{A, B\\}$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L04unionpair
+msgid "Remember, you can use `obtain` to introduce a name for the set that is asserted to\n"
+"exist in `«{h1}»`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L05unionunion
+msgid "Union of a union"
+msgstr ""
+
+#: Game.Levels.FamUnion.L05unionunion
+msgid "In this level, `F` and `G` are families of sets, and you'll work out how `⋃₀ (F ∪ G)` is related\n"
+"to `⋃₀ F` and `⋃₀ G`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L05unionunion
+msgid "Suppose $F$ and $G$ are families of sets.  Then $\\bigcup (F \\cup G) =\n"
+"(\\bigcup F) \\cup (\\bigcup G)$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L06unionsub
+msgid "Union subset of a set"
+msgstr ""
+
+#: Game.Levels.FamUnion.L06unionsub
+msgid "Suppose `A` is a set and `F` is a family of sets.  In this level you'll determine the conditions\n"
+"under which `⋃₀ F` is a subset of `A`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L06unionsub
+msgid "Suppose $A$ is a set and $F$ is a family of sets.  Then $\\bigcup F$ is a subset of $A$\n"
+"if and only if every element of $F$ is a subset of $A$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L06unionsub
+msgid "Notice that `«{h1}»` could be applied to a proof of `«{x}» ∈ ⋃₀ F` to\n"
+"prove the goal.  That means that `apply «{h1}»` will set `«{x}» ∈ ⋃₀ F` as the goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Union of a family of intersections"
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "In this level, we introduce another way to define sets.  If `P x` is a statement about an\n"
+"unspecified object `x`, then `{x | P x}` denotes the set of all values of `x` that make `P x`\n"
+"come out true.  This is often called *set-builder notation*.  For example,\n"
+"`{x | x ∈ A ∧ x ∈ B}` is another way to write `A ∩ B`.\n"
+"\n"
+"As usual, we have a theorem that states the meaning of set-builder notation.  Lean will\n"
+"recognize `mem_setOf` as a proof of any statement of the form `a ∈ {x | P x} ↔ P a`.\n"
+"And that means that `rewrite [mem_setOf]` will rewrite `a ∈ {x | P x}` as `P a`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Lean will recognize `mem_setOf` as a proof of any statement of the form\n"
+"`a ∈ {x | P x} ↔ P a`.  In Mathlib, the name of this theorem is `Set.mem_setOf`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Suppose $A$ is a set and $F$ is a family of sets.  Then $A \\cap (\\bigcup F) =\n"
+"\\bigcup\\{s \\mid \\exists u \\in F, s = A \\cap u\\}$."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "It will help to get as much information as you can out of `«{h1}»`\n"
+"before addressing the goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "You may find it useful to separate out the right half of `«{h1}»`.\n"
+"You can do that with `have «{h1}»r := «{h1}».right`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Your goal is an existential statement.  Do you see what value to use as a witness?"
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Try `apply Exists.intro (A ∩ «{t}»)` or `use A ∩ «{t}»`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Your goal is an existential statement.  Do you see what value to use as a witness?"
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Try `apply Exists.intro (A ∩ «{t}»)` or `use A ∩ «{t}»`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "You can use `rewrite [mem_setOf]` to write out the meaning of the goal."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "Again, work out the consequences of `«{h1}»` first."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "You can separate out the first half of `«{ht}»` with `have «{ht}»l := «{ht}».left`."
+msgstr ""
+
+#: Game.Levels.FamUnion.L07eltwiseinter
+msgid "You know `«{x}» ∈ «{t}»` and `«{t}» = A ∩ «{u}»`.  So you can use `rewrite`\n"
+"to get `«{x}» ∈ A ∩ «{u}»`."
+msgstr ""
+
+#: Game.Levels.FamUnion
+msgid "Family Union World"
+msgstr ""
+
+#: Game.Levels.FamUnion
+msgid "If `F` is a family of sets from `U`, then the *union* of `F` is the set of all objects from\n"
+"`U` that belong to at least one element of `F`.  We'll investigate unions of families in this\n"
+"world."
+msgstr ""
+
 #: Game.Levels.Functions.L01_functions
 msgid "Intro to functions"
 msgstr ""
@@ -1871,7 +2495,7 @@ msgid "The composition of two functions $f : X \\to Y$ and $g : Y \\to Z$ is a f
 msgstr ""
 
 #: Game.Levels.Functions.L11_composition
-msgid "$(g \\\\circ f) (x) = g(f(x))$"
+msgid "$(g \\circ f) (x) = g(f(x))$"
 msgstr ""
 
 #: Game.Levels.Functions.L12_composition_preimage
@@ -2121,6 +2745,67 @@ msgstr ""
 
 #: Game.Levels.Continuous
 msgid "This module introduces the basics of continuous functions."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "The empty set"
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "In this level, we introduce the empty set, denoted `∅`.\n"
+"We show that for any set $X$, the empty set is a subset of $X$.\n"
+"\n"
+"The only thing you need to know about the empty set is that it has no elements.\n"
+"This is stated in the theorem `Set.not_mem_empty`.\n"
+"For any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "For any set $U$, we have that $∅ ⊆ U$. For any set `U`, `EmptySubset U` is a proof that `∅ ⊆ U`."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "For any set $U$, we have that $∅ ⊆ U$."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "Start as you normally do when proving a subset relation, by introducing an arbitrary element `x` of the left-hand side and a hypothesis `h` that `x` is in the left-hand side."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "Recall that `Set.not_mem_empty «{x}»` is a proof that `x ∉ ∅`."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "The tactic `by_contra` can be used here."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+msgid "No element is a member of the emptyset. For any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`."
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "The empty union"
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "TODO"
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "TODO"
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "TODO"
+msgstr ""
+
+#: Game.Levels.Empty
+msgid "The empty set"
+msgstr ""
+
+#: Game.Levels.Empty
+msgid "This module introduces the empty set."
 msgstr ""
 
 #: Game

@@ -4,11 +4,14 @@ import Game.Levels.Comp
 import Game.Levels.Inter
 import Game.Levels.Union
 import Game.Levels.Combo
+import Game.Levels.FamInter
+import Game.Levels.FamUnion
 
 -- Created by me
 import Game.Levels.Functions
 import Game.Levels.Spaces
 import Game.Levels.Continuous
+import Game.Levels.Empty
 
 -- Here's what we'll put on the title screen
 Title "The topology game"

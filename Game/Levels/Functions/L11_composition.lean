@@ -65,6 +65,6 @@ The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as `g (f 
 DefinitionDoc Function.comp as "g ∘ f"
 NewDefinition Function.comp
 
-/-- $(g \\circ f) (x) = g(f(x))$ -/
+/-- $(g \circ f) (x) = g(f(x))$ -/
 TheoremDoc Function.comp_apply as "Function.comp_apply" in "function"
 NewTheorem Function.comp_apply
