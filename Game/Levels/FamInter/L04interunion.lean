@@ -1,4 +1,5 @@
-import Game.Levels.FamInter.L03interpair
+--import Game.Levels.FamInter.L03interpair
+import Game.Levels.FamInter.L02intersubinter
 
 open Set
 
@@ -7,7 +8,7 @@ namespace STG4
 variable {U : Type}
 
 World "FamInter"
-Level 4
+Level 3
 Title "Intersection of a union of families"
 
 Introduction

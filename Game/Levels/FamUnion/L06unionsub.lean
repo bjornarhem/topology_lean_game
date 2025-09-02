@@ -7,7 +7,7 @@ namespace STG4
 variable {U : Type}
 
 World "FamUnion"
-Level 6
+Level 5
 Title "Union subset of a set"
 
 Introduction
@@ -18,7 +18,11 @@ under which `⋃₀ F` is a subset of `A`.
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $\bigcup F$ is a subset of $A$
 if and only if every element of $F$ is a subset of $A$. -/
-Statement (A : Set U) (F : Set (Set U)) : ⋃₀ F ⊆ A ↔ ∀ s ∈ F, s ⊆ A := by
+TheoremDoc STG4.FamUnionSubsetIff as "FamUnionSubsetIff" in "⋂₀⋃₀"
+
+/-- Suppose $A$ is a set and $F$ is a family of sets.  Then $\bigcup F$ is a subset of $A$
+if and only if every element of $F$ is a subset of $A$. -/
+Statement FamUnionSubsetIff (A : Set U) (F : Set (Set U)) : ⋃₀ F ⊆ A ↔ ∀ s ∈ F, s ⊆ A := by
   apply Iff.intro
   intro h1
   intro s h2

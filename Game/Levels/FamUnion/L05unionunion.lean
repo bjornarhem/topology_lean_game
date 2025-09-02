@@ -1,4 +1,5 @@
-import Game.Levels.FamUnion.L04unionpair
+--import Game.Levels.FamUnion.L04unionpair
+import Game.Levels.FamUnion.L03unionsubunion
 
 open Set
 
@@ -7,7 +8,7 @@ namespace STG4
 variable {U : Type}
 
 World "FamUnion"
-Level 5
+Level 4
 Title "Union of a union"
 
 Introduction

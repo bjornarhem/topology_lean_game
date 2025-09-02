@@ -22,7 +22,11 @@ Of course, by now you know how to start a proof that one set is a subset of anot
 
 /-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
 Then $\bigcap G \subseteq \bigcap F$. -/
-Statement (F G : Set (Set U)) (h1 : F ⊆ G) : ⋂₀ G ⊆ ⋂₀ F := by
+TheoremDoc STG4.SubFamilyInter as "SubFamilyInter" in "⋂₀⋃₀"
+
+/-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
+Then $\bigcap G \subseteq \bigcap F$. -/
+Statement SubFamilyInter (F G : Set (Set U)) (h1 : F ⊆ G) : ⋂₀ G ⊆ ⋂₀ F := by
   intro x h2
   Hint (hidden := true) "As usual, if you're not sure how to proceed then writing
   out definitions can help."

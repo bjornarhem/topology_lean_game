@@ -39,6 +39,7 @@ CaptionLong "You should use this game as a template for your own game and add yo
 
 Dependency Intersection → Union
 Dependency Union → Spaces
+Dependency FamInter → FamUnion
 Dependency Continuous → Empty
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/

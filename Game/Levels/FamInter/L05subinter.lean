@@ -7,7 +7,7 @@ namespace STG4
 variable {U : Type}
 
 World "FamInter"
-Level 5
+Level 4
 Title "Subset of an intersection"
 
 Introduction
@@ -18,7 +18,11 @@ that `A ⊆ ⋂₀ F`?  In this level you'll discover the answer to that questio
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $A$ is a subset of $\bigcap F$ if
 and only if $A$ is a subset of every element of $F$.-/
-Statement (A : Set U) (F : Set (Set U)) : A ⊆ ⋂₀ F ↔ ∀ s ∈ F, A ⊆ s := by
+TheoremDoc STG4.SubsetFamInterIff as "SubsetFamInterIff" in "⋂₀⋃₀"
+
+/-- Suppose $A$ is a set and $F$ is a family of sets.  Then $A$ is a subset of $\bigcap F$ if
+and only if $A$ is a subset of every element of $F$.-/
+Statement SubsetFamInterIff (A : Set U) (F : Set (Set U)) : A ⊆ ⋂₀ F ↔ ∀ s ∈ F, A ⊆ s := by
   apply Iff.intro
   intro h1
   intro s h2
