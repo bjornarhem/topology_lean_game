@@ -1,6 +1,6 @@
 import Game.Levels.Empty.L03_empty_open
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter mem_setOf)
+open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
 open TopologicalSpace
 open STG4
 

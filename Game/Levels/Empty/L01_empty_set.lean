@@ -1,7 +1,7 @@
 import Game.Levels.Spaces.L02_closed
 import Game.Levels.FamUnion.L06unionsub
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter mem_setOf)
+open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
 open TopologicalSpace
 open STG4
 

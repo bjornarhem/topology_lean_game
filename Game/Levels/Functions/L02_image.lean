@@ -45,10 +45,13 @@ The command `rw [Set.mem_image] at h` will rewrite a hypothesis `h : y ∈ f '' 
 "
 
 /--
-If you have a hypothesis `y ∈ f '' A `, obtain ⟨x, hxA, rfl⟩ := h`
+If you have an assumption `y ∈ f '' A `, `obtain ⟨x, hxA, rfl⟩ := h`
 will introduce a new object `x`, a proof `hxA` that `x ∈ A`, and will rewrite `y` into `f x`.
 
-To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle or \\< and \\>.
+If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will
+introduce a new object `w` and a new assumption `hw : P w` into the proof.
+
+To enter the angle brackets `⟨ ⟩`, type either `\<` and `\>` or `\langle` and `\rangle`.
 -/
 TacticDoc obtain
 NewTactic obtain

@@ -23,9 +23,15 @@ in the `obtain` tactic, `w` and `hw` must be enclosed in angle brackets: `⟨ �
 enter these by typing either `\\<` and `\\>` or `\\langle` and `\\rangle`.
 "
 
-/-- If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will
-introduce a new object `w` and a new assumption `hw : P w` into the proof.  To enter the
-angle brackets `⟨ ⟩`, type either `\<` and `\>` or `\langle` and `\rangle`. -/
+/--
+If you have an assumption `y ∈ f '' A `, `obtain ⟨x, hxA, rfl⟩ := h`
+will introduce a new object `x`, a proof `hxA` that `x ∈ A`, and will rewrite `y` into `f x`.
+
+If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will
+introduce a new object `w` and a new assumption `hw : P w` into the proof.
+
+To enter the angle brackets `⟨ ⟩`, type either `\<` and `\>` or `\langle` and `\rangle`.
+-/
 TacticDoc obtain
 
 NewTactic obtain

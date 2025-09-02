@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Sep  2 14:47:25 2025\n"
+"POT-Creation-Date: Tue Sep  2 14:58:41 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1852,9 +1852,13 @@ msgid "In this level we have two families of sets, `F` and `G`, with `F ⊆ G`. 
 msgstr ""
 
 #: Game.Levels.FamUnion.L03unionsubunion
-msgid "If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will\n"
-"introduce a new object `w` and a new assumption `hw : P w` into the proof.  To enter the\n"
-"angle brackets `⟨ ⟩`, type either `\\<` and `\\>` or `\\langle` and `\\rangle`."
+msgid "If you have an assumption `y ∈ f '' A `, `obtain ⟨x, hxA, rfl⟩ := h`\n"
+"will introduce a new object `x`, a proof `hxA` that `x ∈ A`, and will rewrite `y` into `f x`.\n"
+"\n"
+"If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will\n"
+"introduce a new object `w` and a new assumption `hw : P w` into the proof.\n"
+"\n"
+"To enter the angle brackets `⟨ ⟩`, type either `\\<` and `\\>` or `\\langle` and `\\rangle`."
 msgstr ""
 
 #: Game.Levels.FamUnion.L03unionsubunion
@@ -2002,10 +2006,13 @@ msgid "Well done!\n"
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "If you have a hypothesis `y ∈ f '' A `, obtain ⟨x, hxA, rfl⟩ := h`\n"
+msgid "If you have an assumption `y ∈ f '' A `, `obtain ⟨x, hxA, rfl⟩ := h`\n"
 "will introduce a new object `x`, a proof `hxA` that `x ∈ A`, and will rewrite `y` into `f x`.\n"
 "\n"
-"To write the symbols `⟨` and `⟩`, you can write \\\\langle and \\\\rangle or \\\\< and \\\\>."
+"If you have an assumption `h : ∃ x, P x`, then the tactic `obtain ⟨w, hw⟩ := h` will\n"
+"introduce a new object `w` and a new assumption `hw : P w` into the proof.\n"
+"\n"
+"To enter the angle brackets `⟨ ⟩`, type either `\\<` and `\\>` or `\\langle` and `\\rangle`."
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
