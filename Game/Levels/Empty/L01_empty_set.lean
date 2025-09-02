@@ -37,3 +37,13 @@ Statement EmptySubset {X : Type} (U : Set X) : ∅ ⊆ U := by
 /-- No element is a member of the emptyset. For any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`. -/
 TheoremDoc Set.not_mem_empty as "Set.not_mem_empty" in "∅"
 NewTheorem Set.not_mem_empty
+
+
+/--
+The empty set, denoted `∅`, is the unique set with no elements.
+To input the symbol `∅`, you can type `\empty`.
+
+The theorem `Set.not_mem_empty` states that for any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`.
+-/
+DefinitionDoc Emptyset as "∅"
+NewDefinition Emptyset

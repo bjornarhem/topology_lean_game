@@ -1,5 +1,4 @@
--- import Game.Levels.Empty.L03_empty_open
-import Game.Levels.Empty.L02_empty_union
+import Game.Levels.Empty.L06_empty_image
 
 World "Empty"
 Title "The empty set"

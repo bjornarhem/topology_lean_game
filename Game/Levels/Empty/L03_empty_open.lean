@@ -10,12 +10,21 @@ Title "The empty set is open"
 
 Introduction "
 In this level, show that the empty set is open in any topological space.
+
+In this level, you will have to use the `isOpen_sUnion` property of topological spaces.
+The `isOpen_sUnion` property states that the union over any collection of open sets is open.
+Explicitly, `TopologicalSpace.isOpen_sUnion` is defined as
+```
+∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
+```
+You can look up the definition of `TopologicalSpace` in the right column if you want to read more.
 "
 
 /-- Let $X$ be a topological space. Then $\emptyset \subseteq X$ is open. -/
 Statement {X : Type} [h : TopologicalSpace X] : IsOpen (∅ : Set X) := by
-  -- TODO: add hint that you can use sUnionEmpty
+  Hint (hidden := true) "Try using `h.isOpen_sUnion` on the empty collection."
   have h1 := h.isOpen_sUnion ∅
+  Hint "You can use the theorem `sUnionEmpty` from the previous level."
   rw [sUnionEmpty] at h1
   apply h1
   intro t

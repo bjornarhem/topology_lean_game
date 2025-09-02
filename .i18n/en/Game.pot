@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat Aug 30 18:22:46 2025\n"
+"POT-Creation-Date: Tue Sep  2 12:14:39 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2784,20 +2784,132 @@ msgstr ""
 msgid "No element is a member of the emptyset. For any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`."
 msgstr ""
 
+#: Game.Levels.Empty.L01_empty_set
+msgid "The empty set, denoted `∅`, is the unique set with no elements.\n"
+"To input the symbol `∅`, you can type `\\empty`.\n"
+"\n"
+"The theorem `Set.not_mem_empty` states that for any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`."
+msgstr ""
+
 #: Game.Levels.Empty.L02_empty_union
 msgid "The empty union"
 msgstr ""
 
 #: Game.Levels.Empty.L02_empty_union
-msgid "TODO"
+msgid "We show that the union over the empty family of sets is the empty set.\n"
+"\n"
+"Now that you have completed the Family Union world, you know have to deal with unions of families of sets."
 msgstr ""
 
 #: Game.Levels.Empty.L02_empty_union
-msgid "TODO"
+msgid "The union over the empty family of sets is the empty set. I.e., $⋃ ∅ = ∅$."
 msgstr ""
 
 #: Game.Levels.Empty.L02_empty_union
-msgid "TODO"
+msgid "The union over the empty family of sets is the empty set."
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "To begin with, you can either use `ext x` or `Subset.antisymm`. If you use `Subset.antisymm`, you can use the theorem `EmptySubset` from the previous subset to prove one of the inclusions."
+msgstr ""
+
+#: Game.Levels.Empty.L02_empty_union
+msgid "Recall that the theorem `mem_sUnion` unfolds the definition of membership in a union over a family of sets."
+msgstr ""
+
+#: Game.Levels.Empty.L03_empty_open
+msgid "The empty set is open"
+msgstr ""
+
+#: Game.Levels.Empty.L03_empty_open
+msgid "In this level, show that the empty set is open in any topological space.\n"
+"\n"
+"In this level, you will have to use the `isOpen_sUnion` property of topological spaces.\n"
+"The `isOpen_sUnion` property states that the union over any collection of open sets is open.\n"
+"Explicitly, `TopologicalSpace.isOpen_sUnion` is defined as\n"
+"```\n"
+"∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)\n"
+"```\n"
+"You can look up the definition of `TopologicalSpace` in the right column if you want to read more."
+msgstr ""
+
+#: Game.Levels.Empty.L03_empty_open
+msgid "Let $X$ be a topological space. Then $\\emptyset \\subseteq X$ is open."
+msgstr ""
+
+#: Game.Levels.Empty.L03_empty_open
+msgid "Try using `h.isOpen_sUnion` on the empty collection."
+msgstr ""
+
+#: Game.Levels.Empty.L03_empty_open
+msgid "You can use the theorem `sUnionEmpty` from the previous level."
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "Nonempty sets"
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "In this level, we introduce nonempty sets.\n"
+"\n"
+"A set is nonempty if it contains at least one element.\n"
+"Specifically, for a set `S`, `S.Nonempty` is defined as `∃ x, x ∈ S`.\n"
+"Whenever you have a hypothesis `h : S.Nonempty` (or `h : Set.Nonempty S`),\n"
+"you can use `obtain ⟨x, h1⟩ := h` to get an element `x` and a proof `h1` that `x ∈ S`."
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "A set is nonempty if and only if it is not equal to the empty set."
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "Show that a set is nonempty if and only if it is not equal to the empty set."
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "Try using `push_neg`."
+msgstr ""
+
+#: Game.Levels.Empty.L04_nonempty
+msgid "For a set `S`, `S.Nonempty` is defined as `∃ x, x ∈ S`.\n"
+"Whenever you have a hypothesis `h : S.Nonempty` (or `h : Set.Nonempty S`),\n"
+"you can use `obtain ⟨x, h1⟩ := h` to get an element `x` and a proof `h1` that `x ∈ S`."
+msgstr ""
+
+#: Game.Levels.Empty.L05_empty_preimage
+msgid "Preimage of the empty set"
+msgstr ""
+
+#: Game.Levels.Empty.L05_empty_preimage
+msgid "In this level, we show that the preimage of the empty set under any function is the empty set."
+msgstr ""
+
+#: Game.Levels.Empty.L05_empty_preimage
+msgid "If $f : X → Y$ is any function, then $f^{-1}(∅) = ∅$."
+msgstr ""
+
+#: Game.Levels.Empty.L05_empty_preimage
+msgid "If $f : X → Y$ is any function, then $f^{-1}(∅) = ∅$."
+msgstr ""
+
+#: Game.Levels.Empty.L05_empty_preimage
+msgid "At some point in this proof, you might end up with a hypothesis `h : f x ∈ ∅`. In this case, `Set.not_mem_empty (f x) h` is a proof of `false`. Thus, `by_contra h_1` followed by `exact Set.not_mem_empty (f x) h` is one way to finish the proof. However, this also works if you don't write `by_contra` first. This is because Lean recognizes that `false` is sufficient to prove anything, so `exact false` is a proof of any statement. Do you see why `false` should imply any statement?"
+msgstr ""
+
+#: Game.Levels.Empty.L06_empty_image
+msgid "Image of the empty set"
+msgstr ""
+
+#: Game.Levels.Empty.L06_empty_image
+msgid "In this level, we show that the image of the empty set under any function is the empty set."
+msgstr ""
+
+#: Game.Levels.Empty.L06_empty_image
+msgid "If $f : X → Y$ is any function, then $f(∅) = ∅$."
+msgstr ""
+
+#: Game.Levels.Empty.L06_empty_image
+msgid "If $f : X → Y$ is any function, then $f(∅) = ∅$."
 msgstr ""
 
 #: Game.Levels.Empty
