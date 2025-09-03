@@ -36,3 +36,5 @@ Statement PreimageUnion {X Y : Type} (A B : Set Y) (f : X → Y) : f ⁻¹' (A �
 Conclusion "
 Level completed!
 "
+
+DisabledTactic constructor

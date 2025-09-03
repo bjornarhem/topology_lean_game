@@ -35,3 +35,5 @@ Statement PreimageComposition {X Y : Type} (A : Set Z) (f : X → Y) (g : Y → 
 Conclusion "
 Level completed!
 "
+
+DisabledTactic constructor

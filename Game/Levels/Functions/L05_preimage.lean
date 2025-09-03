@@ -47,3 +47,5 @@ You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of 
 -/
 DefinitionDoc Set.preimage as "f ⁻¹' A"
 NewDefinition Set.preimage
+
+DisabledTactic constructor

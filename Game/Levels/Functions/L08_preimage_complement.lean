@@ -40,3 +40,5 @@ Statement PreimageComplement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (
 Conclusion "
 Level completed!
 "
+
+DisabledTactic constructor

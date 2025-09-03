@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Sep  3 19:03:24 2025\n"
+"POT-Creation-Date: Wed Sep  3 20:13:48 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2020,7 +2020,14 @@ msgid "$y$ is in $f(A)$ if and only if there exists a $x \\in A$ such that $f(x)
 msgstr ""
 
 #: Game.Levels.Functions.L02_image
-msgid "Image of a set under a function. Can be written as `f '' A` or `Set.image f A`."
+msgid "Image of a set under a function. Can be written as `f '' A` or `Set.image f A`.\n"
+"\n"
+"A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.\n"
+"In this level, we will use the `obtain` tactic to decompose such hypotheses.\n"
+"Whenever you have a hypothesis of the form `h : y ∈ f '' A`, you can write `obtain ⟨x, hxA, rfl⟩ := h` to decompose it into its components.\n"
+"To write the symbols `⟨` and `⟩`, you can write \\\\langle and \\\\rangle, respectively.\n"
+"\n"
+"The theorem `Set.mem_image` rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`, and vice versa."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -2153,7 +2160,10 @@ msgid "$x$ is in $f^{-1}(A)$ if and only if $f(x) \\in A$."
 msgstr ""
 
 #: Game.Levels.Functions.L05_preimage
-msgid "Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\\-1` followed by `'`, or write  `Set.preimage f A`."
+msgid "Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\\-1` followed by `'`, or write  `Set.preimage f A`.\n"
+"\n"
+"The theorem `Set.mem_preimage` states that an element $x$ is in the preimage of $A$ under $f$ if and only if $f(x)$ is in $A$.\n"
+"You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of the form `x ∈ f ⁻¹' A` into `f x ∈ A`."
 msgstr ""
 
 #: Game.Levels.Functions.L06_preimage_union
@@ -2409,7 +2419,9 @@ msgid "Finish by using `«{h}».isOpen_inter` again. You might need to rewrite u
 msgstr ""
 
 #: Game.Levels.Spaces.L01_spaces
-msgid "Level completed!"
+msgid "Good job!\n"
+"In future levels, you can always look up the definition of `TopologicalSpace` in the right column.\n"
+"Here you will also find the predicates and axioms belonging to the TopologicalSpace typeclass, such as `IsOpen` and `isOpen_univ`."
 msgstr ""
 
 #: Game.Levels.Spaces.L01_spaces
@@ -2467,6 +2479,13 @@ msgstr ""
 
 #: Game.Levels.Spaces.L02_closed
 msgid "$U^c$ is open if and only if $U$ is closed."
+msgstr ""
+
+#: Game.Levels.Spaces.L02_closed
+msgid "If U is a set in a topological space X, then `IsClosed U` is defined as `IsOpen Uᶜ`,\n"
+"where `Uᶜ` is the complement of U.\n"
+"\n"
+"You can use the theorem `isOpen_compl_iff` to rewrite `IsClosed U` as `IsOpen Uᶜ`, and vice versa."
 msgstr ""
 
 #: Game.Levels.Spaces
@@ -2534,7 +2553,9 @@ msgstr ""
 #: Game.Levels.Continuous.L02_is_continuous
 msgid "In this level, we prove that the composition of continuous functions is continuous.\n"
 "\n"
-"We introduce the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open."
+"We introduce the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open.\n"
+"\n"
+"You can always look up the definition of `Continuous`, and the related axiom `isOpen_preimage`, in the right column."
 msgstr ""
 
 #: Game.Levels.Continuous.L02_is_continuous
@@ -2883,7 +2904,7 @@ msgid "This level is the hardest one in this Game so far.\n"
 "But, by now, you should have all the necessary tools to complete it.\n"
 "\n"
 "Some general tips for this level:\n"
-"* Many of the you have proved in previous worlds can be applied here to make the proof simpler.\n"
+"* Many of the theorems you have proved in previous worlds can be applied here to make the proof simpler.\n"
 "* You can use the `have` tactic to prove a statement over multiple lines. Look up the documentation in the left column for more details.\n"
 "* If you get stuck, try solving the problem with pen and paper first.\n"
 "\n"

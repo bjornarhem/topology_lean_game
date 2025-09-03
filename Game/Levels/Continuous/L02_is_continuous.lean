@@ -12,6 +12,8 @@ Introduction "
 In this level, we prove that the composition of continuous functions is continuous.
 
 We introduce the theorem `continuous_def`, which states that a function is continuous if and only if the preimage of every open set is open.
+
+You can always look up the definition of `Continuous`, and the related axiom `isOpen_preimage`, in the right column.
 "
 
 /-- The composition of continuous functions is continuous. -/

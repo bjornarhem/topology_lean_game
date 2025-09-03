@@ -33,3 +33,5 @@ Statement PreimageIntersection {X Y : Type} (A B : Set Y) (f : X → Y) : f ⁻�
 Conclusion "
 Level completed!
 "
+
+DisabledTactic constructor

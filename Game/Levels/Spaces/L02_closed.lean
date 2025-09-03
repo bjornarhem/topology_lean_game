@@ -35,3 +35,12 @@ Statement {X : Type} [h : TopologicalSpace X] (U V : Set X) : (IsClosed U) → (
 TheoremDoc isOpen_compl_iff as "isOpen_compl_iff" in "topology"
 
 NewTheorem isOpen_compl_iff
+
+/--
+If U is a set in a topological space X, then `IsClosed U` is defined as `IsOpen Uᶜ`,
+where `Uᶜ` is the complement of U.
+
+You can use the theorem `isOpen_compl_iff` to rewrite `IsClosed U` as `IsOpen Uᶜ`, and vice versa.
+-/
+DefinitionDoc IsClosed as "IsClosed"
+NewDefinition IsClosed

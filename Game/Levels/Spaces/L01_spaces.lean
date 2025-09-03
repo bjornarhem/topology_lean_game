@@ -56,7 +56,9 @@ Statement {X : Type} [h : TopologicalSpace X] (U V W : Set X) : (IsOpen U) → (
 
 
 Conclusion "
-Level completed!
+Good job!
+In future levels, you can always look up the definition of `TopologicalSpace` in the right column.
+Here you will also find the predicates and axioms belonging to the TopologicalSpace typeclass, such as `IsOpen` and `isOpen_univ`.
 "
 
 /--
