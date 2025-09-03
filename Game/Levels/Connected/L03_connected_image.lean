@@ -10,11 +10,11 @@ Title "Continuous image of a connected set"
 
 Introduction "
 This level is the hardest one in this Game so far.
-But, by now, you should have all the necessary tools to complete it.
+But, by now, you have all the necessary tools to complete it.
 
 Some general tips for this level:
 * Many of the theorems you have proved in previous worlds can be applied here to make the proof simpler.
-* You can use the `have` tactic to prove a statement over multiple lines. Look up the documentation in the left column for more details.
+* You can use the `have` tactic to prove a statement over multiple lines. Look up the documentation in the right column for more details.
 * If you get stuck, try solving the problem with pen and paper first.
 
 Good luck!

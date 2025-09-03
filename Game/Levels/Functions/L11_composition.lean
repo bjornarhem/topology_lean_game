@@ -58,7 +58,7 @@ TacticDoc use
 NewTactic use
 
 /--
-The composition of two functions $f : X \to Y$ and $g : Y \to Z$ is a function $g \\circ f : X \\to Z$ defined by $(g \\circ f)(x) = g(f(x))$ for all $x \\in X$.
+The composition of two functions $f : X \to Y$ and $g : Y \to Z$ is a function $g \circ f : X \to Z$ defined by $(g \circ f)(x) = g(f(x))$ for all $x \in X$.
 
 The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as `g (f x)`.
 -/

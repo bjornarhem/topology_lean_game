@@ -22,11 +22,14 @@ Welcome to the topology game!
 
 In this game, you learn to work with topological spaces in Lean.
 
-Some of the worlds in this game are from the Set Theory Game, created by Daniel J. Velleman.
+Open \"Game info\" in the \"≡\" menu in the top right corner for more for more information about this game.
 "
 
 Info "
 In this game, you learn to work with topological spaces in Lean.
+
+This game has been created by Bjørnar Gullikstad Hem ( bjornar.hem(at)epfl.ch ).
+Feel free to contact me if you have any questions or suggestions.
 
 Some of the worlds in this game are from the Set Theory Game, created by Daniel J. Velleman.
 "
