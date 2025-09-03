@@ -33,8 +33,8 @@ For a set `S`, `S.Nonempty` is defined as `∃ x, x ∈ S`.
 Whenever you have a hypothesis `h : S.Nonempty` (or `h : Set.Nonempty S`),
 you can use `obtain ⟨x, h1⟩ := h` to get an element `x` and a proof `h1` that `x ∈ S`.
 -/
-DefinitionDoc Nonempty as "Nonempty"
-NewDefinition Nonempty
+DefinitionDoc Set.Nonempty as "Set.Nonempty"
+NewDefinition Set.Nonempty
 
 /--
 A set $S$ is nonempty if and only if there exists an element $x$ such that $x ∈ S$.

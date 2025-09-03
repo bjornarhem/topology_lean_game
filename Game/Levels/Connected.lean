@@ -1,4 +1,4 @@
-import Game.Levels.Connected.L01_preconnected
+import Game.Levels.Connected.L03_connected_image
 
 World "Connected"
 Title "Connected sets"

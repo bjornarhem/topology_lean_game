@@ -43,5 +43,5 @@ In words, a set `s` in a topological space `α` is _connected_ if it is nonempty
 
 You can treat `IsConnected` as a theorem. Typing `rw [IsConnected]` will unfold the definition.
 -/
-DefinitionDoc Connected as "Connected"
-NewDefinition Connected
+DefinitionDoc IsConnected as "IsConnected"
+NewDefinition IsConnected

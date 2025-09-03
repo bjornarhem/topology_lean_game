@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Sep  3 17:20:08 2025\n"
+"POT-Creation-Date: Wed Sep  3 19:03:24 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2470,7 +2470,7 @@ msgid "$U^c$ is open if and only if $U$ is closed."
 msgstr ""
 
 #: Game.Levels.Spaces
-msgid "Spaces"
+msgid "Topological spaces"
 msgstr ""
 
 #: Game.Levels.Spaces
@@ -2838,6 +2838,60 @@ msgid "The `IsPreconnected` property is defined as follows.\n"
 "we have that `s ∩ (u ∩ v)` is nonempty.\n"
 "\n"
 "You can treat `IsPreconnected` as a theorem. Typing `rw [IsPreconnected]` will unfold the definition."
+msgstr ""
+
+#: Game.Levels.Connected.L02_connected
+msgid "Connected sets"
+msgstr ""
+
+#: Game.Levels.Connected.L02_connected
+msgid "In this level, we introduce connected sets.\n"
+"\n"
+"The `Connected` property is simple. It's defined as follows.\n"
+"```\n"
+"def IsConnected (s : Set α) : Prop :=\n"
+"  s.Nonempty ∧ IsPreconnected s\n"
+"```\n"
+"In words, a set `s` in a topological space `α` is _connected_ if it is nonempty and preconnected.\n"
+"\n"
+"As for `IsPreconnected`, you can treat `IsConnected` as a theorem. Typing `rw [IsConnected]` will unfold the definition.\n"
+"\n"
+"As a warm-up, we show that the empty set is not connected."
+msgstr ""
+
+#: Game.Levels.Connected.L02_connected
+msgid "The empty set is not connected."
+msgstr ""
+
+#: Game.Levels.Connected.L02_connected
+msgid "The `Connected` property is defined as follows.\n"
+"```\n"
+"def IsConnected (s : Set α) : Prop :=\n"
+"  s.Nonempty ∧ IsPreconnected s\n"
+"```\n"
+"In words, a set `s` in a topological space `α` is _connected_ if it is nonempty and preconnected.\n"
+"\n"
+"You can treat `IsConnected` as a theorem. Typing `rw [IsConnected]` will unfold the definition."
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_image
+msgid "Continuous image of a connected set"
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_image
+msgid "This level is the hardest one in this Game so far.\n"
+"But, by now, you should have all the necessary tools to complete it.\n"
+"\n"
+"Some general tips for this level:\n"
+"* Many of the you have proved in previous worlds can be applied here to make the proof simpler.\n"
+"* You can use the `have` tactic to prove a statement over multiple lines. Look up the documentation in the left column for more details.\n"
+"* If you get stuck, try solving the problem with pen and paper first.\n"
+"\n"
+"Good luck!"
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_image
+msgid "The continuous image of a connected set is connected"
 msgstr ""
 
 #: Game.Levels.Connected

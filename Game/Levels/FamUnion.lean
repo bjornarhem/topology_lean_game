@@ -1,6 +1,5 @@
 -- import Game.Levels.FamUnion.L07eltwiseinter --It imports all previous levels.
 import Game.Levels.FamUnion.L06unionsub
-import Game.Metadata
 
 World "FamUnion"
 Title "Family Union World"
