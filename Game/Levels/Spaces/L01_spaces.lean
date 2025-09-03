@@ -54,16 +54,6 @@ Statement {X : Type} [h : TopologicalSpace X] (U V W : Set X) : (IsOpen U) → (
   have hUVW := h.isOpen_inter (U ∩ V) W hUV hW
   exact hUVW
 
-/- TODO: introduce the empty set at some point. -/
--- A final note. In the problem statement, we write `h.IsOpen ∅` instead of `IsOpen ∅`.
--- This is because Lean cannot automatically infer the type of `∅` if we write `IsOpen ∅`.
--- We could also have written `IsOpen (∅ : Set X)`.
--- In the statement, `h` is simply the hypothesis that `X` is a topological space.
--- /-- Show that in any topological space, the empty set is open. -/
--- Statement empty_set_is_open {X : Type} [h: TopologicalSpace X]: h.IsOpen ∅ := by
---   have H := h.isOpen_sUnion ∅
---   apply H
-
 
 Conclusion "
 Level completed!

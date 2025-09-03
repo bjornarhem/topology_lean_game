@@ -3,6 +3,7 @@ import GameServer.Commands
 import Mathlib.Tactic.Common
 import Mathlib.Data.Set.Basic
 import Mathlib.Topology.Basic
+import Mathlib.Topology.Connected.Basic
 
 -- From Set theory game
 import Mathlib.Tactic.Have

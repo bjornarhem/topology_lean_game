@@ -16,7 +16,7 @@ In this level, we show that the image of a nonempty set under any function is no
 TheoremDoc NonemptyImage as "NonemptyImage" in "∅"
 
 /-- If $f : X → Y$ is any function, and $U ⊆ X$ is nonempty, then $f(U)$ is nonempty. -/
-Statement NonemptyImage {X Y : Type} (f : X → Y) (U : Set X) : U.Nonempty → (f '' (U)).Nonempty := by
+Statement NonemptyImage {X Y : Type} (f : X → Y) (A : Set X) : A.Nonempty → (f '' (A)).Nonempty := by
   intro h
   obtain ⟨x, h1⟩ := h
   rw [Set.nonempty_def]

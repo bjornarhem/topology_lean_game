@@ -23,7 +23,7 @@ You can also use the theorem `Set.nonempty_def` to rewrite `S.Nonempty` into `�
 TheoremDoc NonemptyIffNotEmpty as "NonemptyIffNotEmpty" in "∅"
 
 /-- Show that a set is nonempty if and only if it is not equal to the empty set. -/
-Statement NonemptyIffNotEmpty {X : Type} (U : Set X) : U.Nonempty ↔ ¬ (U = ∅):= by
+Statement NonemptyIffNotEmpty {X : Type} (A : Set X) : A.Nonempty ↔ ¬ (A = ∅):= by
   Hint (hidden := true) "Try using `push_neg`."
   push_neg
   rfl

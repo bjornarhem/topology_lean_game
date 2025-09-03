@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Sep  2 14:58:41 2025\n"
+"POT-Creation-Date: Wed Sep  3 17:20:08 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2599,7 +2599,7 @@ msgid "Start as you normally do when proving a subset relation, by introducing a
 msgstr ""
 
 #: Game.Levels.Empty.L01_empty_set
-msgid "Recall that `Set.not_mem_empty «{x}»` is a proof that `x ∉ ∅`."
+msgid "Recall that `Set.not_mem_empty «{x}»` is a proof that `«{x}» ∉ ∅`."
 msgstr ""
 
 #: Game.Levels.Empty.L01_empty_set
@@ -2744,12 +2744,115 @@ msgstr ""
 msgid "If $f : X → Y$ is any function, then $f(∅) = ∅$."
 msgstr ""
 
+#: Game.Levels.Empty.L07_nonempty_image
+msgid "Image of a nonempty empty set"
+msgstr ""
+
+#: Game.Levels.Empty.L07_nonempty_image
+msgid "In this level, we show that the image of a nonempty set under any function is nonempty."
+msgstr ""
+
+#: Game.Levels.Empty.L07_nonempty_image
+msgid "If $f : X → Y$ is any function, and $U ⊆ X$ is nonempty, then $f(U)$ is nonempty."
+msgstr ""
+
+#: Game.Levels.Empty.L07_nonempty_image
+msgid "If $f : X → Y$ is any function, and $U ⊆ X$ is nonempty, then $f(U)$ is nonempty."
+msgstr ""
+
+#: Game.Levels.Empty.L08_empty_inter
+msgid "Intersection with the empty set"
+msgstr ""
+
+#: Game.Levels.Empty.L08_empty_inter
+msgid "In this level, we show that the intersection of any set with the empty set is empty."
+msgstr ""
+
+#: Game.Levels.Empty.L08_empty_inter
+msgid "For any set $U$, $∅ ∩ U = ∅$."
+msgstr ""
+
+#: Game.Levels.Empty.L08_empty_inter
+msgid "For any set $U$, $∅ ∩ U = ∅$."
+msgstr ""
+
 #: Game.Levels.Empty
 msgid "The empty set"
 msgstr ""
 
 #: Game.Levels.Empty
 msgid "This module introduces the empty set."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "Preconnected sets"
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "In this level, we introduce preconnected sets.\n"
+"\n"
+"The `IsPreconnected` property is defined as follows.\n"
+"```\n"
+"def IsPreconnected (s : Set α) : Prop :=\n"
+"  ∀ u v : Set α, IsOpen u → IsOpen v → s ⊆ u ∪ v → (s ∩ u).Nonempty → (s ∩ v).Nonempty →\n"
+"    (s ∩ (u ∩ v)).Nonempty\n"
+"```\n"
+"In words, a set `s` in a topological space `α` is _preconnected_ if,\n"
+"for any two open sets `u` and `v` in `α`  such that\n"
+"`s ⊆ u ∪ v`, `s ∩ u` is nonempty and `s ∩ v` is nonempty,\n"
+"we have that `s ∩ (u ∩ v)` is nonempty.\n"
+"\n"
+"You can treat `IsPreconnected` as a theorem. Typing `rw [IsPreconnected]` will unfold the definition."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "The empty set is preconnected."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "You can begin unwrapping the `IsPreconnected` definition by introducing several variables and hypotheses, like so: `intro V W hV hW hVWunion hV1 hW1`."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "Use the theorem `EmptyInter` to show that `«{V}» ∩ ∅ = ∅`."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "Remember that we proved the theorem `NonemptyIffNotEmpty` the Empty world, which says that a set is `Nonempty` if and only it is not equal to the empty set. You can use that to create a contradiction here."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "If you have `«{hV1}»: ¬ (∅ = ∅)`, then `«{hV1}» rfl` is a proof of `false`."
+msgstr ""
+
+#: Game.Levels.Connected.L01_preconnected
+msgid "The `IsPreconnected` property is defined as follows.\n"
+"```\n"
+"def IsPreconnected (s : Set α) : Prop :=\n"
+"  ∀ u v : Set α, IsOpen u → IsOpen v → s ⊆ u ∪ v → (s ∩ u).Nonempty → (s ∩ v).Nonempty →\n"
+"    (s ∩ (u ∩ v)).Nonempty\n"
+"```\n"
+"In words, a set `s` in a topological space `α` is _preconnected_ if,\n"
+"for any two open sets `u` and `v` in `α`  such that\n"
+"`s ⊆ u ∪ v`, `s ∩ u` is nonempty and `s ∩ v` is nonempty,\n"
+"we have that `s ∩ (u ∩ v)` is nonempty.\n"
+"\n"
+"You can treat `IsPreconnected` as a theorem. Typing `rw [IsPreconnected]` will unfold the definition."
+msgstr ""
+
+#: Game.Levels.Connected
+msgid "Connected sets"
+msgstr ""
+
+#: Game.Levels.Connected
+msgid "This module introduces the basics of connected sets in topology.\n"
+"\n"
+"In lean, a set `U` in a topological space `X` is _preconnected_ if,\n"
+"for any two open sets `V` and `W` in `X`  such that\n"
+"`U ⊆ V ∪ W`, `U ∩ V ≠ ∅` and `U ∩ W ≠ ∅`,\n"
+"we have that `U ∩ (V ∩ W) ≠ ∅`.\n"
+"\n"
+"A set `U ⊆ X` is _connected_ if it is preconnected and nonempty."
 msgstr ""
 
 #: Game

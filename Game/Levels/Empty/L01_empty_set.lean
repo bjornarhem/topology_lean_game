@@ -1,4 +1,4 @@
-import Game.Levels.Spaces.L02_closed
+import Game.Levels.Continuous.L02_is_continuous
 import Game.Levels.FamUnion.L06unionsub
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
@@ -24,11 +24,11 @@ TheoremTab "∅"
 TheoremDoc EmptySubset as "EmptySubset" in "∅"
 
 /-- For any set $U$, we have that $∅ ⊆ U$. -/
-Statement EmptySubset {X : Type} (U : Set X) : ∅ ⊆ U := by
+Statement EmptySubset {X : Type} (A : Set X) : ∅ ⊆ A := by
   Hint (hidden := true) "Start as you normally do when proving a subset relation, by introducing an arbitrary element `x` of the left-hand side and a hypothesis `h` that `x` is in the left-hand side."
   intro x
   intro h
-  Hint "Recall that `Set.not_mem_empty {x}` is a proof that `x ∉ ∅`."
+  Hint "Recall that `Set.not_mem_empty {x}` is a proof that `{x} ∉ ∅`."
   Hint (hidden := true) "The tactic `by_contra` can be used here."
   by_contra
   have not_h := Set.not_mem_empty x

@@ -1,4 +1,4 @@
-import Game.Levels.Empty.L06_empty_image
+import Game.Levels.Empty.L08_empty_inter
 
 World "Empty"
 Title "The empty set"

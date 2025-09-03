@@ -12,6 +12,7 @@ import Game.Levels.Functions
 import Game.Levels.Spaces
 import Game.Levels.Continuous
 import Game.Levels.Empty
+import Game.Levels.Connected
 
 -- Here's what we'll put on the title screen
 Title "The topology game"
@@ -41,6 +42,7 @@ Dependency Intersection → Union
 Dependency Union → Spaces
 Dependency FamInter → FamUnion
 Dependency Continuous → Empty
+Dependency Empty → Connected
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame
