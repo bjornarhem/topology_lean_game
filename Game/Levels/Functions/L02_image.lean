@@ -61,6 +61,15 @@ TheoremDoc Set.mem_image as "Set.mem_image" in "function"
 
 NewTheorem Set.mem_image
 
-/-- Image of a set under a function. Can be written as `f '' A` or `Set.image f A`. -/
+/--
+Image of a set under a function. Can be written as `f '' A` or `Set.image f A`.
+
+A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.
+In this level, we will use the `obtain` tactic to decompose such hypotheses.
+Whenever you have a hypothesis of the form `h : y ∈ f '' A`, you can write `obtain ⟨x, hxA, rfl⟩ := h` to decompose it into its components.
+To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle, respectively.
+
+The theorem `Set.mem_image` rewrite a hypothesis `h : y ∈ f '' A` into `∃ x ∈ A, f x = y`, and vice versa.
+-/
 DefinitionDoc Set.image as "f '' A"
 NewDefinition Set.image

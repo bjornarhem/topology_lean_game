@@ -39,6 +39,11 @@ Level completed!
 TheoremDoc Set.mem_preimage as "Set.mem_preimage" in "function"
 NewTheorem Set.mem_preimage
 
-/-- Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\-1` followed by `'`, or write  `Set.preimage f A`. -/
+/--
+Preimage of a set under a function. To write the preimage, use `f ⁻¹' A`, which can be typed as `\-1` followed by `'`, or write  `Set.preimage f A`.
+
+The theorem `Set.mem_preimage` states that an element $x$ is in the preimage of $A$ under $f$ if and only if $f(x)$ is in $A$.
+You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of the form `x ∈ f ⁻¹' A` into `f x ∈ A`.
+-/
 DefinitionDoc Set.preimage as "f ⁻¹' A"
 NewDefinition Set.preimage
