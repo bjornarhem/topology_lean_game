@@ -40,7 +40,7 @@ NewTactic rfl
 by typing `\compl` or `\^c`. -/
 DefinitionDoc comp as "ᶜ"
 
-/-- `P ↔ Q` means "P if and only if Q".  You can enter the symbol `↔` by typing `\iff`.
+/-- `P ↔ Q` means "`P` if and only if `Q`".  You can enter the symbol `↔` by typing `\iff`.
 
 ### If your goal is `P ↔ Q`
 

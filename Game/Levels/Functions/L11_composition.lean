@@ -22,7 +22,7 @@ If your goal is `y ∈ f '' A`, `use x` will change the goal to `x ∈ A` and `f
 TheoremDoc TTG.image_composition as "image_composition" in "function"
 
 /-- Show that $(g \circ f)(A) = g(f(A))$. -/
-Statement image_composition {X Y : Type} (A : Set X) (f : X → Y) (g : Y → Z) : (g ∘ f) '' (A) = g '' (f '' A)  := by
+Statement image_composition {X Y Z : Type} (A : Set X) (f : X → Y) (g : Y → Z) : (g ∘ f) '' (A) = g '' (f '' A)  := by
   Hint "The theorem `Function.comp_apply` can be used to rewrite `(g ∘ f) x` as `g (f x)`."
   ext y
   apply Iff.intro
