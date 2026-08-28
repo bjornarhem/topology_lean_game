@@ -2,7 +2,7 @@ import Game.Levels.Inter.L03inter_sub_left
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 

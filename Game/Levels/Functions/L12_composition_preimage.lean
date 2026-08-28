@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L11_composition
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 12
@@ -12,10 +12,10 @@ The final level in this world!
 "
 
 /-- The theorem $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
-TheoremDoc PreimageComposition as "PreimageComposition" in "function"
+TheoremDoc TTG.preimage_composition as "preimage_composition" in "function"
 
 /-- Show that $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
-Statement PreimageComposition {X Y : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by
+Statement preimage_composition {X Y : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by
   ext x
   apply Iff.intro
 

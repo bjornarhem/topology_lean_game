@@ -2,7 +2,7 @@ import Game.Levels.FamUnion.L05unionunion
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -18,7 +18,7 @@ under which `⋃₀ F` is a subset of `A`.
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $\bigcup F$ is a subset of $A$
 if and only if every element of $F$ is a subset of $A$. -/
-TheoremDoc STG4.FamUnionSubsetIff as "FamUnionSubsetIff" in "⋂₀⋃₀"
+TheoremDoc TTG.FamUnionSubsetIff as "FamUnionSubsetIff" in "⋂₀⋃₀"
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $\bigcup F$ is a subset of $A$
 if and only if every element of $F$ is a subset of $A$. -/

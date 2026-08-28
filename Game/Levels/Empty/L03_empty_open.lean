@@ -1,8 +1,7 @@
 import Game.Levels.Empty.L02_empty_union
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Empty"
 Level 3
@@ -24,8 +23,8 @@ You can look up the definition of `TopologicalSpace` in the right column if you 
 Statement {X : Type} [h : TopologicalSpace X] : IsOpen (∅ : Set X) := by
   Hint (hidden := true) "Try using `h.isOpen_sUnion` on the empty collection."
   have h1 := h.isOpen_sUnion ∅
-  Hint "You can use the theorem `sUnionEmpty` from the previous level."
-  rw [sUnionEmpty] at h1
+  Hint "You can use the theorem `sUnion_empty` from the previous level."
+  rw [sUnion_empty] at h1
   apply h1
   intro t
   intro h2

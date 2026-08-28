@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L04_image_intersection
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 5
@@ -17,10 +17,10 @@ You can use the command `rewrite [Set.mem_preimage]` to rewrite a hypothesis of 
 "
 
 /-- If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$. -/
-TheoremDoc PreimageSubset as "PreimageSubset" in "function"
+TheoremDoc TTG.preimage_subset as "preimage_subset" in "function"
 
 /-- If A ⊆ B, then $f^{-1}(A) ⊆ f^{-1}(B)$. -/
-Statement PreimageSubset {X Y : Type} (A B : Set Y) (f : X → Y) (h : A ⊆ B) : f ⁻¹' A ⊆ f ⁻¹' B := by
+Statement preimage_subset {X Y : Type} (A B : Set Y) (f : X → Y) (h : A ⊆ B) : f ⁻¹' A ⊆ f ⁻¹' B := by
   Hint "Let's start by choosing an element `x` in the left-hand side, using `intro`."
   intro x
   Hint "As usual when proving an implication, we can begin with `intro H`."

@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L03_image_union
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 4
@@ -12,10 +12,10 @@ Introduction "
 "
 
 /-- The theorem $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
-TheoremDoc ImageIntersection as "ImageIntersection" in "function"
+TheoremDoc TTG.image_intersection as "image_intersection" in "function"
 
 /-- Show that $f(A ∩ B) ⊆ f(A) ∩ f(B)$. -/
-Statement ImageIntersection {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∩ B) ⊆ (f '' A) ∩ (f '' B) := by
+Statement image_intersection {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∩ B) ⊆ (f '' A) ∩ (f '' B) := by
   Hint "This level can be solved in a similar way to the previous one. You can start by introducing an element with `intro y`."
   intro y
   Hint "Now, `intro h` will introduce a hypothesis `h : {y} ∈ {f} '' ({A} ∩ {B})` and change you goal to `{y} ∈ {f}'' {A} ∩ {y} ∈ {f}'' {B}`."

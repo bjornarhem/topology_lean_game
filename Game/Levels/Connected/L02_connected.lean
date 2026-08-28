@@ -1,8 +1,7 @@
 import Game.Levels.Connected.L01_preconnected
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Connected"
 Level 2
@@ -29,7 +28,7 @@ Statement {X : Type} [h : TopologicalSpace X] : ¬ IsConnected (∅ : Set X) := 
   push_neg
   intro h
   by_contra
-  rw [NonemptyIffNotEmpty] at h
+  rw [nonempty_iff_not_empty] at h
   exact h rfl
 
 

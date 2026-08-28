@@ -2,7 +2,7 @@ import Game.Levels.Comp.L02compdef
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -39,7 +39,7 @@ TheoremTab "ᶜ"
 
 /-- If you have `h : A ⊆ B`, then `compl_subset_compl_of_subset h` is a proof of `Bᶜ ⊆ Aᶜ`.
 In Mathlib, the name of this theorem is `Set.compl_subset_compl_of_subset`. -/
-TheoremDoc STG4.compl_subset_compl_of_subset as "compl_subset_compl_of_subset" in "ᶜ"
+TheoremDoc TTG.compl_subset_compl_of_subset as "compl_subset_compl_of_subset" in "ᶜ"
 
 /-- Suppose $A \subseteq B$.  Then $B^c \subseteq A^c$. -/
 Statement compl_subset_compl_of_subset {A B : Set U} (h1 : A ⊆ B) : Bᶜ ⊆ Aᶜ := by

@@ -1,7 +1,7 @@
 import Game.Levels.Comp
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 1

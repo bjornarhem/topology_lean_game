@@ -2,7 +2,7 @@ import Game.Levels.Inter.L06inter_sub_swap
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -22,7 +22,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A` and `B`, `inter_comm A B` is a proof of the
 statement `A ∩ B = B ∩ A`.  In Mathlib, the name of this theorem is `Set.inter_comm`. -/
-TheoremDoc STG4.inter_comm as "inter_comm" in "∩∪"
+TheoremDoc TTG.inter_comm as "inter_comm" in "∩∪"
 
 /-- For any sets $A$ and $B$, $A \cap B = B \cap A$. -/
 Statement inter_comm (A B : Set U) : A ∩ B = B ∩ A := by

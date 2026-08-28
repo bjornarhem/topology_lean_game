@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L08_preimage_complement
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 9
@@ -12,10 +12,10 @@ In this level, there's no hints. Try to solve it using what you've learned so fa
 "
 
 /-- The theorem $f(f^{-1}(A)) \subseteq A $. -/
-TheoremDoc ImagePreimage as "ImagePreimage" in "function"
+TheoremDoc TTG.image_preimage as "image_preimage" in "function"
 
 /-- Show that $f(f^{-1}(A)) \subseteq A $. -/
-Statement ImagePreimage {X Y : Type} (A : Set Y) (f : X → Y) : f '' (f ⁻¹' (A)) ⊆ A  := by
+Statement image_preimage {X Y : Type} (A : Set Y) (f : X → Y) : f '' (f ⁻¹' (A)) ⊆ A  := by
   intro y
   intro h
   obtain ⟨x, hx, rfl⟩ := h

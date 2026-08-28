@@ -2,7 +2,7 @@ import Game.Levels.Union.L05union_comm
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -26,7 +26,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A`, `B`, and `C`, `union_assoc A B C` is a proof of the
 statement `(A ∪ B) ∪ C = A ∪ (B ∪ C)`.  In Mathlib, the name of this theorem is `Set.union_assoc`. -/
-TheoremDoc STG4.union_assoc as "union_assoc" in "∩∪"
+TheoremDoc TTG.union_assoc as "union_assoc" in "∩∪"
 
 /-- For any sets $A$, $B$, and $C$, $(A \cup B) \cup C = A \cup (B \cup C)$. -/
 Statement union_assoc (A B C : Set U) : (A ∪ B) ∪ C = A ∪ (B ∪ C) := by

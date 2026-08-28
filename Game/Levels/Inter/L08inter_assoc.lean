@@ -2,7 +2,7 @@ import Game.Levels.Inter.L07inter_comm
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -23,7 +23,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A`, `B`, and `C`, `inter_assoc A B C` is a proof of the
 statement `(A ∩ B) ∩ C = A ∩ (B ∩ C)`.  Im Mathlib, the name of this theorem is `Set.inter_assoc`. -/
-TheoremDoc STG4.inter_assoc as "inter_assoc" in "∩∪"
+TheoremDoc TTG.inter_assoc as "inter_assoc" in "∩∪"
 
 /-- If your goal is `A = B`, where `A` and `B` are sets, then the tactic `ext x` will introduce
 a new arbitrary object `x` into the proof and set the goal to be `x ∈ A ↔ x ∈ B`. -/

@@ -2,7 +2,7 @@ import Game.Levels.FamInter.L02intersubinter
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -42,9 +42,9 @@ lemma mem_pair (t A B : U) : t ∈ {A, B} ↔ t = A ∨ t = B := by rfl
 
 /-- For any `t`, `A`, and `B`, `mem_pair t A B` is a proof of the statement
 `t ∈ {A, B} ↔ t = A ∨ t = B`. -/
-TheoremDoc STG4.mem_pair as "mem_pair" in "{ }"
+TheoremDoc TTG.mem_pair as "mem_pair" in "{ }"
 
-NewTheorem STG4.mem_pair
+NewTheorem TTG.mem_pair
 
 TheoremTab "{ }"
 

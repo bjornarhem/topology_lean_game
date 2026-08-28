@@ -2,7 +2,7 @@ import Game.Levels.Subset.L05subref
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -22,7 +22,7 @@ TheoremTab "⊆"
 
 /-- If you have `h1 : A ⊆ B` and `h2 : B ⊆ C`, then `Subset.trans h1 h2` is a proof of `A ⊆ C`.
 In Mathlib, the name of this theorem is `Set.Subset.trans`. -/
-TheoremDoc STG4.Subset.trans as "Subset.trans" in "⊆"
+TheoremDoc TTG.Subset.trans as "Subset.trans" in "⊆"
 
 /-- Suppose $A \subseteq B$ and $B \subseteq C$.  Then $A \subseteq C$. -/
 Statement Subset.trans {A B C : Set U}

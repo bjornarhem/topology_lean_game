@@ -1,8 +1,7 @@
 import Game.Levels.Continuous.L01_continuous
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Continuous"
 Level 2
@@ -22,8 +21,8 @@ Statement {X Y Z : Type} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalS
   rw [continuous_def]
   Hint "Now, try `intro U hU` to introduce an open set."
   intro U hU
-  Hint "In this level, you can use the theorem `PreimageComposition`, which you proved in the functions world."
-  rw [PreimageComposition]
+  Hint "In this level, you can use the theorem `preimage_composition`, which you proved in the functions world."
+  rw [preimage_composition]
   Hint "Again, you can use `{hf}.isOpen_preimage` and `{hg}.isOpen_preimage` to finish the proof."
   apply hf.isOpen_preimage
   apply hg.isOpen_preimage

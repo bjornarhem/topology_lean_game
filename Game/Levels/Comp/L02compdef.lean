@@ -2,7 +2,7 @@ import Game.Levels.Comp.L01contra
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -64,7 +64,7 @@ TheoremTab "ᶜ"
 
 /-- If you have `A : Set U` and `x : U`, then `mem_compl_iff A x` is a proof of the statement
 `x ∈ Aᶜ ↔ x ∉ A`.  In Mathlib, the name of this theorem is `Set.mem_compl_iff`. -/
-TheoremDoc STG4.mem_compl_iff as "mem_compl_iff" in "ᶜ"
+TheoremDoc TTG.mem_compl_iff as "mem_compl_iff" in "ᶜ"
 
 /-- Let $x$ be an object in the universe $U$, and let $A$ be a set whose elements
 come from $U$.  Then $x \in A^c \leftrightarrow x \notin A$. -/

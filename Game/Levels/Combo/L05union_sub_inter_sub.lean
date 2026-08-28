@@ -2,7 +2,7 @@ import Game.Levels.Combo.L04union_distrib_inter
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 

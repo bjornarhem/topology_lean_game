@@ -2,7 +2,7 @@ import Game.Levels.FamUnion.L06unionsub
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 

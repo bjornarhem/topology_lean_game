@@ -2,7 +2,7 @@ import Game.Levels.Subset.L04imp
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -26,7 +26,7 @@ TheoremTab "⊆"
 
 /-- If you have `A : Set U`, then `Subset.refl A` is a proof of `A ⊆ A`.
 In Mathlib, the name of this theorem is `Set.Subset.refl`. -/
-TheoremDoc STG4.Subset.refl as "Subset.refl" in "⊆"
+TheoremDoc TTG.Subset.refl as "Subset.refl" in "⊆"
 
 /-- Let $A$ be any set.  Then $A \subseteq A$. -/
 Statement Subset.refl (A : Set U) : A ⊆ A := by

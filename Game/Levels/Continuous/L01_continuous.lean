@@ -2,8 +2,7 @@ import Game.Levels.Functions
 import Game.Levels.Spaces
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Continuous"
 Level 1
@@ -16,7 +15,7 @@ Given a proposition `h : Continuous f`, you can use `h.isOpen_preimage` to prove
 
 Let's warm up by proving that the continuous preimage of a closed set is closed.
 
-In this level, you can use the theorem `PreimageComplement`, which you proved in the functions world,
+In this level, you can use the theorem `preimage_complement`, which you proved in the functions world,
 to rewrite `f⁻¹' (Uᶜ)` as `(f⁻¹' U)ᶜ`.
 "
 
@@ -27,8 +26,8 @@ Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (
   Hint "Recall the theorem `isOpen_compl_iff`. You can rewrite the statements in terms of open sets by writing `rw [← isOpen_compl_iff]` and `rw [← isOpen_compl_iff] at {h}`."
   rw [← isOpen_compl_iff] at h
   rw [← isOpen_compl_iff]
-  Hint "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing `rw [← PreimageComplement]`."
-  rw [← PreimageComplement]
+  Hint "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing `rw [← preimage_complement]`."
+  rw [← preimage_complement]
   Hint "Now you can use `{hf}.isOpen_preimage` to finish the proof."
   apply hf.isOpen_preimage
   exact h

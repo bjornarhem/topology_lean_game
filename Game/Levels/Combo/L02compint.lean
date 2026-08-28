@@ -2,7 +2,7 @@ import Game.Levels.Combo.L01compunion
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -28,7 +28,7 @@ TheoremTab "ᶜ"
 
 /-- For any sets `A` and `B`, `compl_inter A B` is a proof of the
 statement `(A ∩ B)ᶜ = Aᶜ ∪ Bᶜ`.  In Mathlib, the name of this theorem is `Set.compl_inter`. -/
-TheoremDoc STG4.compl_inter as "compl_inter" in "ᶜ"
+TheoremDoc TTG.compl_inter as "compl_inter" in "ᶜ"
 
 /-- For any sets $A$ and $B$, $(A \cap B)^c = A^c \cup B^c$. -/
 Statement compl_inter (A B : Set U) : (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ := by

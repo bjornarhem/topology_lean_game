@@ -2,7 +2,7 @@ import Game.Levels.FamInter.L04interunion
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -18,7 +18,7 @@ that `A ⊆ ⋂₀ F`?  In this level you'll discover the answer to that questio
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $A$ is a subset of $\bigcap F$ if
 and only if $A$ is a subset of every element of $F$.-/
-TheoremDoc STG4.SubsetFamInterIff as "SubsetFamInterIff" in "⋂₀⋃₀"
+TheoremDoc TTG.SubsetFamInterIff as "SubsetFamInterIff" in "⋂₀⋃₀"
 
 /-- Suppose $A$ is a set and $F$ is a family of sets.  Then $A$ is a subset of $\bigcap F$ if
 and only if $A$ is a subset of every element of $F$.-/

@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L01_functions
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 2
@@ -22,10 +22,10 @@ In this level, we prove the following property of images: If $A ⊆ B$, then $f(
 /--
 If A ⊆ B, then $f(A) ⊆ f(B)$.
 -/
-TheoremDoc ImageSubset as "ImageSubset" in "function"
+TheoremDoc TTG.image_subset as "image_subset" in "function"
 
 /-- If A ⊆ B, then $f(A) ⊆ f(B)$. -/
-Statement ImageSubset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f '' A ⊆ f '' B := by
+Statement image_subset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : f '' A ⊆ f '' B := by
   Hint "Let's star by choosing an element `y` in the left-hand side, using `intro`."
   intro y
   Hint "As usual when proving an implication, we can begin with `intro H`."

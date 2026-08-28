@@ -2,7 +2,7 @@ import Game.Levels.Union.L04union_sub_swap
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -20,7 +20,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A` and `B`, `union_comm A B` is a proof of the
 statement `A ∪ B = B ∪ A`.  In Mathlib, the name of this theorem is `Set.union_comm`. -/
-TheoremDoc STG4.union_comm as "union_comm" in "∩∪"
+TheoremDoc TTG.union_comm as "union_comm" in "∩∪"
 
 /-- For any sets $A$ and $B$, $A \cup B = B \cup A$. -/
 Statement union_comm (A B : Set U) : A ∪ B = B ∪ A := by

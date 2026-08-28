@@ -2,7 +2,7 @@ import Game.Levels.FamInter.L01intersub
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -22,7 +22,7 @@ Of course, by now you know how to start a proof that one set is a subset of anot
 
 /-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
 Then $\bigcap G \subseteq \bigcap F$. -/
-TheoremDoc STG4.SubFamilyInter as "SubFamilyInter" in "⋂₀⋃₀"
+TheoremDoc TTG.SubFamilyInter as "SubFamilyInter" in "⋂₀⋃₀"
 
 /-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
 Then $\bigcap G \subseteq \bigcap F$. -/

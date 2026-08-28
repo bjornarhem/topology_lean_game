@@ -2,7 +2,7 @@ import Game.Levels.Union
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -22,7 +22,7 @@ TheoremTab "ᶜ"
 
 /-- For any sets `A` and `B`, `compl_union A B` is a proof of the
 statement `(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ`.  In Mathlib, the name of this theorem is `Set.compl_union`. -/
-TheoremDoc STG4.compl_union as "compl_union" in "ᶜ"
+TheoremDoc TTG.compl_union as "compl_union" in "ᶜ"
 
 /-- For any sets $A$ and $B$, $(A \cup B)^c = A^c \cap B^c$. -/
 Statement compl_union (A B : Set U) : (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ := by

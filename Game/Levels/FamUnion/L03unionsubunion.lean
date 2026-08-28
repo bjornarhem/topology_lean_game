@@ -2,7 +2,7 @@ import Game.Levels.FamUnion.L02subunion
 
 open Set
 
-namespace STG4
+namespace TTG
 
 World "FamUnion"
 Level 3
@@ -38,7 +38,7 @@ NewTactic obtain
 
 /-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
 Then $\bigcup F \subseteq \bigcup G$. -/
-TheoremDoc STG4.SubFamilyUnion as "SubFamilyUnion" in "⋂₀⋃₀"
+TheoremDoc TTG.SubFamilyUnion as "SubFamilyUnion" in "⋂₀⋃₀"
 
 /-- Suppose $F$ and $G$ are families of sets and $F \subseteq G$.
 Then $\bigcup F \subseteq \bigcup G$. -/

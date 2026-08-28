@@ -2,7 +2,7 @@ import Game.Levels.Inter.L05subint
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -20,7 +20,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A` and `B`, `inter_subset_swap A B` is a proof of
 `A ∩ B ⊆ B ∩ A`. -/
-TheoremDoc STG4.inter_subset_swap as "inter_subset_swap" in "∩∪"
+TheoremDoc TTG.inter_subset_swap as "inter_subset_swap" in "∩∪"
 
 /-- For any sets $A$ and $B$, $A \cap B \subseteq B \cap A$. -/
 Statement inter_subset_swap (A B : Set U) : A ∩ B ⊆ B ∩ A := by

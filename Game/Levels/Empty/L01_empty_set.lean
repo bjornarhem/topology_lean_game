@@ -2,8 +2,7 @@ import Game.Levels.Continuous.L02_is_continuous
 import Game.Levels.FamUnion.L06unionsub
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Empty"
 Level 1
@@ -20,11 +19,11 @@ For any `x`, `Set.not_mem_empty x` is a proof that `x ∉ ∅`.
 
 TheoremTab "∅"
 
-/-- For any set $U$, we have that $∅ ⊆ U$. For any set `U`, `EmptySubset U` is a proof that `∅ ⊆ U`. -/
-TheoremDoc EmptySubset as "EmptySubset" in "∅"
+/-- For any set $U$, we have that $∅ ⊆ U$. For any set `U`, `empty_subset U` is a proof that `∅ ⊆ U`. -/
+TheoremDoc TTG.empty_subset as "empty_subset" in "∅"
 
 /-- For any set $U$, we have that $∅ ⊆ U$. -/
-Statement EmptySubset {X : Type} (A : Set X) : ∅ ⊆ A := by
+Statement empty_subset {X : Type} (A : Set X) : ∅ ⊆ A := by
   Hint (hidden := true) "Start as you normally do when proving a subset relation, by introducing an arbitrary element `x` of the left-hand side and a hypothesis `h` that `x` is in the left-hand side."
   intro x
   intro h

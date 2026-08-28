@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L07_preimage_intersection
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 8
@@ -17,10 +17,10 @@ Recall that `x ∈ Aᶜ ↔ x ∉ A`.
 /--
 The theorem $f^{-1}(A^c) = f^{-1}(A)^c$
 -/
-TheoremDoc PreimageComplement as "PreimageComplement" in "function"
+TheoremDoc TTG.preimage_complement as "preimage_complement" in "function"
 
 /-- Show that $f^{-1}(A^c) = f^{-1}(A)^c$. -/
-Statement PreimageComplement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (Aᶜ) = (f ⁻¹' A)ᶜ := by
+Statement preimage_complement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (Aᶜ) = (f ⁻¹' A)ᶜ := by
   Hint "In this level, it can be useful to use `rw [mem_compl_iff]` or `rw [mem_compl_iff] at h` to rewrite at statement `a ∈ Sᶜ` to `a ∉ S`."
   Hint "Another useful technique is to use `by_contra` to do a proof by contradiction."
   ext y

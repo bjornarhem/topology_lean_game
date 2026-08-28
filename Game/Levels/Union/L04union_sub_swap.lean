@@ -2,7 +2,7 @@ import Game.Levels.Union.L03cases
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -21,7 +21,7 @@ TheoremTab "∩∪"
 
 /-- For any sets `A` and `B`, `union_sub_swap A B` is a proof of
 `A ∪ B ⊆ B ∪ A`. -/
-TheoremDoc STG4.union_subset_swap as "union_subset_swap" in "∩∪"
+TheoremDoc TTG.union_subset_swap as "union_subset_swap" in "∩∪"
 
 /-- For any sets $A$ and $B$, $A \cup B \subseteq B \cup A$. -/
 Statement union_subset_swap (A B : Set U) : A ∪ B ⊆ B ∪ A := by

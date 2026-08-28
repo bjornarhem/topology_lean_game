@@ -2,7 +2,7 @@ import Game.Levels.Subset.L03have
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 

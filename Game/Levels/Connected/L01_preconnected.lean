@@ -1,8 +1,7 @@
 import Game.Levels.Empty.L08_empty_inter
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Connected"
 Level 1
@@ -29,10 +28,10 @@ You can treat `IsPreconnected` as a theorem. Typing `rw [IsPreconnected]` will u
 Statement {X : Type} [h : TopologicalSpace X] : IsPreconnected (∅ : Set X) := by
   Hint "You can begin unwrapping the `IsPreconnected` definition by introducing several variables and hypotheses, like so: `intro V W hV hW hVWunion hV1 hW1`."
   intro V W hV hW hUnion hV1 hW1
-  Hint (hidden := true) "Use the theorem `EmptyInter` to show that `{V} ∩ ∅ = ∅`."
-  Hint (hidden := true) "Remember that we proved the theorem `NonemptyIffNotEmpty` the Empty world, which says that a set is `Nonempty` if and only it is not equal to the empty set. You can use that to create a contradiction here."
-  rw [EmptyInter] at hV1
-  rw [NonemptyIffNotEmpty] at hV1
+  Hint (hidden := true) "Use the theorem `empty_inter` to show that `{V} ∩ ∅ = ∅`."
+  Hint (hidden := true) "Remember that we proved the theorem `nonempty_iff_not_empty` the Empty world, which says that a set is `Nonempty` if and only it is not equal to the empty set. You can use that to create a contradiction here."
+  rw [empty_inter] at hV1
+  rw [nonempty_iff_not_empty] at hV1
   Hint (hidden := true) "If you have `{hV1}: ¬ (∅ = ∅)`, then `{hV1} rfl` is a proof of `false`."
   by_contra
   exact hV1 rfl

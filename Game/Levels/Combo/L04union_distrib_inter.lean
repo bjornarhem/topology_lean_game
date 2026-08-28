@@ -2,7 +2,7 @@ import Game.Levels.Combo.L03inter_distrib_union
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 
@@ -27,7 +27,7 @@ TheoremTab "∩∪"
 /-- For any sets `A`, `B`, and `C`, `union_distrib_left A B C` is a proof of the
 statement `A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)`.  In Mathlib, the name of this theorem
 is `Set.union_distrib_left`. -/
-TheoremDoc STG4.union_distrib_left as "union_distrib_left" in "∩∪"
+TheoremDoc TTG.union_distrib_left as "union_distrib_left" in "∩∪"
 
 /-- For any sets $A$, $B$, and $C$, $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$. -/
 Statement union_distrib_left (A B C : Set U) : A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) := by

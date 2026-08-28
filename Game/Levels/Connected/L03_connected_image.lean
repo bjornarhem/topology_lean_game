@@ -1,8 +1,7 @@
 import Game.Levels.Connected.L02_connected
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Connected"
 Level 3
@@ -26,7 +25,7 @@ Statement {X Y : Type} [hX : TopologicalSpace X] [hY : TopologicalSpace Y] (f : 
   intro hA
   apply And.intro
   have Unonempty := hA.left
-  exact NonemptyImage f A Unonempty
+  exact nonempty_image f A Unonempty
 
   -- Second part: Prove that f(A) is preconnected
   have Apreconnected := hA.right
@@ -55,9 +54,9 @@ Statement {X Y : Type} [hX : TopologicalSpace X] [hY : TopologicalSpace Y] (f : 
 
   -- A \subset f^{-1}(V) ∪ f^{-1}(W)
   have hA_VW_preim_union : A ⊆ (f ⁻¹' V) ∪ (f ⁻¹' W)
-  rw [← PreimageUnion]
-  have h_1 := PreimageSubset (f '' A) (V ∪ W) f hUnion
-  have h_2 := PreimageImage A f
+  rw [← preimage_union]
+  have h_1 := preimage_subset (f '' A) (V ∪ W) f hUnion
+  have h_2 := preimage_image A f
   exact Subset.trans h_2 h_1
 
   -- Using preconnectedness of A to conclude
@@ -66,5 +65,5 @@ Statement {X Y : Type} [hX : TopologicalSpace X] [hY : TopologicalSpace Y] (f : 
   use (f x)
   apply And.intro
   exact ⟨x, hxA, rfl⟩
-  rw [← PreimageIntersection] at hxVW_preim
+  rw [← preimage_intersection] at hxVW_preim
   exact hxVW_preim

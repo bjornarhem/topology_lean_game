@@ -2,7 +2,7 @@ import Game.Levels.Inter.L04proveand
 
 open Set
 
-namespace STG4
+namespace TTG
 
 variable {U : Type}
 

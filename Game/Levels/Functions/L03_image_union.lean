@@ -1,7 +1,7 @@
 import Game.Levels.Functions.L02_image
 
 open Set (mem_inter_iff mem_union Subset.antisymm)
-open STG4
+namespace TTG
 
 World "Functions"
 Level 3
@@ -12,10 +12,10 @@ In this level, we will prove that the image of the union of two sets is equal to
 "
 
 /-- The theorem $f(A ∪ B) = f(A) ∪ f(B)$. -/
-TheoremDoc ImageUnion as "ImageUnion" in "function"
+TheoremDoc TTG.image_union as "image_union" in "function"
 
 /-- Show that $f(A ∪ B) = f(A) ∪ f(B)$. -/
-Statement ImageUnion {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) ∪ (f '' B) := by
+Statement image_union {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) = (f '' A) ∪ (f '' B) := by
   Hint "Recall that you can use the `ext` tactic to prove that two sets are equal."
   ext y
   Hint "You can apply Iff.intro to split the goal into two subgoals."

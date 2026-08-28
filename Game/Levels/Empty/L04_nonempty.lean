@@ -1,8 +1,7 @@
 import Game.Levels.Empty.L03_empty_open
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
-open TopologicalSpace
-open STG4
+namespace TTG
 
 World "Empty"
 Level 4
@@ -20,10 +19,10 @@ You can also use the theorem `Set.nonempty_def` to rewrite `S.Nonempty` into `�
 "
 
 /-- A set is nonempty if and only if it is not equal to the empty set. -/
-TheoremDoc NonemptyIffNotEmpty as "NonemptyIffNotEmpty" in "∅"
+TheoremDoc TTG.nonempty_iff_not_empty as "nonempty_iff_not_empty" in "∅"
 
 /-- Show that a set is nonempty if and only if it is not equal to the empty set. -/
-Statement NonemptyIffNotEmpty {X : Type} (A : Set X) : A.Nonempty ↔ ¬ (A = ∅):= by
+Statement nonempty_iff_not_empty {X : Type} (A : Set X) : A.Nonempty ↔ ¬ (A = ∅):= by
   Hint (hidden := true) "Try using `push_neg`."
   push_neg
   rfl
