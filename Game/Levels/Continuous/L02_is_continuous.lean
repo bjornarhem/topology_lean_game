@@ -34,6 +34,6 @@ Level completed!
 "
 
 /-- A function is continuous if and only if the preimage of every open set is open. -/
-TheoremDoc continuous_def as "continuous_def" in "continuous"
+TheoremDoc continuous_def as "continuous_def" in "topology"
 
 NewTheorem continuous_def
