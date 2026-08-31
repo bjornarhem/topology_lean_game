@@ -31,8 +31,10 @@ Statement image_subset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : 
   Hint "As usual when proving an implication, we can begin with `intro H`."
   intro H
   Hint "Use `obtain` to decompose the hypothesis `{y} ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
+  Hint (hidden:=true) "Explicitly, you can write `obtain ⟨x, hxA, rfl⟩ := {H}`."
   obtain ⟨x, hxA, rfl⟩ := H
   Hint "You can use the keyword `have` to create the hypothesis `{x} ∈ B`."
+  Hint (strict:=true) (hidden:=true) "Try `have hxB : {x} ∈ B := {h} {hxA}`."
   have hxB : x ∈ B := h hxA
   Hint "You can now complete the proof using `exact ⟨ {x}, {hxB}, rfl ⟩`."
   exact ⟨x, hxB, rfl⟩

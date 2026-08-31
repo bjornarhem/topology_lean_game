@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-28\n"
+"POT-Creation-Date: 2026-08-31\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -123,6 +123,15 @@ msgstr ""
 msgid "Implication"
 msgstr ""
 
+#. §0: `rcases «{h}»`
+#. §1: `x ∈ f ⁻¹' A`
+#. §2: `f x ∈ A`
+#. §3: `Set.mem_preimage`
+#: Game.Levels.Functions.L06_preimage_union
+#: Game.Levels.Functions.L06_preimage_union
+msgid "You can use §0 to split the proof into two cases. This works because §1 and §2 are the same by definition, so no rewriting is needed. (§3 can make the conversion explicit if you prefer to see it.)"
+msgstr ""
+
 #. §0: `rewrite`
 #. §1: `rewrite`
 #. §2: `rw`
@@ -150,6 +159,22 @@ msgstr ""
 #. §0: `by_contra`
 #: Game.Levels.Empty.L01_empty_set
 msgid "The tactic §0 can be used here."
+msgstr ""
+
+#. §0: `∅`
+#. §1: $X$
+#. §2: $X$
+#. §3: `Set.not_mem_empty`
+#. §4: `x`
+#. §5: `Set.not_mem_empty x`
+#. §6: `x ∉ ∅`
+#: Game.Levels.Empty.L01_empty_set
+msgid "In this level, we introduce the empty set, denoted §0.\n"
+"We show that for any set §1, the empty set is a subset of §2.\n"
+"\n"
+"The only thing you need to know about the empty set is that it has no elements.\n"
+"This is stated in the theorem §3.\n"
+"For any §4, §5 is a proof that §6."
 msgstr ""
 
 #. §0: `«{x}» ∈ A ∨ «{x}» ∈ B`
@@ -185,22 +210,6 @@ msgid "If §0 and §1 are sets, then the *intersection* of §2 and §3, denoted\
 "then §10 is the set of all round red things.\n"
 "\n"
 "In this world you'll prove some basic properties of intersections of sets."
-msgstr ""
-
-#. §0: `∅`
-#. §1: $X$
-#. §2: $X$
-#. §3: `Set.not_mem_empty`
-#. §4: `x`
-#. §5: `Set.not_mem_empty x`
-#. §6: `x ∉ ∅`
-#: Game.Levels.Empty.L01_empty_set
-msgid "In this level, we introduce the empty set, denoted §0.\n"
-"We show that for any set §1, the empty set is a subset of §2.\n"
-"\n"
-"The only thing you need to know about the empty set is that it has no elements.\n"
-"This is stated in the theorem §3.\n"
-"For any §4, §5 is a proof that §6."
 msgstr ""
 
 #. §0: `F`
@@ -796,6 +805,13 @@ msgstr ""
 
 #: Game.Levels.FamInter.L02intersubinter
 msgid "Intersection of larger family is smaller"
+msgstr ""
+
+#. §0: `intro`
+#. §1: `obtain`
+#. §2: `obtain`
+#: Game.Levels.Functions.L03_image_union
+msgid "As in the previous level, you can use §0 followed by §1 here. Recall that you can use the tactics tab to see the syntax for §2."
 msgstr ""
 
 #. §0: `intro hU hV hW`
@@ -1415,6 +1431,12 @@ msgstr ""
 msgid "If A ⊆ B, then §0."
 msgstr ""
 
+#. §0: `have hxB : «{x}» ∈ B := «{h}» «{hxA}»`
+#: Game.Levels.Functions.L02_image
+#: Game.Levels.Functions.L03_image_union
+msgid "Try §0."
+msgstr ""
+
 #. §0: `x`
 #. §1: `h`
 #. §2: `x`
@@ -1435,11 +1457,6 @@ msgstr ""
 msgid "Connected sets"
 msgstr ""
 
-#: Game.Levels.Empty.L01_empty_set
-#: Game.Levels.Empty
-msgid "The empty set"
-msgstr ""
-
 #. §0: `∅`
 #. §1: `∅`
 #. §2: `\\empty`
@@ -1452,6 +1469,11 @@ msgid "The empty set, denoted §0, is the unique set with no elements.\n"
 "To input the symbol §1, you can type §2.\n"
 "\n"
 "The theorem §3 states that for any §4, §5 is a proof that §6."
+msgstr ""
+
+#: Game.Levels.Empty.L01_empty_set
+#: Game.Levels.Empty
+msgid "The empty set"
 msgstr ""
 
 #. §0: `P`
@@ -1530,13 +1552,6 @@ msgstr ""
 #: Game.Levels.FamInter.L01intersub
 msgid "As usual, you may find it helpful to use the §0 tactic to write out the\n"
 "definition of §1, using the theorem §2."
-msgstr ""
-
-#. §0: `intro h`
-#. §1: `h : «{y}» ∈ «{f}» '' («{A}» ∩ «{B}»)`
-#. §2: `«{y}» ∈ «{f}»'' «{A}» ∩ «{y}» ∈ «{f}»'' «{B}»`
-#: Game.Levels.Functions.L04_image_intersection
-msgid "Now, §0 will introduce a hypothesis §1 and change you goal to §2."
 msgstr ""
 
 #. §0: $f^{-1}(A^c) = f^{-1}(A)^c$
@@ -1908,8 +1923,8 @@ msgstr ""
 msgid "Union World"
 msgstr ""
 
-#. §0: `rw [mem_compl_iff]`
-#. §1: `rw [mem_compl_iff] at h`
+#. §0: `rewrite [mem_compl_iff]`
+#. §1: `rewrite [mem_compl_iff] at h`
 #. §2: `a ∈ Sᶜ`
 #. §3: `a ∉ S`
 #: Game.Levels.Functions.L08_preimage_complement
@@ -1920,6 +1935,14 @@ msgstr ""
 #. §1: `rw [continuous_def]`
 #: Game.Levels.Continuous.L02_is_continuous
 msgid "In this level, you can use the theorem §0, which states that a function is continuous if and only if the preimage of every open set is open. Try using §1."
+msgstr ""
+
+#. §0: `«{f}» «{y}» ∈ «{A}»ᶜ`
+#. §1: `«{f}» «{y}» ∉ «{A}»`
+#. §2: `(«{f}» «{y}» ∈ «{A}») → False`
+#: Game.Levels.Functions.L08_preimage_complement
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "§0 is equivalent to §1, which in turn is equivalent to §2. Do you see how we can get a proof by contradiction?"
 msgstr ""
 
 #. §0: `P ∨ Q`
@@ -1969,12 +1992,6 @@ msgid "§0 means \"§1 or §2 or both\".  To enter the symbol §3, type §4.\n"
 "will break the proof into two cases.  In case 1, the assumption §25 is replaced by\n"
 "§26, and in case 2 it is replaced by §27.  In both cases, you must prove\n"
 "the goal."
-msgstr ""
-
-#. §0: `intro`
-#. §1: `obtain`
-#: Game.Levels.Functions.L03_image_union
-msgid "As in the previous level, you can use §0 followed by §1 here."
 msgstr ""
 
 #: Game.Levels.Inter.L02elt_inter_elt_right
@@ -2075,7 +2092,7 @@ msgid "Family intersection is subset"
 msgstr ""
 
 #. §0: $f \\colon X \\to Y$
-#. §1: $A \\in X$
+#. §1: $A \\subseteq X$
 #. §2: $A$
 #. §3: $f$
 #. §4: $f(A) = \\{ f(x) \\mid x \\in A \\}$
@@ -2517,6 +2534,13 @@ msgid "Note that Lean also has a §0 tactic, but the syntax is a little more com
 "assumptions that are \"or\" statements, to break the proof into cases."
 msgstr ""
 
+#. §0: `Or.inl`
+#. §1: `Or.inr`
+#: Game.Levels.Functions.L06_preimage_union
+#: Game.Levels.Functions.L06_preimage_union
+msgid "Recall that §0 and §1 can be useful here."
+msgstr ""
+
 #. §0: $A$
 #. §1: $B$
 #. §2: $A \\subseteq B$
@@ -2757,13 +2781,13 @@ msgid "Now your goal is an if-then statement; that means §0 is\n"
 "appropriate again, to introduce §1 as a new assumption."
 msgstr ""
 
-#: Game.Levels.Comp.L05compsubiff
-msgid "The second goal is similar, but a little trickier."
-msgstr ""
-
 #. §0: `mem_sUnion`
 #: Game.Levels.Empty.L02_empty_union
 msgid "Recall that the theorem §0 unfolds the definition of membership in a union over a family of sets."
+msgstr ""
+
+#: Game.Levels.Comp.L05compsubiff
+msgid "The second goal is similar, but a little trickier."
 msgstr ""
 
 #. §0: `Connected`
@@ -2820,6 +2844,12 @@ msgid "Notice that §0 is now listed under *Assumptions*, and your new goal is\n
 "§1."
 msgstr ""
 
+#. §0: $U$
+#. §1: $∅ ⊆ U$
+#: Game.Levels.Empty.L01_empty_set
+msgid "For any set §0, we have that §1."
+msgstr ""
+
 #. §0: `inter_subset_swap`
 #. §1: `A`
 #. §2: `B`
@@ -2828,12 +2858,6 @@ msgstr ""
 #: Game.Levels.Inter.L06inter_sub_swap
 msgid "We have given this theorem the name §0.  Thus, from now on, for\n"
 "any sets §1 and §2, §3 is a proof of §4."
-msgstr ""
-
-#. §0: $U$
-#. §1: $∅ ⊆ U$
-#: Game.Levels.Empty.L01_empty_set
-msgid "For any set §0, we have that §1."
 msgstr ""
 
 #. §0: `«{h2}» : «{x}» ∉ B`
@@ -2942,9 +2966,17 @@ msgid "Our goal in this level is again an equation between sets.  In previous pr
 "two sets have exactly the same elements, then they are equal."
 msgstr ""
 
+#: Game.Levels.Functions.L12_composition_preimage
+msgid "How can you manipulate expressions involving membership in preimages?"
+msgstr ""
+
 #: Game.Levels.Combo
 msgid "In this world you'll prove theorems combining complements, intersections, and unions.  For\n"
 "the most part, we'll leave you on your own to figure out these proofs."
+msgstr ""
+
+#: Game.Levels.Functions.L04_image_intersection
+msgid "In this level, we will prove that the image of the intersection of two sets is contained in the intersection of their images."
 msgstr ""
 
 #. §0: `x`
@@ -2960,6 +2992,13 @@ msgstr ""
 
 #: Game.Levels.Subset.L06subtrans
 msgid "Subset is transitive"
+msgstr ""
+
+#. §0: `intro h`
+#. §1: `h : «{y}» ∈ «{f}» '' («{A}» ∩ «{B}»)`
+#. §2: `«{y}» ∈ «{f}» '' «{A}» ∩ «{f}» '' «{B}»`
+#: Game.Levels.Functions.L04_image_intersection
+msgid "Now, §0 will introduce a hypothesis §1 and change your goal to §2."
 msgstr ""
 
 #: Game.Levels.Union.L05union_comm
@@ -3050,8 +3089,20 @@ msgid "§0 means \"if §1 then §2\".  You can enter the symbol §3 by typing §
 "If you also have §11, then §12 is a proof of §13."
 msgstr ""
 
+#. §0: `exact ⟨«{x}», «{hxAB}».left, rfl⟩`
+#. §1: `«{hxAB}».right`
+#: Game.Levels.Functions.L04_image_intersection
+msgid "We can use §0 to finish one subgoal, and similarly with §1 for the other."
+msgstr ""
+
 #: Game.Levels.Spaces
 msgid "Topological spaces"
+msgstr ""
+
+#. §0: `ext`
+#. §1: `↔`
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Do you remember how to prove that two sets are equal? You want to use the §0 tactic, followed by splitting the §1 statement into two subgoals."
 msgstr ""
 
 #: Game.Levels.FamUnion
@@ -3070,10 +3121,6 @@ msgstr ""
 msgid "This module introduces the basics of topological spaces."
 msgstr ""
 
-#: Game.Levels.Subset.L05subref
-msgid "The situation now should remind you of your first proof, in level 1 of this world."
-msgstr ""
-
 #. §0: $U$
 #. §1: $∅ ⊆ U$
 #. §2: `U`
@@ -3081,6 +3128,10 @@ msgstr ""
 #. §4: `∅ ⊆ U`
 #: Game.Levels.Empty.L01_empty_set
 msgid "For any set §0, we have that §1. For any set §2, §3 is a proof that §4."
+msgstr ""
+
+#: Game.Levels.Subset.L05subref
+msgid "The situation now should remind you of your first proof, in level 1 of this world."
 msgstr ""
 
 #: Game.Levels.Inter.L03inter_sub_left
@@ -3220,8 +3271,6 @@ msgid "For working with unions, the important logical word is \"or\".\n"
 "§14 proves §15."
 msgstr ""
 
-#: Game.Levels.Functions.L06_preimage_union
-#: Game.Levels.Functions.L07_preimage_intersection
 #: Game.Levels.Functions.L09_image_preimage
 #: Game.Levels.Functions.L10_preimage_image
 msgid "In this level, there's no hints. Try to solve it using what you've learned so far!"
@@ -3316,6 +3365,14 @@ msgstr ""
 
 #: Game.Levels.Functions.L01_functions
 msgid "Level 1"
+msgstr ""
+
+#. §0: `∧`
+#. §1: `mem_inter_iff`
+#. §2: `∧`
+#. §3: `∧`
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Recall that a membership in an intersection is equivalent to an §0 statement (via §1). Do you remember which theorems and tactics are relevant for proving an §2 statement? You can always check the definitions tab to read about §3 and other symbols."
 msgstr ""
 
 #. §0: `«{h3}»`
@@ -3467,10 +3524,6 @@ msgstr ""
 #. §2: $x ∈ S$
 #: Game.Levels.Empty.L04_nonempty
 msgid "A set §0 is nonempty if and only if there exists an element §1 such that §2."
-msgstr ""
-
-#: Game.Levels.Functions.L04_image_intersection
-msgid ""
 msgstr ""
 
 #. §0: $A$
@@ -3779,6 +3832,13 @@ msgstr ""
 msgid "Next, we'll see how to prove that a union is a subset of another set."
 msgstr ""
 
+#. §0: `x`
+#. §1: `Set.not_mem_empty x`
+#. §2: `x ∉ ∅`
+#: Game.Levels.Empty.L01_empty_set
+msgid "No element is a member of the emptyset. For any §0, §1 is a proof that §2."
+msgstr ""
+
 #. §0: `A`
 #. §1: `B`
 #. §2: `A`
@@ -3818,13 +3878,6 @@ msgid "If §0 and §1 are sets, then we say that §2 is a *subset* of §3 if\n"
 "\n"
 "See if you can use this to complete this level.  If you need a hint, click on\n"
 "\"Show more help!\"."
-msgstr ""
-
-#. §0: `x`
-#. §1: `Set.not_mem_empty x`
-#. §2: `x ∉ ∅`
-#: Game.Levels.Empty.L01_empty_set
-msgid "No element is a member of the emptyset. For any §0, §1 is a proof that §2."
 msgstr ""
 
 #. §0: `Exists.intro`
@@ -3919,10 +3972,23 @@ msgstr ""
 msgid "Suppose §0 and §1 are sets.  Then §2."
 msgstr ""
 
+#. §0: `obtain`
+#. §1: `x`
+#. §2: `«{A}»`
+#. §3: `(«{g}» ∘ «{f}») x = «{y}»`
+#: Game.Levels.Functions.L11_composition
+msgid "As usual when dealing with images, you can use §0 to obtain an element §1 in §2 such that §3."
+msgstr ""
+
 #. §0: `intro H`
 #: Game.Levels.Functions.L02_image
 #: Game.Levels.Functions.L05_preimage
 msgid "As usual when proving an implication, we can begin with §0."
+msgstr ""
+
+#. §0: `ext`
+#: Game.Levels.Functions.L06_preimage_union
+msgid "Recall that the §0 tactic can be used to prove that two sets are equal."
 msgstr ""
 
 #. §0: `∀ t`
@@ -3993,6 +4059,11 @@ msgstr ""
 #. §3: `empty_subset`
 #: Game.Levels.Empty.L02_empty_union
 msgid "To begin with, you can either use §0 or §1. If you use §2, you can use the theorem §3 from the previous subset to prove one of the inclusions."
+msgstr ""
+
+#. §0: `Iff.intro`
+#: Game.Levels.Functions.L06_preimage_union
+msgid "As usual, an application of §0 will split the goal into two subgoals."
 msgstr ""
 
 #. §0: `P ↔ Q`
@@ -4115,6 +4186,12 @@ msgid "For any sets §0 and §1, §2 is a proof of\n"
 "§3."
 msgstr ""
 
+#. §0: `rewrite [mem_compl_iff]`
+#. §1: `Set.mem_preimage`
+#: Game.Levels.Functions.L08_preimage_complement
+msgid "You can't use §0 directly here, because the goal is not of the correct form. Rewriting with §1 gives you the desired form."
+msgstr ""
+
 #. §0: `h1`
 #. §1: `«{h3}»`
 #. §2: `x ∈ B`
@@ -4150,6 +4227,12 @@ msgid "The assumption §0 is now an existential statement.  Thus, §1\n"
 "will introduce a new object §2 and a new assumption §3 into the proof.\n"
 "Once the witness §4 has been introduced, the assumption §5 becomes redundant, so it is\n"
 "deleted."
+msgstr ""
+
+#. §0: `rcases «{h}»`
+#. §1: `obtain ⟨x, hx, rfl⟩ := «{h}»`
+#: Game.Levels.Functions.L03_image_union
+msgid "You can use §0 followed by §1."
 msgstr ""
 
 #: Game.Levels.Inter.L05subint
@@ -4280,6 +4363,11 @@ msgstr ""
 msgid "Our first step is to introduce an object §0 into the proof.  To do this, type §1.\n"
 "We have already seen that the §2 tactic can be used to introduce a new *assumption* into a\n"
 "proof.  This step illustrates a second use of §3: introducing a new *object* into a proof."
+msgstr ""
+
+#. §0: `obtain ⟨x, hxA, rfl⟩ := «{H}»`
+#: Game.Levels.Functions.L02_image
+msgid "Explicitly, you can write §0."
 msgstr ""
 
 #. §0: `A`
@@ -4420,11 +4508,22 @@ msgid "The §0 tactic is smart enough to figure out some things on its own.  If 
 "will figure out that in this case, §8 has to be applied to §9 and §10."
 msgstr ""
 
+#: Game.Levels.Functions.L06_preimage_union
+#: Game.Levels.Functions.L07_preimage_intersection
+msgid "Try to solve it using what you've learned so far! Hints are available if you get stuck."
+msgstr ""
+
 #. §0: $f \\colon X \\to Y$
 #. §1: $U \\subset Y$
 #. §2: $f^{-1}(U)$
 #: Game.Levels.Continuous.L01_continuous
 msgid "If §0 and §1 is closed, then §2 is closed."
+msgstr ""
+
+#. §0: `obtain`
+#. §1: `«{h}»`
+#: Game.Levels.Functions.L11_composition
+msgid "As usual when dealing with images, you can use §0 to unwrap the hypothesis §1."
 msgstr ""
 
 #. §0: `h2 : x ∉ B`
