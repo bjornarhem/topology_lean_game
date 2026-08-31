@@ -1,28 +1,27 @@
-FROM node:20
+FROM node:22
 
-WORKDIR /
+# Set default shell to bash
+SHELL ["/bin/bash", "-c"]
 
-COPY ./lean-toolchain /lean-toolchain
+# ADD ./* GameSkeleton/
 
-USER node
+# install curl, git and nodejs
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get install -y git && \
+    apt-get install -y python3 && \
+    apt-get clean
 
-WORKDIR /home/node
+# install lean4game
+#COPY lean-toolchain .
+#COPY npm-install.sh .
 
-RUN export LEAN_VERSION="$(cat /lean-toolchain | grep -oE '[^:]+$')" && git clone --depth 1 --branch $LEAN_VERSION https://github.com/leanprover-community/lean4game.git
+#RUN chmod +x npm-install.sh
+#RUN ./npm-install.sh
 
-WORKDIR /
+# install lean
+#COPY lean-install.sh .
+#RUN chmod +x lean-install.sh
+#RUN ./lean-install.sh
 
-USER root
-
-ENV ELAN_HOME=/usr/local/elan \
-  PATH=/usr/local/elan/bin:$PATH
-
-SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
-
-RUN export LEAN_VERSION="$(cat /lean-toolchain)" && \
-  curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --no-modify-path --default-toolchain $LEAN_VERSION; \
-    chmod -R a+w $ELAN_HOME; \
-    elan --version; \
-    lean --version; \
-    leanc --version; \
-    lake --version;
+#CMD ["bash"]

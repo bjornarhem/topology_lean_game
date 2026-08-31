@@ -4,6 +4,8 @@ open Set
 
 namespace TTG
 
+variable {U : Type}
+
 World "FamUnion"
 Level 3
 Title "Union of larger family is larger"

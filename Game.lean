@@ -36,8 +36,8 @@ Some of the worlds in this game are from the Set Theory Game, created by Daniel 
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "English"
-CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
+CaptionShort "The topology game"
+CaptionLong "Learn to work with topological spaces in Lean."
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
 

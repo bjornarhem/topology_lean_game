@@ -15,7 +15,7 @@ The final level in this world!
 TheoremDoc TTG.preimage_composition as "preimage_composition" in "function"
 
 /-- Show that $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$. -/
-Statement preimage_composition {X Y : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by
+Statement preimage_composition {X Y Z : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by
   ext x
   apply Iff.intro
 
