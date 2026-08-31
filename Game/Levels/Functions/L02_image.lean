@@ -8,7 +8,7 @@ Level 2
 Title "Images of functions"
 
 Introduction "
-If $f \\colon X \\to Y$ and $A \\in X$, then the image of $A$ under $f$ is the set
+If $f \\colon X \\to Y$ and $A \\subseteq X$, then the image of $A$ under $f$ is the set
 $f(A) = \\{ f(x) \\mid x \\in A \\}$. In Lean, this is denoted `f '' A` or `image f A`.
 
 A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.
