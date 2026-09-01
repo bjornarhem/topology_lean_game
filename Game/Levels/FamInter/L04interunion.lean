@@ -1,5 +1,5 @@
---import Game.Levels.FamInter.L03interpair
-import Game.Levels.FamInter.L02intersubinter
+import Game.Levels.FamInter.L03interpair
+--import Game.Levels.FamInter.L02intersubinter
 
 open Set
 
@@ -8,7 +8,7 @@ namespace TTG
 variable {U : Type}
 
 World "FamInter"
-Level 3
+Level 4
 Title "Intersection of a union of families"
 
 Introduction

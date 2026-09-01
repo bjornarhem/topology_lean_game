@@ -1,5 +1,5 @@
---import Game.Levels.FamUnion.L04unionpair
-import Game.Levels.FamUnion.L03unionsubunion
+import Game.Levels.FamUnion.L04unionpair
+--import Game.Levels.FamUnion.L03unionsubunion
 
 open Set
 
@@ -8,7 +8,7 @@ namespace TTG
 variable {U : Type}
 
 World "FamUnion"
-Level 4
+Level 5
 Title "Union of a union"
 
 Introduction

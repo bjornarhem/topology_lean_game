@@ -7,7 +7,7 @@ namespace TTG
 variable {U : Type}
 
 World "FamInter"
-Level 4
+Level 5
 Title "Subset of an intersection"
 
 Introduction

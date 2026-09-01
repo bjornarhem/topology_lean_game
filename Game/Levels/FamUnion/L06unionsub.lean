@@ -7,7 +7,7 @@ namespace TTG
 variable {U : Type}
 
 World "FamUnion"
-Level 5
+Level 6
 Title "Union subset of a set"
 
 Introduction

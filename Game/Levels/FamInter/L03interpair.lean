@@ -42,14 +42,17 @@ lemma mem_pair (t A B : U) : t ∈ {A, B} ↔ t = A ∨ t = B := by rfl
 
 /-- For any `t`, `A`, and `B`, `mem_pair t A B` is a proof of the statement
 `t ∈ {A, B} ↔ t = A ∨ t = B`. -/
-TheoremDoc TTG.mem_pair as "mem_pair" in "{ }"
+TheoremDoc TTG.mem_pair as "mem_pair" in "⋂₀⋃₀"
 
 NewTheorem TTG.mem_pair
 
-TheoremTab "{ }"
+TheoremTab "⋂₀⋃₀"
 
-/-- Suppose $A$ and $B$ are sets.  Then $A \cap B = \bigcap \{A, B\}$. -/
-Statement (A B : Set U) : A ∩ B = ⋂₀ {A, B} := by
+/-- For any two sets $A$ and $B$, we have $A ∩ B = ⋂₀ {A, B}$. -/
+TheoremDoc TTG.sInter_pair as "sInter_pair" in "⋂₀⋃₀"
+
+/-- -/
+Statement sInter_pair (A B : Set U) : A ∩ B = ⋂₀ {A, B} := by
   ext x
   apply Iff.intro
   intro h1

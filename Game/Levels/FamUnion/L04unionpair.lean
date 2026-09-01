@@ -16,8 +16,11 @@ In this level, you'll show that, as with intersections, family unions generalize
 unions we studied in Union World.
 "
 
+/-- For any two sets $A$ and $B$, we have $A ∪ B = ⋃₀ {A, B}$. -/
+TheoremDoc TTG.sUnion_pair as "sUnion_pair" in "⋂₀⋃₀"
+
 /-- Suppose $A$ and $B$ are sets.  Then $A \cup B = \bigcup \{A, B\}$. -/
-Statement (A B : Set U) : A ∪ B = ⋃₀ {A, B}:= by
+Statement sUnion_pair (A B : Set U) : A ∪ B = ⋃₀ {A, B}:= by
   ext x
   apply Iff.intro
   intro h1

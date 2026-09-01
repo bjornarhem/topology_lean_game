@@ -1,5 +1,4 @@
--- import Game.Levels.FamUnion.L07eltwiseinter --It imports all previous levels.
-import Game.Levels.FamUnion.L06unionsub
+import Game.Levels.FamUnion.L07eltwiseinter
 
 World "FamUnion"
 Title "Family Union World"

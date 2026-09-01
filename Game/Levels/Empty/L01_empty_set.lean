@@ -1,5 +1,4 @@
 import Game.Levels.Continuous.L02_is_continuous
-import Game.Levels.FamUnion.L06unionsub
 
 open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
 namespace TTG
