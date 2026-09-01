@@ -16,6 +16,7 @@ TheoremDoc TTG.empty_inter as "empty_inter" in "∅"
 
 /-- For any set $U$, $∅ ∩ U = ∅$. -/
 Statement empty_inter {X : Type} (A : Set X) : (∅ ∩ A = ∅) := by
+  Hint (hidden:=true) "Remember that you can `apply Subset.antisymm` to prove that two sets are equal. This changes the goal into two subset inclusions. Do you see how one of them follows directly from something you've already proven?"
   apply Subset.antisymm
   intro x h
   rw [mem_inter_iff] at h

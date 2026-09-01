@@ -28,6 +28,7 @@ Statement image_composition {X Y Z : Type} (A : Set X) (f : X → Y) (g : Y → 
   apply Iff.intro
 
   intro h
+  Hint (hidden:=true) "As usual when dealing with images, you can use `obtain` to obtain an element `x` in `{A}` such that `({g} ∘ {f}) x = {y}`."
   obtain ⟨x, hx, rfl⟩ := h
   Hint "Try 'rewrite [Function.comp_apply]'."
   rewrite [Function.comp_apply]
@@ -38,6 +39,7 @@ Statement image_composition {X Y Z : Type} (A : Set X) (f : X → Y) (g : Y → 
   rfl
 
   intro h
+  Hint (hidden:=true) "As usual when dealing with images, you can use `obtain` to unwrap the hypothesis `{h}`."
   obtain ⟨y, hy, rfl⟩ := h
   obtain ⟨x, hx, rfl⟩ := hy
   Hint "Now, you can use `use` to finish the subgoal. Try `use {x}`."

@@ -21,19 +21,22 @@ TheoremDoc TTG.preimage_complement as "preimage_complement" in "function"
 
 /-- Show that $f^{-1}(A^c) = f^{-1}(A)^c$. -/
 Statement preimage_complement {X Y : Type} (A : Set Y) (f : X → Y) : f ⁻¹' (Aᶜ) = (f ⁻¹' A)ᶜ := by
-  Hint "In this level, it can be useful to use `rw [mem_compl_iff]` or `rw [mem_compl_iff] at h` to rewrite at statement `a ∈ Sᶜ` to `a ∉ S`."
+  Hint "In this level, it can be useful to use `rewrite [mem_compl_iff]` or `rewrite [mem_compl_iff] at h` to rewrite at statement `a ∈ Sᶜ` to `a ∉ S`."
   Hint "Another useful technique is to use `by_contra` to do a proof by contradiction."
   ext y
   apply Iff.intro
   intro h
   rewrite [mem_compl_iff]
+  Hint (hidden:=true) "`{f} {y} ∈ {A}ᶜ` is equivalent to `{f} {y} ∉ {A}`, which in turn is equivalent to `({f} {y} ∈ {A}) → False`. Do you see how we can get a proof by contradiction?"
   by_contra h2
   exact h h2
 
   intro h
   rewrite [mem_compl_iff] at h
+  Hint (hidden:=true) "You can't use `rewrite [mem_compl_iff]` directly here, because the goal is not of the correct form. Rewriting with `Set.mem_preimage` gives you the desired form."
   rewrite [Set.mem_preimage]
   rewrite [mem_compl_iff]
+  Hint (hidden:=true) "`{f} {y} ∈ {A}ᶜ` is equivalent to `{f} {y} ∉ {A}`, which in turn is equivalent to `({f} {y} ∈ {A}) → False`. Do you see how we can get a proof by contradiction?"
   by_contra h2
   exact h h2
 

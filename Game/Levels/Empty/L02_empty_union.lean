@@ -25,6 +25,6 @@ Statement sUnion_empty {X : Type} : ⋃₀ (∅ : Set (Set X)) = (∅ : Set X)  
   rw [mem_sUnion] at h
   obtain ⟨t, h1, _⟩ := h
   by_contra
-  exact Set.not_mem_empty t h1
+  exact Set.notMem_empty t h1
 
   apply empty_subset

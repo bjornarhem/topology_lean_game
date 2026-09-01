@@ -8,7 +8,7 @@ Level 2
 Title "Images of functions"
 
 Introduction "
-If $f \\colon X \\to Y$ and $A \\in X$, then the image of $A$ under $f$ is the set
+If $f \\colon X \\to Y$ and $A \\subseteq X$, then the image of $A$ under $f$ is the set
 $f(A) = \\{ f(x) \\mid x \\in A \\}$. In Lean, this is denoted `f '' A` or `image f A`.
 
 A hypothesis `y ∈ f '' A ` decomposes as a triple `⟨x, hxA, rfl⟩`, where `x` is an element of `A`, `hxA` is the proof that `x ∈ A`, and `rfl` is the proof that `f x = y`. This is a common pattern when working with images in Lean.
@@ -31,8 +31,10 @@ Statement image_subset {X Y : Type} (A B : Set X) (f : X → Y) (h : A ⊆ B) : 
   Hint "As usual when proving an implication, we can begin with `intro H`."
   intro H
   Hint "Use `obtain` to decompose the hypothesis `{y} ∈ f '' A` into a triple ⟨x, hxA, rfl⟩."
+  Hint (hidden:=true) "Explicitly, you can write `obtain ⟨x, hxA, rfl⟩ := {H}`."
   obtain ⟨x, hxA, rfl⟩ := H
   Hint "You can use the keyword `have` to create the hypothesis `{x} ∈ B`."
+  Hint (strict:=true) (hidden:=true) "Try `have hxB : {x} ∈ B := {h} {hxA}`."
   have hxB : x ∈ B := h hxA
   Hint "You can now complete the proof using `exact ⟨ {x}, {hxB}, rfl ⟩`."
   exact ⟨x, hxB, rfl⟩

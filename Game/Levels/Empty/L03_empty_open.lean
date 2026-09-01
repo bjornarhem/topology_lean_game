@@ -29,4 +29,4 @@ Statement {X : Type} [h : TopologicalSpace X] : IsOpen (∅ : Set X) := by
   intro t
   intro h2
   by_contra
-  exact Set.not_mem_empty t h2
+  exact Set.notMem_empty t h2

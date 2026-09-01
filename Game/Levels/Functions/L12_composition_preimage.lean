@@ -18,6 +18,7 @@ TheoremDoc TTG.preimage_composition as "preimage_composition" in "function"
 Statement preimage_composition {X Y Z : Type} (A : Set Z) (f : X → Y) (g : Y → Z) : (g ∘ f) ⁻¹' (A) = f ⁻¹' (g ⁻¹' A)  := by
   ext x
   apply Iff.intro
+  Hint (hidden:=true) "How can you manipulate expressions involving membership in preimages?"
 
   intro h
   rewrite [Set.mem_preimage]

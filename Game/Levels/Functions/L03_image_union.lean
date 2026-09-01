@@ -21,7 +21,7 @@ Statement image_union {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) 
   Hint "You can apply Iff.intro to split the goal into two subgoals."
   apply Iff.intro
 
-  Hint "As in the previous level, you can use `intro` followed by `obtain` here."
+  Hint (hidden:=true) "As in the previous level, you can use `intro` followed by `obtain` here. Recall that you can use the tactics tab to see the syntax for `obtain`."
   intro h
   obtain ⟨x, hx, rfl⟩ := h
   Hint "You can use `rcases {hx}` to split the proof into two cases."
@@ -35,9 +35,11 @@ Statement image_union {X Y : Type} (A B : Set X) (f : X → Y) : f '' (A ∪ B) 
 
   Hint "The second subgoal can be solved similarly."
   intro h
+  Hint (hidden:=true) "You can use `rcases {h}` followed by `obtain ⟨x, hx, rfl⟩ := {h}`."
   rcases h
   obtain ⟨x, hx, rfl⟩ := h
   Hint "The theorems `Or.inl` and `Or.inr` can be useful here."
+  Hint (hidden:=true) "Try `exact ⟨{x}, Or.inl {hx}, rfl⟩`."
   exact ⟨x, Or.inl hx, rfl⟩
   obtain ⟨x, hx, rfl⟩ := h
   exact ⟨x, Or.inr hx, rfl⟩
