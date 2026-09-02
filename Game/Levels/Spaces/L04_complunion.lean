@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L03_complinter
 
-open Set (mem_sInter mem_sUnion)
+open Set
 
 namespace TTG
 
