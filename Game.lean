@@ -13,6 +13,7 @@ import Game.Levels.Spaces
 import Game.Levels.Continuous
 import Game.Levels.Empty
 import Game.Levels.Connected
+import Game.Levels.Compact
 
 -- Here's what we'll put on the title screen
 Title "The topology game"
