@@ -1,4 +1,4 @@
-import Game.Levels.Spaces.L07_pairclosed -- it imports all previous levels
+import Game.Levels.Spaces.L08_localopen -- it imports all previous levels
 -- import Game.Levels.Spaces.L03_empty
 
 World "Spaces"
