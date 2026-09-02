@@ -1,6 +1,6 @@
 import Game.Levels.Empty.L05_empty_preimage
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
+open Set
 namespace TTG
 
 World "Empty"

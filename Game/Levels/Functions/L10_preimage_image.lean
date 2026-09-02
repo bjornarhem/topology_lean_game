@@ -1,6 +1,6 @@
 import Game.Levels.Functions.L09_image_preimage
 
-open Set (mem_inter_iff mem_union Subset.antisymm)
+open Set
 namespace TTG
 
 World "Functions"

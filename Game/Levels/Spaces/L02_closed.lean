@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L01_spaces
 
-open Set (mem_inter_iff mem_union Subset.antisymm)
+open Set
 namespace TTG
 
 World "Spaces"

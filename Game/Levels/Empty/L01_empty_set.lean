@@ -1,6 +1,6 @@
 import Game.Levels.Continuous.L02_is_continuous
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
+open Set
 namespace TTG
 
 World "Empty"

@@ -1,6 +1,6 @@
 import Game.Levels.Empty.L08_empty_inter
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter)
+open Set
 namespace TTG
 
 World "Connected"

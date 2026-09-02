@@ -1,6 +1,6 @@
 import Game.Levels.Continuous.L01_continuous
 
-open Set (mem_inter_iff mem_union Subset.antisymm)
+open Set
 namespace TTG
 
 World "Continuous"
