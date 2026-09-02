@@ -1,7 +1,7 @@
 import Game.Levels.Combo
 import Game.Levels.FamUnion
 
-open Set (mem_inter_iff mem_union Subset.antisymm)
+open Set
 namespace TTG
 
 World "Spaces"

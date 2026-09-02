@@ -1,7 +1,7 @@
 import Game.Levels.Functions
 import Game.Levels.Spaces
 
-open Set (mem_inter_iff mem_union Subset.antisymm)
+open Set
 namespace TTG
 
 World "Continuous"
