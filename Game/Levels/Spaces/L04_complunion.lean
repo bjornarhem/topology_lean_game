@@ -9,12 +9,13 @@ Level 4
 Title "Complement of Union"
 
 Introduction "
-
+Prove the symmetric result of the previous exercise.
 "
 
-/-- For any family of sets $F$, we have $(⋃ A) ^c = ⋂ A^c$. -/
+/-- For any family of sets $F$, we have $(⋃_{A ∈ F} A) ^c = ⋂ _{A ∈ F} A^c$. -/
 TheoremDoc TTG.compl_sUnion as "compl_sUnion" in "⋂₀⋃₀"
 
+/-- For any family of sets $F$, we have $(⋃_{A ∈ F} A) ^c = ⋂ _{A ∈ F} A^c$. -/
 Statement compl_sUnion {U : Type} (F : Set (Set U)) : (⋃₀ F)ᶜ = ⋂₀ {B | ∃ A ∈ F, B = Aᶜ} := by
   ext x
   constructor
