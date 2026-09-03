@@ -28,10 +28,6 @@ gives a function `g : Y → X` together with a proof `hg : ∀ y, P (g y) y`.
 
 In this level, we apply `choose!` to prove that if a function is surjective, then it has a
 right inverse.
-
-(The assumption `[Nonempty X]` says that `X` has at least one element.  The tactic `choose!`
-always builds a function defined on all of `Y`, so it needs somewhere to send the elements
-it has no witness for.)
 "
 
 /-- If $f$ is a surjective function from a nonempty set, then $f$ has a right inverse. -/
