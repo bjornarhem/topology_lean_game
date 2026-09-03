@@ -9,19 +9,15 @@ Title "Compact sets"
 
 Introduction "
 Now we can define compact sets.
-
 A *cover* of a set `s` is a family of sets whose union contains `s`.  A set is *compact* if
 every open cover of it has a finite subcover.  In Lean:
-
 ```
 def IsCompact {X : Type} [TopologicalSpace X] (s : Set X) : Prop :=
   ∀ F : Set (Set X), (∀ U ∈ F, IsOpen U) → s ⊆ ⋃₀ F →
     ∃ G ⊆ F, G.Finite ∧ s ⊆ ⋃₀ G
 ```
-
 In words: for every family `F` of open sets with `s ⊆ ⋃₀ F`, there is a subfamily
 `G ⊆ F` which is finite and still satisfies `s ⊆ ⋃₀ G`.
-
 Recall that you can enter the symbol `⋃₀` by typing `\\U0`, and `∅` by typing `\\empty`.
 
 As with `IsConnected`, you can treat `IsCompact` as a theorem: typing `rw [IsCompact]` will

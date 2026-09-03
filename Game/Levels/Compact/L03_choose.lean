@@ -10,20 +10,16 @@ Title "Pick and choose"
 Introduction "
 In this level, we introduce a new tactic, `choose!`,
 which will be useful when working with compact sets.
-
 While `obtain` is a tactic to extract a witness from a statement of the form `∃ x, P x`,
 `choose!` is a tactic to extract several witnesses from a statement of the form
 `∀ y, ∃ x, P x y`.
 
 The tactic `obtain` unpacks a single `∃` statement, while `choose!` unpacks many `∃`
 statements at once.
-
 Suppose you have a hypothesis `h : ∀ y, ∃ x, P x y`. Writing
-
 ```
 choose! g hg using h
 ```
-
 gives a function `g : Y → X` together with a proof `hg : ∀ y, P (g y) y`.
 
 In this level, we apply `choose!` to prove that if a function is surjective, then it has a
