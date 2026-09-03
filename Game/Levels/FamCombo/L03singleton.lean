@@ -1,4 +1,4 @@
-import Game.Levels.FamUnion.L07eltwiseinter
+import Game.Levels.FamCombo.L02compinter
 
 open Set
 
@@ -6,8 +6,8 @@ namespace TTG
 
 variable {U : Type}
 
-World "FamUnion"
-Level 8
+World "FamCombo"
+Level 3
 Title "A set that must be a singleton"
 
 Introduction

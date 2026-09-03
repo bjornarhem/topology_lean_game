@@ -25,11 +25,15 @@ Statement IsOpen.union {X : Type} [h : TopologicalSpace X] (U V : Set X) : IsOpe
   Hint "We want to be able to use `isOpen_sUnion` on the set `\{U, V}`. To satisfy the conditions of this theorem,
   first prove the intermediary result: `∀ A ∈ \{U, V}, IsOpen A`"
   have hUV : ∀ A ∈ {U, V}, IsOpen A := by
-    Hint (hidden := true) "`rintro A (rfl | rfl)` will automatically introduce `A`
-    and split the statement `A ∈ \{U, V} into two cases."
-    rintro A (rfl | rfl)
+    Hint (hidden := true) "Since the goal starts with a universal quantifier, you should use `intro`."
+    intro A hA
+    Hint "Lean interprets {hA} as `{A} = U ∨ {A} ∈ \{V}`."
+    Hint (hidden := true) "Use `rcases` to decompose {hA}. Using `rcases {hA} with rfl | rfl`
+    will automatically replace {A} with $U$ and $V$ respectively without adding an extra hypothesis."
+    rcases hA with rfl | rfl
     · exact hU
     · exact hV
   Hint (hidden := true) "Make use of `isOpen_sUnion` and `sUnion_pair`."
   have := isOpen_sUnion hUV
-  rwa [←sUnion_pair] at this
+  rw [←sUnion_pair] at this
+  exact this

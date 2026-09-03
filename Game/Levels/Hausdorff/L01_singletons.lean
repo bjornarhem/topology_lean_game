@@ -1,6 +1,6 @@
 import Game.Levels.Empty
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter mem_setOf)
+open Set
 namespace TTG
 
 World "Hausdorff"
@@ -74,7 +74,7 @@ Statement {X : Type} [h : TopologicalSpace X] [T2 : T2Space X] (U V : Set X) : �
     Hint (hidden := true) "Combining {abs}, {zinU} and {xinV} should yield
     a statement in contradiction with {UVdisj}."
     rw [abs] at zinU
-    have UVndisj : (U ∩ V).Nonempty := by
+    have UVndisj : Set.Nonempty (U ∩ V) := by
       rw [Set.nonempty_def]
       exact ⟨x, zinU, xinV⟩
     rw [nonempty_iff_not_empty] at UVndisj

@@ -6,6 +6,7 @@ import Game.Levels.Union
 import Game.Levels.Combo
 import Game.Levels.FamInter
 import Game.Levels.FamUnion
+import Game.Levels.FamCombo
 
 -- Created by me
 import Game.Levels.Functions
@@ -46,6 +47,7 @@ CaptionLong "Learn to work with topological spaces in Lean."
 Dependency Intersection → Union
 Dependency Union → Spaces
 Dependency FamInter → FamUnion
+Dependency FamUnion → FamCombo
 Dependency Continuous → Empty
 Dependency Empty → Connected
 

@@ -32,15 +32,15 @@ Statement isOpen_iff_forall_mem_open {X : Type} [h : TopologicalSpace X] (U : Se
     precise proofs of each property."
     intro hU x xinU
     use U
-  · intro prop
+  · intro pr
     Hint "It might be useful to prove the statement `U = ⋃₀ \{V | V ⊆ U ∧ IsOpen V}` before carrying on."
     have : U = ⋃₀ {V | V ⊆ U ∧ IsOpen V} := by
       ext x
       constructor
       · intro xinU
         rw [mem_sUnion]
-        Hint (hidden := true) "`{prop} {x} {xinU}` has type `∃ V ⊆ U, IsOpen V ∧ x ∈ V`. Decompose it with `obtain`."
-        obtain ⟨V, VssU, hV, xinV⟩ := prop x xinU
+        Hint (hidden := true) "`{pr} {x} {xinU}` has type `∃ V ⊆ U, IsOpen V ∧ x ∈ V`. Decompose it with `obtain`."
+        obtain ⟨V, VssU, hV, xinV⟩ := pr x xinU
         use V
         constructor
         · rw [mem_setOf]

@@ -13,10 +13,7 @@ Prove the symmetric result of the previous exercise.
 "
 
 /-- For any family of sets $F$, we have $(⋃_{A ∈ F} A) ^c = ⋂ _{A ∈ F} A^c$. -/
-TheoremDoc TTG.compl_sUnion as "compl_sUnion" in "⋂₀⋃₀"
-
-/-- For any family of sets $F$, we have $(⋃_{A ∈ F} A) ^c = ⋂ _{A ∈ F} A^c$. -/
-Statement compl_sUnion {U : Type} (F : Set (Set U)) : (⋃₀ F)ᶜ = ⋂₀ {B | ∃ A ∈ F, B = Aᶜ} := by
+Statement {U : Type} (F : Set (Set U)) : (⋃₀ F)ᶜ = ⋂₀ {B | ∃ A ∈ F, B = Aᶜ} := by
   ext x
   constructor
   · intro h; rw [mem_compl_iff, mem_sUnion] at h; push_neg at h

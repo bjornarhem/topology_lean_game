@@ -1,5 +1,5 @@
-import Game.Levels.Combo
-import Game.Levels.FamUnion
+import Game.Levels.FamCombo
+import Game.Levels.Functions
 
 open Set
 namespace TTG

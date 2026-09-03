@@ -15,10 +15,7 @@ about closed sets and viceversa.
 "
 
 /-- For any family of sets $F$, we have $(⋂_{A ∈ F} A) ^c = ⋃ _{A ∈ F} A^c$. -/
-TheoremDoc TTG.compl_sInter as "compl_sInter" in "⋂₀⋃₀"
-
-/-- For any family of sets $F$, we have $(⋂_{A ∈ F} A) ^c = ⋃ _{A ∈ F} A^c$. -/
-Statement compl_sInter {U : Type} (F : Set (Set U)) : (⋂₀ F)ᶜ = ⋃₀ {B | ∃ A ∈ F, B = Aᶜ} := by
+Statement {U : Type} (F : Set (Set U)) : (⋂₀ F)ᶜ = ⋃₀ {B | ∃ A ∈ F, B = Aᶜ} := by
   ext x
   constructor
   · intro h
