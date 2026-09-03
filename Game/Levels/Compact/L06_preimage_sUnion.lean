@@ -15,13 +15,12 @@ Back in Functions World you showed that `f ⁻¹' (A ∪ B) = f ⁻¹' A ∪ f �
 true for a whole family of sets at once: the preimage of `⋃₀ F` is the union of the
 preimages of the members of `F`.
 
-To write \"the family of all preimages of members of `F`\" in Lean, recall that `f ⁻¹' U` is
-notation for `preimage f U`.  So the function sending a set to its preimage is just
-`preimage f`, and the family we want is the image of `F` under it:
-
+To write \"the family of all preimages of members of `F`\" in Lean we use set-builder
+notation, just as you did in Spaces World for families of complements:
 ```
-preimage f '' F
+{B | ∃ U ∈ F, B = f ⁻¹' U}
 ```
+Read this as \"those sets `B` for which there is some `U` in `F` with `B = f ⁻¹' U`\".
 "
 
 /-- The theorem $f^{-1}(\bigcup F) = \bigcup \{f^{-1}(U) : U \in F\}$. -/
@@ -29,7 +28,7 @@ TheoremDoc TTG.preimage_sUnion as "preimage_sUnion" in "⋂₀⋃₀"
 
 /-- Show that $f^{-1}(\bigcup F) = \bigcup \{f^{-1}(U) : U \in F\}$. -/
 Statement preimage_sUnion {X Y : Type} (f : X → Y) (F : Set (Set Y)) :
-    f ⁻¹' (⋃₀ F) = ⋃₀ (preimage f '' F) := by
+    f ⁻¹' (⋃₀ F) = ⋃₀ {B | ∃ U ∈ F, B = f ⁻¹' U} := by
   Hint "As before, `ext x` and then split the `↔`."
   ext x
   apply Iff.intro

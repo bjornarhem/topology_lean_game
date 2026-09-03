@@ -11,7 +11,8 @@ Introduction "
 Now let's show that if `s` and `t` are compact, then so is `s ∪ t`.
 
 You have been provided with another theorem, `Finite.union`, which states that
-the union of two finite sets is finite.
+the union of two finite sets is finite.  It may also be useful to apply `sUnion_union`,
+which you proved back in Family Union World.
 "
 
 /-- The union of two compact sets is compact. -/
@@ -55,22 +56,18 @@ Statement compact_union {X : Type} [TopologicalSpace X] (s t : Set X)
   constructor
   Hint (hidden := true) "This is the new theorem: `Finite.union {hGfin} {hHfin}`."
   · exact Finite.union hGfin hHfin
-  Hint (hidden := true) "Take `x ∈ s ∪ t` and `rcases` it.  In each case the corresponding
-  subfamily already covers that part."
-  · intro x hx
+  Hint "The goal is about `⋃₀ ({G} ∪ {H})`.  A theorem from Family Union World rewrites
+  that as a union of two unions."
+  Hint (hidden := true) "`rw [sUnion_union]` turns the goal into `s ∪ t ⊆ ⋃₀ {G} ∪ ⋃₀ {H}`."
+  · rw [sUnion_union]
+    Hint (hidden := true) "Now `rcases` the assumption `x ∈ s ∪ t`; each case is closed by
+    `{hGcov}` or `{hHcov}` in one step."
+    intro x hx
     rcases hx with hx | hx
-    · obtain ⟨U, hUG, hxU⟩ := hGcov hx
-      use U
-      constructor
-      left
-      exact hUG
-      exact hxU
-    · obtain ⟨U, hUH, hxU⟩ := hHcov hx
-      use U
-      constructor
-      right
-      exact hUH
-      exact hxU
+    left
+    exact hGcov hx
+    right
+    exact hHcov hx
 
 Conclusion "
 Level completed!

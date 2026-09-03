@@ -9,13 +9,15 @@ Title "Finite sets are compact"
 
 Introduction "
 In this level, we prove that every finite set is compact.
+We will use `choose!` again, but in a fuller form than in the previous level.  There the
+hypothesis was `∀ y, ∃ x, f x = y`, and `choose!` handed us a function and a single proof.
+Here the hypothesis will be *guarded* by a membership condition, and the existential
+statement will have *two* parts — so we get a function and two proofs.
 
-We will need to use the `choose!` tactic. Suppose `A : Set X` and `B : Set Y`, and you have
-a hypothesis of the form `h : ∀ x ∈ A, ∃ y ∈ B, P x y`. Then `choose! g hgB hgx using h`
-produces a function `g : X → Y`, together with proofs `hgB : ∀ x ∈ A, g x ∈ B` and
-`hgx : ∀ x ∈ A, P x (g x)`.
+Suppose `A : Set X` and `B : Set Y`, and you have a hypothesis of the form
+`h : ∀ x ∈ A, ∃ y ∈ B, P x y`.  Then `choose! g hgB hgx using h` produces a function
+`g : X → Y`, together with proofs `hgB : ∀ x ∈ A, g x ∈ B` and `hgx : ∀ x ∈ A, P x (g x)`.
 In other words, it picks out a witness for each element of `A`.
-
 Note that `g` is defined on all of `X`, not just on `A`; outside of `A` its values are
 arbitrary, and the two proofs say nothing about them.
 

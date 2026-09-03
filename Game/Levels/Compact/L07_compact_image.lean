@@ -31,11 +31,11 @@ Statement compact_image {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (
     (hf : Continuous f) (s : Set X) (hs : IsCompact s) : IsCompact (f '' s) := by
   Hint (hidden := true) "Start with `intro F hopen hcover`."
   intro F hopen hcover
-  Hint (hidden := true) "Step 1.  Record that the pulled-back family `preimage {f} '' {F}` consists of
-  open sets.  Use `have hpullopen : ∀ V ∈ preimage {f} '' {F}, IsOpen V`"
+  Hint (hidden := true) "Step 1.  Record that the pulled-back family `\{B | ∃ U ∈ {F}, B = {f} ⁻¹' U}` consists of
+  open sets.  Use `have hpullopen : ∀ V ∈ \{B | ∃ U ∈ {F}, B = {f} ⁻¹' U}, IsOpen V`"
   Hint (hidden := true) "After `intro V hV`, use `obtain ⟨U, hUF, rfl⟩ := hV` to see that
   `V` is `f ⁻¹' U` for some `U ∈ {F}`, then apply continuity of `{f}`."
-  have hpullopen : ∀ V ∈ preimage f '' F, IsOpen V := by
+  have hpullopen : ∀ V ∈ {B | ∃ U ∈ F, B = f ⁻¹' U}, IsOpen V := by
     intro V hV
     obtain ⟨U, hUF, rfl⟩ := hV
     exact hf.isOpen_preimage U (hopen U hUF)
@@ -44,7 +44,7 @@ Statement compact_image {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (
   Hint (hidden := true) "Rewrite with `preimage_sUnion` backwards, so that the goal becomes
   `s ⊆ f ⁻¹' (⋃₀ {F})`.  Then chain `preimage_image` and `preimage_subset` with
   `Subset.trans`."
-  have hpullcover : s ⊆ ⋃₀ (preimage f '' F) := by
+  have hpullcover : s ⊆ ⋃₀ ({B | ∃ U ∈ F, B = f ⁻¹' U}) := by
     rewrite [← preimage_sUnion]
     apply Subset.trans (preimage_image s f)
     apply preimage_subset
@@ -57,11 +57,15 @@ Statement compact_image {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (
   Hint (hidden := true) "Step 3.  Every member of `{G}` is the preimage of some member of `{F}`.  State that
   as a single `have`, then feed it to `choose!`."
   Hint (hidden := true) "`have key : ∀ V, V ∈ {G} → ∃ U, U ∈ {F} ∧ f ⁻¹' U = V`, proved with
-  `intro`, `obtain` and `use`."
+  `intro` and `obtain`.  Note that membership in the pulled-back family gives you the
+  equation the other way round, so you will need to `rw` with it."
   have key : ∀ V, V ∈ G → ∃ U, U ∈ F ∧ f ⁻¹' U = V := by
     intro V hV
     obtain ⟨U, hUF, hUV⟩ := hGsub hV
     use U
+    constructor
+    exact hUF
+    rw [hUV]
   Hint (hidden := true) "`choose! g hgF hgeq using {key}` gives you the choice of a member
   of `{F}` for each member of `{G}`."
   choose! g hgF hgeq using key
