@@ -63,9 +63,9 @@ A subset of a finite set is finite.
 If `h : S.Finite` and `h2 : T ⊆ S`, then `Finite.subset h h2` is a proof that
 `T.Finite`.  This can also be written `h.subset h2`.
 -/
-TheoremDoc Set.Finite.subset as "Set.Finite.subset" in "Finite"
+TheoremDoc Set.Finite.subset as "Finite.subset" in "Finite"
 
 /-- `finite_empty` is a proof that the empty set is finite. -/
-TheoremDoc Set.finite_empty as "Set.finite_empty" in "Finite"
+TheoremDoc Set.finite_empty as "finite_empty" in "Finite"
 
 NewTheorem Set.Finite.subset Set.finite_empty

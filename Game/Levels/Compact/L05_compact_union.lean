@@ -82,5 +82,5 @@ The union of two finite sets is finite.
 If `h1 : S.Finite` and `h2 : T.Finite`, then `Finite.union h1 h2` is a proof that
 `(S ∪ T).Finite`.  This can also be written `h1.union h2`.
 -/
-TheoremDoc Set.Finite.union as "Set.Finite.union" in "Finite"
+TheoremDoc Set.Finite.union as "Finite.union" in "Finite"
 NewTheorem Set.Finite.union

@@ -74,5 +74,5 @@ The image of a finite set is finite.
 If `h : S.Finite` then `Finite.image f h` is a proof of `(f '' S).Finite`. This can
 also be written `h.image f`.
 -/
-TheoremDoc Set.Finite.image as "Set.Finite.image" in "Finite"
+TheoremDoc Set.Finite.image as "Finite.image" in "Finite"
 NewTheorem Set.Finite.image
