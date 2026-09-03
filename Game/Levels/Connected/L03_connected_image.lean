@@ -20,7 +20,7 @@ Good luck!
 "
 
 /-- The continuous image of a connected set is connected -/
-Statement {X Y : Type} [hX : TopologicalSpace X] [hY : TopologicalSpace Y] (f : X → Y) (hf : Continuous f) (A : Set X) : (IsConnected A) → IsConnected (f '' A) := by
+Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (hf : Continuous f) (A : Set X) : (IsConnected A) → IsConnected (f '' A) := by
   -- First part: Prove that f(A) is nonempty
   intro hA
   apply And.intro

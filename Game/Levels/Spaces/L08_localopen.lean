@@ -21,7 +21,7 @@ In other words, every topology is a basis which generates itself.
 TheoremDoc TTG.isOpen_iff_forall_mem_open as "isOpen_iff_forall_mem_open" in "topology"
 
 /--$U$ is open iff every point $x ∈ U$ admits an open neighbourhood $V$ contained in $U$.-/
-Statement isOpen_iff_forall_mem_open {X : Type} [h : TopologicalSpace X] (U : Set X) :
+Statement isOpen_iff_forall_mem_open {X : Type} [TopologicalSpace X] (U : Set X) :
     IsOpen U ↔ ∀ x ∈ U, ∃ V ⊆ U, IsOpen V ∧ x ∈ V := by
   constructor
   · Hint (hidden := true) "This implication is quite direct.

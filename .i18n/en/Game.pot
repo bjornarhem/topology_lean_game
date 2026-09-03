@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02\n"
+"POT-Creation-Date: 2026-09-03\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -23,6 +23,44 @@ msgid "The typeclass §0 is defined as follows:\n"
 "§1\n"
 "\n"
 "If you have hypotheses §2 and §3, then §4 is a proof of §5."
+msgstr ""
+
+#. §0: `T2Space`
+#. §1: `T2Space X`
+#. §2: `T2Space`
+#. §3: ```
+#. T2Space (X : Type u) [TopologicalSpace X] : Prop where
+#.   t2 : ∀ x y : X, x ≠ y → ∃ (u : Set X) (v : Set Y), isOpen u ∧ isOpen v ∧ x ∈ u ∧ x ∈ v ∧ u ∩ v = ∅
+#. ```
+#. §4: `T2Space`
+#. §5: `[TopologicalSpace X]`
+#. §6: `X`
+#. §7: `T2Space`
+#. §8: `TopologicalSpace`
+#. §9: `T2Spaces`
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "In this level, we introduce the §0 typeclass.\n"
+"The proposition §1 means that the topological space X is a Hausdorff space.\n"
+"\n"
+"We define the §2 typeclass in the following manner:\n"
+"\n"
+"§3\n"
+"\n"
+"An important thing to notice is that §4 does not rehash the properties of a general topological space.\n"
+"Also, the predicate §5 appears in its sequence of arguments.\n"
+"Thus, we can only say §6 is a §7 when we already know it is a §8.\n"
+"\n"
+"Note also that we call Hausdorff spaces §9.\n"
+"This is a mathematical convention that exists outside of Lean to describe several separation axioms:\n"
+"\n"
+"T_1 space: a space where all singletons are closed\n"
+"T_2 space (Hausdorff): a space where two distinct points can be separated\n"
+"T_3 space (regular): a T_1 space where a point and a closed set can be separated\n"
+"T_4 space (normal): a T_1 space where two closed sets can be separated\n"
+"\n"
+"Why do you think they are arranged in this particular order?\n"
+"\n"
+"As a hint to the question above, in this exercise we will prove that all T_2 spaces are also T_1 spaces."
 msgstr ""
 
 #. §0: `«{hf}».isOpen_preimage`
@@ -102,6 +140,10 @@ msgid "You can use the §0 tactic to work backwards from the goal.  Suppose you 
 "establish the goal, then §8 will set all of the needed proofs as goals."
 msgstr ""
 
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Now you can use the fact that the space is Hausdorff."
+msgstr ""
+
 #: Game.Levels.Compact.L05_compact_union
 msgid "Union of two compact sets"
 msgstr ""
@@ -138,6 +180,14 @@ msgstr ""
 #: Game.Levels.Functions.L06_preimage_union
 #: Game.Levels.Functions.L06_preimage_union
 msgid "You can use §0 to split the proof into two cases. This works because §1 and §2 are the same by definition, so no rewriting is needed. (§3 can make the conversion explicit if you prefer to see it.)"
+msgstr ""
+
+#. §0: `isOpen_sUnion`
+#. §1: `{U, V}`
+#. §2: `∀ A ∈ {U, V}, IsOpen A`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "We want to be able to use §0 on the set §1. To satisfy the conditions of this theorem,\n"
+"first prove the intermediary result: §2"
 msgstr ""
 
 #. §0: `rewrite`
@@ -190,6 +240,10 @@ msgstr ""
 msgid "You can use §0 to write out the meaning of the goal."
 msgstr ""
 
+#: Game.Levels.FamUnion.L08singleton
+msgid "A set that must be a singleton"
+msgstr ""
+
 #. §0: `∅`
 #. §1: $X$
 #. §2: $X$
@@ -204,6 +258,11 @@ msgid "In this level, we introduce the empty set, denoted §0.\n"
 "The only thing you need to know about the empty set is that it has no elements.\n"
 "This is stated in the theorem §3.\n"
 "For any §4, §5 is a proof that §6."
+msgstr ""
+
+#. §0: `U = ⋃₀ {V | V ⊆ U ∧ IsOpen V}`
+#: Game.Levels.Spaces.L08_localopen
+msgid "It might be useful to prove the statement §0 before carrying on."
 msgstr ""
 
 #. §0: `«{x}» ∈ A ∨ «{x}» ∈ B`
@@ -299,8 +358,10 @@ msgid "Of course, you should begin by introducing the assumption\n"
 msgstr ""
 
 #. §0: $F$
-#. §1: $(⋂ A) ^c = ⋃ A^c$
+#. §1: $(⋂_{A ∈ F} A) ^c = ⋃ _{A ∈ F} A^c$
 #: Game.Levels.Spaces.L03_complinter
+#: Game.Levels.Spaces.L03_complinter
+#: Game.Levels.Spaces.L04_complunion
 #: Game.Levels.Spaces.L04_complunion
 msgid "For any family of sets §0, we have §1."
 msgstr ""
@@ -424,6 +485,10 @@ msgid "Fortunately, we can use the theorem §0 to prove §1 and\n"
 "replace §11 with §12."
 msgstr ""
 
+#: Game.Levels.Hausdorff
+msgid "Hausdorff"
+msgstr ""
+
 #: Game.Levels.Union.L01or
 msgid "Now we're ready to start proving theorems about unions."
 msgstr ""
@@ -527,9 +592,23 @@ msgstr ""
 msgid "Remember that we proved the theorem §0 the Empty world, which says that a set is §1 if and only it is not equal to the empty set. You can use that to create a contradiction here."
 msgstr ""
 
+#. §0: $A$
+#. §1: $F$
+#. §2: $\\bigcup F = A$
+#. §3: $A \\in F$
+#. §4: $A$
+#: Game.Levels.FamUnion.L08singleton
+msgid "Suppose §0 is a set, and for every family of sets §1, if §2 then §3.\n"
+"Then §4 must be a singleton set."
+msgstr ""
+
 #. §0: $⋃ ∅ = ∅$
 #: Game.Levels.Empty.L02_empty_union
 msgid "The union over the empty family of sets is the empty set. I.e., §0."
+msgstr ""
+
+#: Game.Levels.Spaces.L08_localopen
+msgid "World completed! Now you have a solid grasp on working with open and closed sets!"
 msgstr ""
 
 #. §0: $A$
@@ -816,6 +895,10 @@ msgid "So far the elements of all of our sets have been objects in the universe 
 "that belong to every element of §20."
 msgstr ""
 
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Rewrite «{hy}» into a more suitable form."
+msgstr ""
+
 #. §0: `Exists.intro A «{h}»`
 #. §1: `exact Exists.intro A «{h}»`
 #: Game.Levels.FamUnion.L01proveexists
@@ -850,6 +933,14 @@ msgid "If you had §0 and §1, then §2\n"
 "theorem §9 could be applied to prove the goal, if only you had proofs of\n"
 "§10 and §11.  So it will set those two statements as goals, to be proven\n"
 "one after the other."
+msgstr ""
+
+#. §0: `hU : IsOpen U`
+#. §1: `hV : IsOpen V`
+#. §2: `isOpen_inter hU hV`
+#. §3: `IsOpen (U ∩ V)`
+#: Game.Levels.Spaces.L01_spaces
+msgid "Given §0 and §1, §2 proves §3."
 msgstr ""
 
 #. §0: `A`
@@ -898,6 +989,7 @@ msgstr ""
 #. §0: $U$
 #. §1: $V$
 #. §2: $U ∩ V$
+#: Game.Levels.Spaces.L07_pairclosed
 #: Game.Levels.Spaces.L07_pairclosed
 msgid "If §0 and §1 are closed sets, then §2 is also closed."
 msgstr ""
@@ -1228,6 +1320,45 @@ msgid "§0\n"
 "two hypotheses."
 msgstr ""
 
+#. §0: `TopologicalSpace`
+#. §1: ```
+#. class TopologicalSpace (X : Type u) where
+#.   protected IsOpen : Set X → Prop
+#.   protected isOpen_univ : IsOpen univ
+#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
+#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
+#. ```
+#. §2: `U : Set X`
+#. §3: `IsOpen U`
+#. §4: `U`
+#. §5: `x ∈ U`
+#. §6: `A ⊆ B`
+#. §7: `U`
+#. §8: `isOpen_univ`
+#. §9: `isOpen_inter hU hV`
+#. §10: `IsOpen (U ∩ V)`
+#. §11: `hU : IsOpen U`
+#. §12: `hV : IsOpen V`
+#. §13: `isOpen_sUnion`
+#: Game.Levels.Spaces.L01_spaces
+msgid "The §0 typeclass is defined as follows:\n"
+"\n"
+"§1\n"
+"\n"
+"The first line says which sets are open.  For a set §2, the statement §3\n"
+"says that §4 is open.  Like §5 or §6, this is a *statement*: it is either true or\n"
+"false, and it is something you prove.  You never have to say *which* topology you mean —\n"
+"Lean works that out from the type of §7.\n"
+"\n"
+"The other three lines are the axioms of a topological space, and you can use them as\n"
+"theorems:\n"
+"\n"
+"* §8 is a proof that the whole space is open.\n"
+"* §9 is a proof of §10, given §11 and\n"
+"  §12.\n"
+"* §13 says that a union of a family of open sets is open."
+msgstr ""
+
 #: Game.Levels.Inter.L03inter_sub_left
 msgid "Intersection is a subset"
 msgstr ""
@@ -1284,6 +1415,10 @@ msgstr ""
 #. §1: `«{h4}»`
 #: Game.Levels.FamInter.L02intersubinter
 msgid "You can now combine §0 and §1 to reach the goal in one step."
+msgstr ""
+
+#: Game.Levels.Hausdorff
+msgid "This world introduces Hausdorff spaces and other separation axioms."
 msgstr ""
 
 #. §0: $A$
@@ -1415,6 +1550,13 @@ msgid "After §0, use §1 to see that\n"
 "§2 is §3 for some §4, then apply continuity of §5."
 msgstr ""
 
+#. §0: `«{prop}» «{x}» «{xinU}»`
+#. §1: `∃ V ⊆ U, IsOpen V ∧ x ∈ V`
+#. §2: `obtain`
+#: Game.Levels.Spaces.L08_localopen
+msgid "§0 has type §1. Decompose it with §2."
+msgstr ""
+
 #: Game.Levels.FamUnion.L04unionpair
 msgid "In this level, you'll show that, as with intersections, family unions generalize the\n"
 "unions we studied in Union World."
@@ -1514,6 +1656,11 @@ msgid "The §0 tactic can reexpress a number of different kinds of negative stat
 "\n"
 "We have given this theorem the name §7.  Both this theorem and the one in the previous\n"
 "level will be useful in the next level."
+msgstr ""
+
+#. §0: `isOpen_sUnion`
+#: Game.Levels.Empty.L03_empty_open
+msgid "Now the axiom §0 applies."
 msgstr ""
 
 #. §0: $x$
@@ -1624,6 +1771,17 @@ msgstr ""
 msgid "Complement subsets from subsets"
 msgstr ""
 
+#. §0: `use`
+#. §1: `exact ⟨...⟩`
+#: Game.Levels.Spaces.L08_localopen
+msgid "This implication is quite direct.\n"
+"«{U}» is indeed an open neighbourhood of any point.\n"
+"\n"
+"The tactic §0 will automatically recognize the desired properties of «{U}»\n"
+"in the assumption list and close the goal, while §1 will ask for\n"
+"precise proofs of each property."
+msgstr ""
+
 #. §0: `union_subset_swap`
 #: Game.Levels.Union.L04union_sub_swap
 msgid "You'll be able to use the theorem §0 in the next level to prove\n"
@@ -1715,6 +1873,17 @@ msgid "The name of the tactic §0 is short for \"reflexivity\", which is the pro
 "we will see how we can use it to prove theorems about complements."
 msgstr ""
 
+#. §0: `T2Space`
+#. §1: ```
+#. T2Space (X : Type u) [TopologicalSpace X] : Prop where
+#.   t2 : ∀ x y : X, x ≠ y → ∃ (u : Set X) (v : Set Y), isOpen u ∧ isOpen v ∧ x ∈ u ∧ x ∈ v ∧ u ∩ v = ∅
+#. ```
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "We define the §0 typeclass in the following manner:\n"
+"\n"
+"§1"
+msgstr ""
+
 #. §0: `f ⁻¹' A`
 #. §1: `\\-1`
 #. §2: `'`
@@ -1743,6 +1912,13 @@ msgstr ""
 #. §5: `A`
 #: Game.Levels.Empty.L07_nonempty_image
 msgid "Remember that §0 is defined as §1. Thus, if you have a hypothesis §2, you can use §3 to get an element §4 of §5."
+msgstr ""
+
+#. §0: $U$
+#. §1: $V$
+#. §2: $U ∪ V$
+#: Game.Levels.Spaces.L06_pairopen
+msgid "If §0 and §1 are open sets, §2 is also open."
 msgstr ""
 
 #: Game.Levels.Subset.L06subtrans
@@ -1794,6 +1970,16 @@ msgstr ""
 msgid "Show that if §0 and §1 are closed sets in §2, then §3 is closed."
 msgstr ""
 
+#. §0: `«{T2}».t2 «{y}» «{x}» «{hy}»`
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Add the assumption §0."
+msgstr ""
+
+#: Game.Levels.Spaces.L08_localopen
+msgid "In this level you will prove an important characterization of what it means to be an open set.\n"
+"It could also be interpreted as the statement: Every topology is a basis generating itself."
+msgstr ""
+
 #. §0: `Or.inl h`
 #: Game.Levels.Union.L01or
 msgid "§0 is a proof of the goal."
@@ -1814,6 +2000,15 @@ msgstr ""
 
 #: Game.Levels.Spaces.L01_spaces
 msgid "Introduction to topological spaces"
+msgstr ""
+
+#. §0: `sUnion_pair`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "In this level, we are going to prove that the union of two open sets is open.\n"
+"Since this arises trivially from the axioms of a topological space,\n"
+"the real difficulty is in reconciling the notions of\n"
+"pairwise unions and family unions.\n"
+"Fortunately, §0 does most of the heavy lifting."
 msgstr ""
 
 #. §0: `g '' «{A}»`
@@ -1861,6 +2056,7 @@ msgstr ""
 #. §0: `have hxB : «{x}» ∈ B := «{h}» «{hxA}»`
 #: Game.Levels.Functions.L02_image
 #: Game.Levels.Functions.L03_image_union
+#: Game.Levels.Empty.L03_empty_open
 msgid "Try §0."
 msgstr ""
 
@@ -2038,6 +2234,12 @@ msgstr ""
 msgid "The theorem §0"
 msgstr ""
 
+#. §0: `isOpen_inter`
+#. §1: `have hUV := isOpen_inter «{hU}» «{hV}»`
+#: Game.Levels.Spaces.L01_spaces
+msgid "Now you can use §0 to prove that the intersection of two open sets is open. For example, try §1."
+msgstr ""
+
 #. §0: `x`
 #. §1: `h2`
 #. §2: `intro x h2`
@@ -2063,6 +2265,11 @@ msgid "If your goal has the form §0, then the tactic §1 will replace this\n"
 "that are most relevant for the set theory game."
 msgstr ""
 
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Combining «{abs}», «{zinU}» and «{xinV}» should yield\n"
+"a statement in contradiction with «{UVdisj}»."
+msgstr ""
+
 #: Game.Levels.Union.L02subunion
 msgid "Your goal is a subset statement.\n"
 "That should tell you how to get started."
@@ -2077,7 +2284,7 @@ msgstr ""
 msgid "Of course, you know by now how to start a proof that one set is a subset of another."
 msgstr ""
 
-#. §0: `«{h}».isOpen_inter`
+#. §0: `isOpen_inter`
 #. §1: `inter_assoc`
 #. §2: `inter_comm`
 #: Game.Levels.Spaces.L01_spaces
@@ -2115,6 +2322,13 @@ msgstr ""
 msgid "Another useful technique is to use §0 to do a proof by contradiction."
 msgstr ""
 
+#. §0: `F`
+#. §1: `isOpen_sUnion`
+#. §2: `IsOpen (⋃₀ F)`
+#: Game.Levels.Spaces.L01_spaces
+msgid "If every member of a family §0 is open, then §1 proves §2."
+msgstr ""
+
 #: Game.Levels.Empty.L02_empty_union
 msgid "The empty union"
 msgstr ""
@@ -2146,12 +2360,16 @@ msgid "This level is the hardest one in this Game so far.\n"
 "Good luck!"
 msgstr ""
 
-#: Game.Levels.Spaces.L03_complinter
-msgid "BIG IMPORTANT THEOREM"
-msgstr ""
-
 #: Game.Levels.Comp.L04compcomp
 msgid "Complement of a complement"
+msgstr ""
+
+#. §0: `mem_singleton_iff`
+#. §1: `x ∈ {a} ↔ x = a`
+#. §2: `Set.mem_singleton_iff`
+#: Game.Levels.FamUnion.L08singleton
+msgid "Lean will recognize §0 is a proof of any statement of the form\n"
+"§1.  In Mathlib, the name of this theorem is §2."
 msgstr ""
 
 #. §0: `«{G}» ∪ «{H}»`
@@ -2399,11 +2617,6 @@ msgid "In this level, we introduce nonempty sets.\n"
 "You can also use the theorem §9 to rewrite §10 into §11 and vice versa."
 msgstr ""
 
-#. §0: `h.isOpen_sUnion`
-#: Game.Levels.Empty.L03_empty_open
-msgid "Try using §0 on the empty collection."
-msgstr ""
-
 #: Game
 msgid "Learn to work with topological spaces in Lean."
 msgstr ""
@@ -2631,6 +2844,14 @@ msgstr ""
 msgid "Now your situation is similar to the previous level."
 msgstr ""
 
+#. §0: $U$
+#. §1: $x ∈ U$
+#. §2: $V$
+#. §3: $U$
+#: Game.Levels.Spaces.L08_localopen
+msgid "§0 is open iff every point §1 admits an open neighbourhood §2 contained in §3."
+msgstr ""
+
 #. §0: `h1 : A ⊆ B`
 #. §1: `h2 : B ⊆ C`
 #. §2: `h3 : x ∈ A`
@@ -2817,6 +3038,11 @@ msgstr ""
 msgid "§0 is in §1 if and only if §2."
 msgstr ""
 
+#. §0: `isOpen_univ`
+#: Game.Levels.Spaces.L01_spaces
+msgid "§0 is a proof that the whole space is open."
+msgstr ""
+
 #. §0: $A \\subseteq B$
 #. §1: $B \\subseteq C$
 #. §2: $x \\in A$
@@ -2943,6 +3169,12 @@ msgstr ""
 #: Game.Levels.Union.L06union_assoc
 msgid "Notice that, as with intersections, Lean groups unions to the left, so\n"
 "§0 means §1."
+msgstr ""
+
+#: Game.Levels.FamUnion.L08singleton
+msgid "Congratulations!  You have completed the Set Theory Game!\n"
+"\n"
+"If you want to learn more about Lean, check out the [Lean Community](https://leanprover-community.github.io)."
 msgstr ""
 
 #. §0: `ext x`
@@ -3247,11 +3479,21 @@ msgstr ""
 msgid "In this level, we show that the image of a nonempty set under any function is nonempty."
 msgstr ""
 
+#: Game.Levels.Spaces.L03_complinter
+msgid "In the two following levels, we take a break from topology and prove two set theoretic results\n"
+"that are vital for adapting propositions about open sets to propositions\n"
+"about closed sets and viceversa."
+msgstr ""
+
 #. §0: `A`
 #. §1: `Subset.refl`
 #: Game.Levels.FamUnion.L01proveexists
 msgid "Your goal says that there is a set that is a subset of §0.\n"
 "The theorem §1 suggests such a set."
+msgstr ""
+
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Level finished! Well done!"
 msgstr ""
 
 #: Game.Levels.Combo.L02compint
@@ -3300,62 +3542,11 @@ msgid "Your immediate goal now is to prove that §0.  Once you close that goal,\
 "you'll be asked to prove the second goal, §1."
 msgstr ""
 
-#. §0: `TopologicalSpace`
-#. §1: `TopologicalSpace X`
-#. §2: `X`
-#. §3: `TopologicalSpace`
-#. §4: ```
-#. class TopologicalSpace (X : Type u) where
-#.   protected IsOpen : Set X → Prop
-#.   protected isOpen_univ : IsOpen univ
-#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
-#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
-#. ```
-#. §5: `IsOpen`
-#. §6: `h : TopologicalSpace X`
-#. §7: `U : Set X`
-#. §8: `h.IsOpen U`
-#. §9: `true`
-#. §10: `U`
-#. §11: `false`
-#. §12: `U`
-#. §13: `V`
-#. §14: `X`
-#. §15: `hU : h.IsOpen U`
-#. §16: `hV : h.IsOpen V`
-#. §17: `h.isOpen_inter U V hU hV`
-#. §18: `h.IsOpen (U ∩ V)`
-#. §19: `IsOpen U`
-#. §20: `h.IsOpen U`
-#. §21: `U`
-#: Game.Levels.Spaces.L01_spaces
-msgid "In this level, we introduce the §0 typeclass.\n"
-"The statement §1 means that §2 is a topological space.\n"
-"\n"
-"The §3 typeclass is defined as follows:\n"
-"\n"
-"§4\n"
-"\n"
-"It's okay if you don't understand all of this.\n"
-"We will only focus on some of it now, and get to the rest in later worlds.\n"
-"\n"
-"The §5 predicate is used to determine whether a set is open in the topological space.\n"
-"You can treat it as a function: given §6 and §7,\n"
-"the expression §8 returns §9 if §10 is open and §11 otherwise.\n"
-"\n"
-"The other three lines are the axioms of a topological space.\n"
-"You can treat them as theorems: If §12 and §13 are open set in §14,\n"
-"and you have hypotheses §15 and §16,\n"
-"then §17 is a proof of §18.\n"
-"\n"
-"Note also that it Lean, it often suffices to write §19 instead of §20.\n"
-"This is because Lean can often infer the topological space from the type of §21.\n"
-"\n"
-"Observe that It's not explcitly stated in the axioms that the empty set is open,\n"
-"because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
-"We will prove this in a later level!\n"
-"\n"
-"We start with a warm-up exercise."
+#. §0: `rintro A (rfl | rfl)`
+#. §1: `A`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "§0 will automatically introduce §1\n"
+"and split the statement `A ∈ {U, V} into two cases."
 msgstr ""
 
 #. §0: `s`
@@ -3373,6 +3564,12 @@ msgstr ""
 
 #: Game.Levels.Subset.L02subhyp
 msgid "A subset hypothesis"
+msgstr ""
+
+#. §0: `isOpen_sUnion`
+#. §1: `sUnion_pair`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "Make use of §0 and §1."
 msgstr ""
 
 #. §0: `x ∈ A → x ∈ C`
@@ -3410,6 +3607,10 @@ msgid "This module introduces the basics of connected sets in topology.\n"
 "we have that §8.\n"
 "\n"
 "A set §9 is _connected_ if it is preconnected and nonempty."
+msgstr ""
+
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Closed Singletons"
 msgstr ""
 
 #. §0: `mem_inter_iff`
@@ -3509,6 +3710,19 @@ msgid "If you have §0, §1, and §2, then §3 is a proof of the\n"
 "In Mathlib, the name of this theorem is §5."
 msgstr ""
 
+#. §0: `U`
+#. §1: `IsOpen U`
+#. §2: `U`
+#. §3: `Bool`
+#. §4: `U`
+#: Game.Levels.Spaces.L01_spaces
+msgid "For a set §0 in a topological space, §1 is the statement that §2 is open.\n"
+"\n"
+"It is a statement, not a number or a §3: it is either true or false, and it is something\n"
+"you prove.  You do not have to say which topology you mean; Lean infers that from the type\n"
+"of §4."
+msgstr ""
+
 #: Game.Levels.Inter.L08inter_assoc
 msgid "Intersection is associative"
 msgstr ""
@@ -3532,6 +3746,17 @@ msgstr ""
 msgid "Level completed!"
 msgstr ""
 
+#. §0: `{a}`
+#. §1: `a`
+#. §2: `mem_singleton_iff`
+#. §3: `mem_singleton_iff`
+#. §4: `x ∈ {a} ↔ x = a`
+#: Game.Levels.FamUnion.L08singleton
+msgid "The notation §0 denotes a set whose only element is §1; such a set is called a *singleton*\n"
+"set.  The theorem §2 expresses the definition of singleton sets: §3 is\n"
+"a proof of any statement of the form §4."
+msgstr ""
+
 #: Game.Levels.Empty.L06_empty_image
 msgid "In this level, we show that the image of the empty set under any function is the empty set."
 msgstr ""
@@ -3550,6 +3775,10 @@ msgstr ""
 #. §1: $(A^c)^c = A$
 #: Game.Levels.Comp.L04compcomp
 msgid "Suppose §0 is a set.  Then §1."
+msgstr ""
+
+#: Game.Levels.Spaces.L04_complunion
+msgid "Prove the symmetric result of the previous exercise."
 msgstr ""
 
 #. §0: `«{h3}» h1`
@@ -4055,10 +4284,9 @@ msgid "Now §0 says §1, which means §2.  Of course, this can be simplified to\
 "the assumption §5, write §6."
 msgstr ""
 
-#. §0: `«{h}».isOpen_inter`
-#. §1: `have hUV := h.isOpen_inter «{U}» «{V}» «{hU}» «{hV}»`
-#: Game.Levels.Spaces.L01_spaces
-msgid "Now, you can use §0 to prove that the intersection of two open sets is open. For example, try §1."
+#. §0: `by_contra`
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Use §0."
 msgstr ""
 
 #. §0: `Continuous`
@@ -4143,6 +4371,11 @@ msgstr ""
 msgid "Use §0 again to introduce the assumption §1."
 msgstr ""
 
+#. §0: `isOpen_iff_forall_mem_open`
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "You can use §0."
+msgstr ""
+
 #. §0: `P`
 #. §1: `Q`
 #. §2: `P ∨ Q`
@@ -4178,6 +4411,10 @@ msgstr ""
 #. §1: `empty_subset (⋃₀ ∅)`
 #: Game.Levels.Compact.L02_compact_empty
 msgid "§0 again: §1."
+msgstr ""
+
+#: Game.Levels.Spaces.L07_pairclosed
+msgid "Here we ask you to prove the symmetric result of the previous exercise."
 msgstr ""
 
 #: Game.Levels.Union.L04union_sub_swap
@@ -4224,47 +4461,9 @@ msgstr ""
 msgid "A set is nonempty if and only if it is not equal to the empty set."
 msgstr ""
 
-#. §0: `TopologicalSpace`
-#. §1: ```
-#. class TopologicalSpace (X : Type u) where
-#.   protected IsOpen : Set X → Prop
-#.   protected isOpen_univ : IsOpen univ
-#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
-#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
-#. ```
-#. §2: `IsOpen`
-#. §3: `h : TopologicalSpace X`
-#. §4: `U : Set X`
-#. §5: `h.IsOpen U`
-#. §6: `true`
-#. §7: `U`
-#. §8: `false`
-#. §9: `U`
-#. §10: `V`
-#. §11: `X`
-#. §12: `hU : h.IsOpen U`
-#. §13: `hV : h.IsOpen V`
-#. §14: `h.isOpen_inter U V hU hV`
-#. §15: `h.IsOpen (U ∩ V)`
-#. §16: `IsOpen U`
-#. §17: `h.IsOpen U`
-#. §18: `U`
-#: Game.Levels.Spaces.L01_spaces
-msgid "The §0 typeclass is defined as follows:\n"
-"\n"
-"§1\n"
-"\n"
-"The §2 predicate is used to determine whether a set is open in the topological space.\n"
-"You can treat it as a function: given §3 and §4,\n"
-"the expression §5 returns §6 if §7 is open and §8 otherwise.\n"
-"\n"
-"The other three lines are the axioms of a topological space.\n"
-"You can treat them as theorems: If §9 and §10 are open set in §11,\n"
-"and you have hypotheses §12 and §13,\n"
-"then §14 is a proof of §15.\n"
-"\n"
-"Note also that it Lean, it often suffices to write §16 instead of §17.\n"
-"This is because Lean can often infer the topological space from the type of §18."
+#. §0: `mem_setOf`
+#: Game.Levels.Spaces.L08_localopen
+msgid "Use §0 to simplify the goal."
 msgstr ""
 
 #: Game.Levels.Functions.L01_functions
@@ -4492,13 +4691,7 @@ msgid "A set §0 is nonempty if and only if there exists an element §1 such tha
 msgstr ""
 
 #: Game.Levels.FamInter.L03interpair
-#: Game.Levels.Spaces.L03_complinter
-#: Game.Levels.Spaces.L04_complunion
 #: Game.Levels.Spaces.L05_interclosed
-#: Game.Levels.Spaces.L06_pairopen
-#: Game.Levels.Spaces.L06_pairopen
-#: Game.Levels.Spaces.L07_pairclosed
-#: Game.Levels.Spaces.L07_pairclosed
 msgid ""
 msgstr ""
 
@@ -4645,6 +4838,13 @@ msgid "Well done!\n"
 "The command §2 will rewrite a hypothesis §3 into §4."
 msgstr ""
 
+#. §0: `sUnion_empty`
+#. §1: `∅`
+#: Game.Levels.Empty.L03_empty_open
+msgid "You can use the theorem §0 from the previous level to rewrite §1 as\n"
+"the union of the empty family."
+msgstr ""
+
 #: Game.Levels.Functions
 msgid "Functions"
 msgstr ""
@@ -4716,6 +4916,16 @@ msgstr ""
 msgid "The proof of the second goal is similar."
 msgstr ""
 
+#. §0: `h1`
+#. §1: `A`
+#. §2: `A`
+#. §3: `A`
+#: Game.Levels.FamUnion.L08singleton
+msgid "You need to apply §0 to a family of sets with two\n"
+"properties: the union of the family must be §1, and knowing that §2 belongs to the\n"
+"family must help you prove that §3 is a singleton."
+msgstr ""
+
 #. §0: `¬P`
 #. §1: `P`
 #. §2: `¬`
@@ -4762,6 +4972,17 @@ msgstr ""
 msgid "Now combine §0 and §1."
 msgstr ""
 
+#. §0: `have h2 := h1 {s | ...}`
+#. §1: `...`
+#: Game.Levels.FamUnion.L08singleton
+msgid "Start with §0.  The hard part is figuring out\n"
+"how to fill in the §1."
+msgstr ""
+
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "«{U}» should do the trick."
+msgstr ""
+
 #. §0: `constructor`
 #: Game.Levels.Compact.L04_compact_finite
 msgid "Split the three remaining goals with §0."
@@ -4775,6 +4996,60 @@ msgstr ""
 #. §0: `«{h1}»`
 #: Game.Levels.FamUnion.L07eltwiseinter
 msgid "Again, work out the consequences of §0 first."
+msgstr ""
+
+#. §0: `TopologicalSpace`
+#. §1: `TopologicalSpace X`
+#. §2: `X`
+#. §3: `TopologicalSpace`
+#. §4: ```
+#. class TopologicalSpace (X : Type u) where
+#.   protected IsOpen : Set X → Prop
+#.   protected isOpen_univ : IsOpen univ
+#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
+#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
+#. ```
+#. §5: `U : Set X`
+#. §6: `IsOpen U`
+#. §7: `U`
+#. §8: `x ∈ U`
+#. §9: `A ⊆ B`
+#. §10: `U`
+#. §11: `isOpen_univ`
+#. §12: `isOpen_inter hU hV`
+#. §13: `IsOpen (U ∩ V)`
+#. §14: `hU : IsOpen U`
+#. §15: `hV : IsOpen V`
+#. §16: `isOpen_sUnion`
+#: Game.Levels.Spaces.L01_spaces
+msgid "In this level, we introduce the §0 typeclass.\n"
+"The statement §1 means that §2 is a topological space.\n"
+"\n"
+"The §3 typeclass is defined as follows:\n"
+"\n"
+"§4\n"
+"\n"
+"It's okay if you don't understand all of this.\n"
+"We will only focus on some of it now, and get to the rest in later worlds.\n"
+"\n"
+"The first line says which sets are open.  For a set §5, the statement §6\n"
+"says that §7 is open.  Like §8 or §9, this is a *statement*: it is either true or\n"
+"false, and it is something you prove.  You never have to say *which* topology you mean —\n"
+"Lean works that out from the type of §10.\n"
+"\n"
+"The other three lines are the axioms of a topological space, and you can use them as\n"
+"theorems:\n"
+"\n"
+"* §11 is a proof that the whole space is open.\n"
+"* §12 is a proof of §13, given §14 and\n"
+"  §15.\n"
+"* §16 says that a union of a family of open sets is open.\n"
+"\n"
+"Observe that It's not explcitly stated in the axioms that the empty set is open,\n"
+"because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
+"We will prove this in a later level!\n"
+"\n"
+"We start with a warm-up exercise."
 msgstr ""
 
 #. §0: `A`
@@ -5360,16 +5635,15 @@ msgstr ""
 msgid "Proof by contradiction"
 msgstr ""
 
+#: Game.Levels.Spaces.L08_localopen
+msgid "Openness as a Local Property"
+msgstr ""
+
 #. §0: `A ∩ B = B ∩ A`
 #. §1: `A ∩ B ⊆ B ∩ A`
 #: Game.Levels.Inter.L06inter_sub_swap
 msgid "In the next level we're going to prove that intersection is commutative; that is,\n"
 "§0.  As a warm-up, in this level we prove §1."
-msgstr ""
-
-#. §0: `sUnion_empty`
-#: Game.Levels.Empty.L03_empty_open
-msgid "You can use the theorem §0 from the previous level."
 msgstr ""
 
 #: GameServer.RpcHandlers
@@ -5558,6 +5832,11 @@ msgstr ""
 msgid "Explicitly, you can write §0."
 msgstr ""
 
+#. §0: `use`
+#: Game.Levels.Hausdorff.L01_singletons
+msgid "Pair the §0 tactic with a suitable object that is already in your assumption list."
+msgstr ""
+
 #. §0: `A`
 #. §1: `B`
 #. §2: `a ∈ A ∩ B`
@@ -5634,6 +5913,12 @@ msgstr ""
 msgid "Now §0 is the function you were asked for, so tell Lean to use it."
 msgstr ""
 
+#. §0: `rw[«{this}»]`
+#. §1: `isOpen_sUnion`
+#: Game.Levels.Spaces.L08_localopen
+msgid "Use §0 on the goal, then apply §1."
+msgstr ""
+
 #. §0: `⋃₀ F`
 #. §1: `F`
 #. §2: `⋃₀`
@@ -5689,6 +5974,18 @@ msgstr ""
 #: Game.Levels.FamUnion.L04unionpair
 msgid "Remember, you can use §0 to introduce a name for the set that is asserted to\n"
 "exist in §1."
+msgstr ""
+
+#. §0: $U$
+#. §1: $x ∈ U$
+#. §2: $V$
+#. §3: $U$
+#: Game.Levels.Spaces.L08_localopen
+msgid "Characterization of openness as a local property:\n"
+"\n"
+"§0 is open iff every point §1 admits an open neighbourhood §2 contained in §3.\n"
+"\n"
+"In other words, every topology is a basis which generates itself."
 msgstr ""
 
 #. §0: $f \\colon X \\to Y$

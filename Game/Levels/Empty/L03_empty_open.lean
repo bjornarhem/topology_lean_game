@@ -20,12 +20,13 @@ You can look up the definition of `TopologicalSpace` in the right column if you 
 "
 
 /-- Let $X$ be a topological space. Then $\emptyset \subseteq X$ is open. -/
-Statement {X : Type} [h : TopologicalSpace X] : IsOpen (∅ : Set X) := by
-  Hint (hidden := true) "Try using `h.isOpen_sUnion` on the empty collection."
-  have h1 := h.isOpen_sUnion ∅
-  Hint "You can use the theorem `sUnion_empty` from the previous level."
-  rw [sUnion_empty] at h1
-  apply h1
+Statement {X : Type} [TopologicalSpace X] : IsOpen (∅ : Set X) := by
+  Hint "You can use the theorem `sUnion_empty` from the previous level to rewrite `∅` as
+  the union of the empty family."
+  Hint (hidden := true) "Try `rw [← sUnion_empty]`."
+  rw [← sUnion_empty]
+  Hint (hidden := true) "Now the axiom `isOpen_sUnion` applies."
+  apply isOpen_sUnion
   intro t
   intro h2
   by_contra

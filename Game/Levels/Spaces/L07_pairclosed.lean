@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L06_pairopen
 
-open TopologicalSpace
+open Set
 
 namespace TTG
 

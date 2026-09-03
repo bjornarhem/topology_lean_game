@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L05_interclosed
 
-open TopologicalSpace
+open Set
 
 namespace TTG
 
@@ -20,7 +20,7 @@ Fortunately, `sUnion_pair` does most of the heavy lifting.
 TheoremDoc TTG.IsOpen.union as "IsOpen.union" in "topology"
 
 /-- If $U$ and $V$ are open sets, $U ∪ V$ is also open. -/
-Statement IsOpen.union {X : Type} [h : TopologicalSpace X] (U V : Set X) : IsOpen U → IsOpen V → IsOpen (U ∪ V) := by
+Statement IsOpen.union {X : Type} [TopologicalSpace X] (U V : Set X) : IsOpen U → IsOpen V → IsOpen (U ∪ V) := by
   intro hU hV
   Hint "We want to be able to use `isOpen_sUnion` on the set `\{U, V}`. To satisfy the conditions of this theorem,
   first prove the intermediary result: `∀ A ∈ \{U, V}, IsOpen A`"
