@@ -19,7 +19,7 @@ In this level, you can use the theorem `preimage_complement`, which you proved i
 to rewrite `f⁻¹' (Uᶜ)` as `(f⁻¹' U)ᶜ`.
 "
 
-/-- If $f \colon X \to Y$ and $U \subset Y$ is closed, then $f^{-1}(U)$ is closed. -/
+/-- If $f \colon X \to Y$ is continuous and $U \subset Y$ is closed, then $f^{-1}(U)$ is closed. -/
 Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (hf: Continuous f) (U : Set Y) : (IsClosed U) → (IsClosed (f⁻¹' U)) := by
   Hint "As always, start with `intro h`."
   intro h
