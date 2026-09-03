@@ -38,7 +38,7 @@ theorems:
   `hV : IsOpen V`.
 * `isOpen_sUnion` says that a union of a family of open sets is open.
 
-Observe that It's not explcitly stated in the axioms that the empty set is open,
+Observe that It's not explicitly stated in the axioms that the empty set is open,
 because this follows from the fact that a union of open sets is open, applied to the empty union.
 We will prove this in a later level!
 
