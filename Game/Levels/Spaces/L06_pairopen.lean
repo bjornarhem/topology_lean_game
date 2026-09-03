@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L05_interclosed
 
-open TopologicalSpace
+open Set
 
 namespace TTG
 

@@ -1,6 +1,6 @@
 import Game.Levels.Spaces.L04_complunion
 
-open TopologicalSpace
+open Set
 
 namespace TTG
 

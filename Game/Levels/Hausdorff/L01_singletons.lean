@@ -1,6 +1,6 @@
 import Game.Levels.Empty
 
-open Set (mem_inter_iff mem_union Subset.antisymm mem_sUnion mem_sInter mem_setOf)
+open Set
 namespace TTG
 
 World "Hausdorff"
