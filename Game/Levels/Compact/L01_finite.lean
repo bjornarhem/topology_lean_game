@@ -41,14 +41,9 @@ Statement inter_finite {X : Type} (A B : Set X) (hA : A.Finite) : (A ∩ B).Fini
 Conclusion "
 Well done!  This is the fact you will reach for most often when working with finite sets.
 
-You have also been given two more facts about finite sets, which you will need later in
-this world:
-
-* `finite_empty` is a proof that the empty set is finite.
-* For any `x`, `finite_singleton x` is a proof that the one-element set `{x}` is finite.
-
-Notice that `finite_empty` takes no arguments, while `finite_singleton` has to be
-told which element you mean.  All three theorems are listed in the `Finite` tab on the right.
+You have also been given one more fact about finite sets, which you will need later in
+this world: `finite_empty` is a proof that the empty set is finite.  Both theorems are
+listed in the `Finite` tab on the right.
 "
 
 /--
@@ -70,10 +65,7 @@ If `h : S.Finite` and `h2 : T ⊆ S`, then `Finite.subset h h2` is a proof that
 -/
 TheoremDoc Set.Finite.subset as "Set.Finite.subset" in "Finite"
 
-/-- For any `x`, `finite_singleton x` is a proof that the set `{x}` is finite. -/
-TheoremDoc Set.finite_singleton as "Set.finite_singleton" in "Finite"
-
 /-- `finite_empty` is a proof that the empty set is finite. -/
 TheoremDoc Set.finite_empty as "Set.finite_empty" in "Finite"
 
-NewTheorem Set.Finite.subset Set.finite_singleton Set.finite_empty
+NewTheorem Set.Finite.subset Set.finite_empty
