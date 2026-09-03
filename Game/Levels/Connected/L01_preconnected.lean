@@ -25,7 +25,7 @@ You can treat `IsPreconnected` as a theorem. Typing `rw [IsPreconnected]` will u
 "
 
 /-- The empty set is preconnected. -/
-Statement {X : Type} [h : TopologicalSpace X] : IsPreconnected (∅ : Set X) := by
+Statement {X : Type} [TopologicalSpace X] : IsPreconnected (∅ : Set X) := by
   Hint "You can begin unwrapping the `IsPreconnected` definition by introducing several variables and hypotheses, like so: `intro V W hV hW hVWunion hV1 hW1`."
   intro V W hV hW hUnion hV1 hW1
   Hint (hidden := true) "Use the theorem `empty_inter` to show that `{V} ∩ ∅ = ∅`."

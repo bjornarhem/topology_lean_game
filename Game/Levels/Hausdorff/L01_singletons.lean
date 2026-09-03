@@ -49,7 +49,7 @@ NewDefinition T2Space
 class T2Space (X : Type u) [TopologicalSpace X] : Prop where
   t2 : ∀ x y : X, x ≠ y → ∃ (u : Set X) (v : Set X), IsOpen u ∧ IsOpen v ∧ x ∈ u ∧ y ∈ v ∧ u ∩ v = ∅
 
-Statement {X : Type} [h : TopologicalSpace X] [T2 : T2Space X] (U V : Set X) : ∀ x : X, IsClosed {x} := by
+Statement {X : Type} [TopologicalSpace X] [T2 : T2Space X] (U V : Set X) : ∀ x : X, IsClosed {x} := by
   intro x
   rw [←isOpen_compl_iff]
   Hint "You can use `isOpen_iff_forall_mem_open`."

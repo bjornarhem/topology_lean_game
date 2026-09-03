@@ -16,7 +16,7 @@ Introduction "
 TheoremDoc TTG.isClosed_sInter as "isClosed_sInter" in "topology"
 
 /-  -/
-Statement isClosed_sInter {U : Type} [h : TopologicalSpace U] {F : Set (Set U)} :
+Statement isClosed_sInter {U : Type} [TopologicalSpace U] {F : Set (Set U)} :
     (∀ A ∈ F, IsClosed A) → IsClosed (⋂₀ F) := by
   intro Acl
   rw [←isOpen_compl_iff]

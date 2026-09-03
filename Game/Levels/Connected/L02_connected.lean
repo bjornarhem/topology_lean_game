@@ -23,7 +23,7 @@ As a warm-up, we show that the empty set is not connected.
 "
 
 /-- The empty set is not connected. -/
-Statement {X : Type} [h : TopologicalSpace X] : ¬ IsConnected (∅ : Set X) := by
+Statement {X : Type} [TopologicalSpace X] : ¬ IsConnected (∅ : Set X) := by
   rw [IsConnected]
   push_neg
   intro h

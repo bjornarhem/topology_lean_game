@@ -16,7 +16,7 @@ Here we ask you to prove the symmetric result of the previous exercise.
 TheoremDoc TTG.IsClosed.inter as "IsClosed.inter" in "topology"
 
 /-- If $U$ and $V$ are closed sets, then $U ∩ V$ is also closed. -/
-Statement IsClosed.inter {X : Type} [h : TopologicalSpace X] (U V : Set X) : IsClosed U → IsClosed V → IsClosed (U ∩ V) := by
+Statement IsClosed.inter {X : Type} [TopologicalSpace X] (U V : Set X) : IsClosed U → IsClosed V → IsClosed (U ∩ V) := by
   intro hU hV
   have hUV : ∀ A ∈ {U, V}, IsClosed A := by
     rintro A (rfl | rfl)
