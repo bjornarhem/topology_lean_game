@@ -14,6 +14,7 @@ import Game.Levels.Continuous
 import Game.Levels.Empty
 import Game.Levels.Connected
 import Game.Levels.Compact
+import Game.Levels.Hausdorff
 
 -- Here's what we'll put on the title screen
 Title "The topology game"
