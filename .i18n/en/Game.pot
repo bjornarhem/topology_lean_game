@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03\n"
+"POT-Creation-Date: 2026-09-04\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -144,6 +144,41 @@ msgstr ""
 msgid "Now you can use the fact that the space is Hausdorff."
 msgstr ""
 
+#. §0: `choose!`
+#. §1: `obtain`
+#. §2: `∃ x, P x`
+#. §3: `choose!`
+#. §4: `∀ y, ∃ x, P x y`
+#. §5: `obtain`
+#. §6: `∃`
+#. §7: `choose!`
+#. §8: `∃`
+#. §9: ```h : ∀ y, ∃ x, P x y```
+#. §10: ```
+#. choose! g hg using h
+#. ```
+#. §11: `g : Y → X`
+#. §12: `hg : ∀ y, P (g y) y`
+#. §13: `choose!`
+#: Game.Levels.Compact.L03_choose
+msgid "In this level, we introduce a new tactic, §0,\n"
+"which will be useful when working with compact sets.\n"
+"While §1 is a tactic to extract a witness from a statement of the form §2,\n"
+"§3 is a tactic to extract several witnesses from a statement of the form\n"
+"§4.\n"
+"\n"
+"The tactic §5 unpacks a single §6 statement, while §7 unpacks many §8\n"
+"statements at once.\n"
+"Suppose you have a hypothesis:\n"
+"§9\n"
+"Writing\n"
+"§10\n"
+"gives a function §11 together with a proof §12.\n"
+"\n"
+"In this level, we apply §13 to prove that if a function is surjective, then it has a\n"
+"right inverse."
+msgstr ""
+
 #: Game.Levels.Compact.L05_compact_union
 msgid "Union of two compact sets"
 msgstr ""
@@ -240,7 +275,7 @@ msgstr ""
 msgid "You can use §0 to write out the meaning of the goal."
 msgstr ""
 
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "A set that must be a singleton"
 msgstr ""
 
@@ -360,8 +395,6 @@ msgstr ""
 #. §0: $F$
 #. §1: $(⋂_{A ∈ F} A) ^c = ⋃ _{A ∈ F} A^c$
 #: Game.Levels.Spaces.L03_complinter
-#: Game.Levels.Spaces.L03_complinter
-#: Game.Levels.Spaces.L04_complunion
 #: Game.Levels.Spaces.L04_complunion
 msgid "For any family of sets §0, we have §1."
 msgstr ""
@@ -401,6 +434,26 @@ msgid "In this level we have two families of sets, §0 and §1, with §2.  That 
 "Of course, by now you know how to start a proof that one set is a subset of another."
 msgstr ""
 
+#. §0: `s`
+#. §1: `t`
+#. §2: `s ∪ t`
+#. §3: `Finite.union`
+#. §4: `sUnion_union`
+#: Game.Levels.Compact.L05_compact_union
+msgid "Now let's show that if §0 and §1 are compact, then so is §2.\n"
+"\n"
+"You have been provided with another theorem, §3, which states that\n"
+"the union of two finite sets is finite.  It may also be useful to apply §4,\n"
+"which you proved back in Family Union World."
+msgstr ""
+
+#. §0: `rw [IsConnected]`
+#. §1: `constructor`
+#. §2: `apply And.intro`
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Unfold the definition with §0, then split the two halves with §1 or §2."
+msgstr ""
+
 #: Game.Levels.Inter.L07inter_comm
 msgid "We'll prove one more property of intersections in the next level."
 msgstr ""
@@ -428,34 +481,14 @@ msgstr ""
 msgid "Finite sets"
 msgstr ""
 
-#. §0: `f ⁻¹' (A ∪ B) = f ⁻¹' A ∪ f ⁻¹' B`
-#. §1: `⋃₀ F`
-#. §2: `F`
-#. §3: `F`
-#. §4: `f ⁻¹' U`
-#. §5: `preimage f U`
-#. §6: `preimage f`
-#. §7: `F`
-#. §8: ```
-#. preimage f '' F
-#. ```
-#: Game.Levels.Compact.L06_preimage_sUnion
-msgid "This level is about how preimages interact with unions of families.  We need it for the\n"
-"main theorem of this world.\n"
-"\n"
-"Back in Functions World you showed that §0.  The same is\n"
-"true for a whole family of sets at once: the preimage of §1 is the union of the\n"
-"preimages of the members of §2.\n"
-"\n"
-"To write \"the family of all preimages of members of §3\" in Lean, recall that §4 is\n"
-"notation for §5.  So the function sending a set to its preimage is just\n"
-"§6, and the family we want is the image of §7 under it:\n"
-"\n"
-"§8"
-msgstr ""
-
 #: Game.Levels.Spaces.L04_complunion
 msgid "Complement of Union"
+msgstr ""
+
+#. §0: `rw [sUnion_union]`
+#. §1: `s ∪ t ⊆ ⋃₀ «{G}» ∪ ⋃₀ «{H}»`
+#: Game.Levels.Compact.L05_compact_union
+msgid "§0 turns the goal into §1."
 msgstr ""
 
 #. §0: `exact ⟨ «{x}», «{hxB}», rfl ⟩`
@@ -549,34 +582,6 @@ msgid "You've finished Family Intersection World!  As you might guess, you can a
 "if your guess is right."
 msgstr ""
 
-#. §0: `h : ∀ x, ∃ y, P x y`
-#. §1: `choose! g hg using h`
-#. §2: `g`
-#. §3: `hg : ∀ x, P x (g x)`
-#. §4: `y`
-#. §5: `x`
-#. §6: `g x`
-#. §7: `h : ∀ x ∈ A, ∃ y, P x y`
-#. §8: `hg : ∀ x ∈ A, P x (g x)`
-#. §9: `g`
-#. §10: `choose!`
-#. §11: `y`
-#. §12: `obtain`
-#. §13: `∃`
-#. §14: `choose!`
-#: Game.Levels.Compact.L03_choose
-msgid "If you have an assumption §0, then §1 introduces a\n"
-"function §2 together with an assumption §3.  In other words, it picks\n"
-"such a §4 for every §5 at once, and names it §6.\n"
-"\n"
-"It also works if the assumption only holds on a set, as in §7; then\n"
-"§8.  Either way §9 is defined on the whole type, so §10\n"
-"needs the type of §11 to be nonempty — it has to send the remaining inputs somewhere.\n"
-"\n"
-"Compare this with §12, which unpacks a single §13 statement.  Use §14 when you\n"
-"need a witness for every element at once, not just for one."
-msgstr ""
-
 #. §0: `s`
 #: Game.Levels.Compact.L07_compact_image
 msgid "Step 2.  Now apply compactness of §0 to the pulled-back family."
@@ -597,7 +602,7 @@ msgstr ""
 #. §2: $\\bigcup F = A$
 #. §3: $A \\in F$
 #. §4: $A$
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "Suppose §0 is a set, and for every family of sets §1, if §2 then §3.\n"
 "Then §4 must be a singleton set."
 msgstr ""
@@ -625,6 +630,11 @@ msgstr ""
 msgid "§0 is the intersection of the family of sets §1.  To enter the symbol §2, type §3."
 msgstr ""
 
+#. §0: `∀ A ∈ {U, V}, IsClosed A`
+#: Game.Levels.Spaces.L07_pairclosed
+msgid "Prove §0."
+msgstr ""
+
 #. §0: $U$
 #. §1: $∅ ∩ U = ∅$
 #: Game.Levels.Empty.L08_empty_inter
@@ -637,6 +647,10 @@ msgstr ""
 #. §2: `⋂₀ (F ∪ G)`
 #: Game.Levels.FamInter.L04interunion
 msgid "If §0 and §1 are families of sets, what is §2?  In this level, you'll find out!"
+msgstr ""
+
+#: Game.Levels.Continuous.L03_closed_preimage
+msgid "Closing time"
 msgstr ""
 
 #. §0: `P ∧ Q`
@@ -685,6 +699,10 @@ msgstr ""
 msgid "You can use the §0 to replace §1 with §2."
 msgstr ""
 
+#: Game.Levels.Spaces.L05_interclosed
+msgid "In this level we ask you to prove that a family intersection of closed sets is closed."
+msgstr ""
+
 #. §0: `use «{U}»`
 #: Game.Levels.Compact.L06_preimage_sUnion
 msgid "§0, and then both remaining goals are assumptions you\n"
@@ -713,6 +731,10 @@ msgstr ""
 #: Game.Levels.Inter.L05subint
 #: Game.Levels.Union.L03cases
 msgid "Suppose §0 and §1.  Then §2."
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Show that a one-element set is connected."
 msgstr ""
 
 #. §0: `push_neg`
@@ -1110,6 +1132,10 @@ msgstr ""
 msgid "Intersection of larger family is smaller"
 msgstr ""
 
+#: Game.Levels.Spaces.L07_pairclosed
+msgid "Repeat the strategy from the previous exercise."
+msgstr ""
+
 #. §0: `intro hU hV hW`
 #: Game.Levels.Spaces.L01_spaces
 msgid "Start by introducing three hypotheses, with §0."
@@ -1490,8 +1516,8 @@ msgstr ""
 msgid "Intersection subset of swap"
 msgstr ""
 
-#. §0: `preimage «{f}» '' «{F}»`
-#. §1: `have hpullopen : ∀ V ∈ preimage «{f}» '' «{F}», IsOpen V`
+#. §0: `{B | ∃ U ∈ «{F}», B = «{f}» ⁻¹' U}`
+#. §1: `have hpullopen : ∀ V ∈ {B | ∃ U ∈ «{F}», B = «{f}» ⁻¹' U}, IsOpen V`
 #: Game.Levels.Compact.L07_compact_image
 msgid "Step 1.  Record that the pulled-back family §0 consists of\n"
 "open sets.  Use §1"
@@ -1508,7 +1534,7 @@ msgid "After §0, use §1 to see that\n"
 "§2 is §3 for some §4, then apply continuity of §5."
 msgstr ""
 
-#. §0: `«{prop}» «{x}» «{xinU}»`
+#. §0: `«{pr}» «{x}» «{xinU}»`
 #. §1: `∃ V ⊆ U, IsOpen V ∧ x ∈ V`
 #. §2: `obtain`
 #: Game.Levels.Spaces.L08_localopen
@@ -1862,6 +1888,23 @@ msgid "Preimage of a set under a function. To write the preimage, use §0, which
 "You can use the command §10 to rewrite a hypothesis of the form §11 into §12."
 msgstr ""
 
+#: Game.Levels.FamCombo.L01compunion
+msgid "Complement of a family union"
+msgstr ""
+
+#. §0: `compl_union`
+#. §1: `compl_union`
+#. §2: `push_neg`
+#: Game.Levels.FamCombo.L01compunion
+msgid "In this level you'll prove a generalization of the theorem §0 that you proved\n"
+"in Combination World.  That theorem was about the complement of a union of two sets; the\n"
+"theorem in this level is about the complement of a union of a family of sets.\n"
+"\n"
+"As in the case of §1, you have a choice about how to deal with the negations that\n"
+"arise when you write out the meaning of complement.  You can use the §2 tactic to\n"
+"reexpress negative statements, or you can use proof by contradiction."
+msgstr ""
+
 #. §0: `A.Nonempty`
 #. §1: `∃ x, x ∈ A`
 #. §2: `«{h}» : A.Nonempty`
@@ -2018,6 +2061,21 @@ msgstr ""
 msgid "Try §0."
 msgstr ""
 
+#. §0: `«{h3}»`
+#. §1: `«{t}»ᶜ ∈ {s | sᶜ ∈ F}`
+#. §2: `have «{h3}»a : «{t}»ᶜ ∈ {s | sᶜ ∈ F}`
+#. §3: `«{t}»ᶜ ∈ {s | sᶜ ∈ F}`
+#. §4: `«{h3}»a : «{t}»ᶜ ∈ {s | sᶜ ∈ F}`
+#. §5: `have`
+#: Game.Levels.FamCombo.L01compunion
+msgid "To make use of §0, you'll need to assert §1.  If you don't see\n"
+"right away how to justify this assertion, you can just write §2\n"
+"and Lean will set §3 as your immediate goal.  Once you achieve that goal,\n"
+"Lean will add §4 to your list of assumptions, and you can continue\n"
+"with the proof of your original goal.  For further details, click on §5 in the list of tactics\n"
+"on the right."
+msgstr ""
+
 #: Game.Levels.Compact.L07_compact_image
 msgid "The continuous image of a compact set is compact."
 msgstr ""
@@ -2051,7 +2109,6 @@ msgid "If §0, then the goal is easy to prove.  This suggests breaking\n"
 "§2."
 msgstr ""
 
-#: Game.Levels.Connected.L02_connected
 #: Game.Levels.Connected
 msgid "Connected sets"
 msgstr ""
@@ -2132,7 +2189,7 @@ msgid "In the first level of this world, you showed that if a function §0 is\n"
 "§2 is closed, then §3 is continuous."
 msgstr ""
 
-#. §0: `rw [← preimage_complement]`
+#. §0: `rw [← preimage_compl]`
 #: Game.Levels.Continuous.L01_continuous
 msgid "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing §0."
 msgstr ""
@@ -2141,6 +2198,16 @@ msgstr ""
 #: Game.Levels.Subset.L01exact
 msgid "In order to complete this proof, type §0 in the text box\n"
 "under the goal and click on \"Execute\" or hit the \"Return\" or \"Enter\" key."
+msgstr ""
+
+#. §0: `have key : ∀ V, V ∈ «{G}» → ∃ U, U ∈ «{F}» ∧ f ⁻¹' U = V`
+#. §1: `intro`
+#. §2: `obtain`
+#. §3: `rw`
+#: Game.Levels.Compact.L07_compact_image
+msgid "§0, proved with\n"
+"§1 and §2.  Note that membership in the pulled-back family gives you the\n"
+"equation the other way round, so you will need to §3 with it."
 msgstr ""
 
 #: Game.Levels.Functions.L03_image_union
@@ -2253,7 +2320,43 @@ msgstr ""
 
 #. §0: $(g \\circ f) (x) = g(f(x))$
 #: Game.Levels.Functions.L11_composition
+#: Game.Levels.Connected.L03_connected_singleton
+#: Game.Levels.Connected.L03_connected_singleton
 msgid "§0"
+msgstr ""
+
+#. §0: `choose!`
+#. §1: `∀ y, ∃ x, f x = y`
+#. §2: `choose!`
+#. §3: `A : Set X`
+#. §4: `B : Set Y`
+#. §5: `h : ∀ x ∈ A, ∃ y ∈ B, P x y`
+#. §6: `choose! g hgB hgx using h`
+#. §7: `g : X → Y`
+#. §8: `hgB : ∀ x ∈ A, g x ∈ B`
+#. §9: `hgx : ∀ x ∈ A, P x (g x)`
+#. §10: `A`
+#. §11: `g`
+#. §12: `X`
+#. §13: `A`
+#. §14: `A`
+#. §15: `Finite.image`
+#: Game.Levels.Compact.L04_compact_finite
+msgid "In this level, we prove that every finite set is compact.\n"
+"We will use §0 again, but in a fuller form than in the previous level.  There the\n"
+"hypothesis was §1, and §2 handed us a function and a single proof.\n"
+"Here the hypothesis will be *guarded* by a membership condition, and the existential\n"
+"statement will have *two* parts — so we get a function and two proofs.\n"
+"\n"
+"Suppose §3 and §4, and you have a hypothesis of the form\n"
+"§5.  Then §6 produces a function\n"
+"§7, together with proofs §8 and §9.\n"
+"In other words, it picks out a witness for each element of §10.\n"
+"Note that §11 is defined on all of §12, not just on §13; outside of §14 its values are\n"
+"arbitrary, and the two proofs say nothing about them.\n"
+"\n"
+"You have also been provided with the theorem §15, which states that the image\n"
+"of a finite set is finite."
 msgstr ""
 
 #: Game.Levels.Inter.L05subint
@@ -2339,7 +2442,7 @@ msgid "How do you finish a proof when the goal begins with §0?"
 msgstr ""
 
 #. §0: `have`
-#: Game.Levels.Connected.L03_connected_image
+#: Game.Levels.Connected.L04_connected_image
 msgid "This level is the hardest one in this Game so far.\n"
 "But, by now, you have all the necessary tools to complete it.\n"
 "\n"
@@ -2358,7 +2461,7 @@ msgstr ""
 #. §0: `mem_singleton_iff`
 #. §1: `x ∈ {a} ↔ x = a`
 #. §2: `Set.mem_singleton_iff`
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "Lean will recognize §0 is a proof of any statement of the form\n"
 "§1.  In Mathlib, the name of this theorem is §2."
 msgstr ""
@@ -2492,6 +2595,42 @@ msgstr ""
 msgid "The final level in this world!"
 msgstr ""
 
+#. §0: `s`
+#. §1: `s`
+#. §2: ```
+#. def IsCompact {X : Type} [TopologicalSpace X] (s : Set X) : Prop :=
+#.   ∀ F : Set (Set X), (∀ U ∈ F, IsOpen U) → s ⊆ ⋃₀ F →
+#.     ∃ G ⊆ F, G.Finite ∧ s ⊆ ⋃₀ G
+#. ```
+#. §3: `F`
+#. §4: `s ⊆ ⋃₀ F`
+#. §5: `G ⊆ F`
+#. §6: `s ⊆ ⋃₀ G`
+#. §7: `⋃₀`
+#. §8: `\\U0`
+#. §9: `∅`
+#. §10: `\\empty`
+#. §11: `IsConnected`
+#. §12: `IsCompact`
+#. §13: `rw [IsCompact]`
+#. §14: `∀`
+#. §15: `intro`
+#: Game.Levels.Compact.L02_compact_empty
+msgid "Now we can define compact sets.\n"
+"A *cover* of a set §0 is a family of sets whose union contains §1.  A set is *compact* if\n"
+"every open cover of it has a finite subcover.  In Lean:\n"
+"§2\n"
+"In words: for every family §3 of open sets with §4, there is a subfamily\n"
+"§5 which is finite and still satisfies §6.\n"
+"Recall that you can enter the symbol §7 by typing §8, and §9 by typing §10.\n"
+"\n"
+"As with §11, you can treat §12 as a theorem: typing §13 will\n"
+"unfold the definition.  You don't have to, though — since the definition begins with a §14,\n"
+"you can go straight in with §15.\n"
+"\n"
+"To warm up, let's show that the empty set is compact."
+msgstr ""
+
 #: Game.Levels.Union.L01or
 msgid "Or"
 msgstr ""
@@ -2526,6 +2665,11 @@ msgstr ""
 #. §2: `false`
 #: Game.Levels.Connected.L01_preconnected
 msgid "If you have §0, then §1 is a proof of §2."
+msgstr ""
+
+#. §0: `«{h1}»`
+#: Game.Levels.FamCombo.L01compunion
+msgid "What set can you apply §0 to?"
 msgstr ""
 
 #. §0: `a`
@@ -2601,41 +2745,11 @@ msgid "The union of two finite sets is finite.\n"
 "§3.  This can also be written §4."
 msgstr ""
 
-#. §0: `choose!`
-#. §1: `obtain`
-#. §2: `∃ x, P x`
-#. §3: `choose!`
-#. §4: `∀ y, ∃ x, P x y`
-#. §5: `obtain`
-#. §6: `∃`
-#. §7: `choose!`
-#. §8: `∃`
-#. §9: `h : ∀ y, ∃ x, P x y`
-#. §10: ```
-#. choose! g hg using h
-#. ```
-#. §11: `g : Y → X`
-#. §12: `hg : ∀ y, P (g y) y`
-#. §13: `choose!`
-#: Game.Levels.Compact.L03_choose
-msgid "In this level, we introduce a new tactic, §0,\n"
-"which will be useful when working with compact sets.\n"
-"\n"
-"While §1 is a tactic to extract a witness from a statement of the form §2,\n"
-"§3 is a tactic to extract several witnesses from a statement of the form\n"
-"§4.\n"
-"\n"
-"The tactic §5 unpacks a single §6 statement, while §7 unpacks many §8\n"
-"statements at once.\n"
-"\n"
-"Suppose you have a hypothesis §9. Writing\n"
-"\n"
-"§10\n"
-"\n"
-"gives a function §11 together with a proof §12.\n"
-"\n"
-"In this level, we apply §13 to prove that if a function is surjective, then it has a\n"
-"right inverse."
+#. §0: `«{haX}»`
+#. §1: `«{a}»`
+#. §2: `{«{x}»}`
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "§0 says that §1 is a member of §2. Which theorem turns that into an equation?"
 msgstr ""
 
 #. §0: `S`
@@ -2797,36 +2911,6 @@ msgstr ""
 msgid "§0 is equivalent to §1, which in turn is equivalent to §2. Do you see how we can get a proof by contradiction?"
 msgstr ""
 
-#. §0: `choose!`
-#. §1: `A : Set X`
-#. §2: `B : Set Y`
-#. §3: `h : ∀ x ∈ A, ∃ y ∈ B, P x y`
-#. §4: `choose! g hgB hgx using h`
-#. §5: `g : X → Y`
-#. §6: `hgB : ∀ x ∈ A, g x ∈ B`
-#. §7: `hgx : ∀ x ∈ A, P x (g x)`
-#. §8: `A`
-#. §9: `g`
-#. §10: `X`
-#. §11: `A`
-#. §12: `A`
-#. §13: `Finite.image`
-#: Game.Levels.Compact.L04_compact_finite
-msgid "In this level, we prove that every finite set is compact.\n"
-"\n"
-"We will need to use the §0 tactic. Suppose §1 and §2, and you have\n"
-"a hypothesis of the form §3. Then §4\n"
-"produces a function §5, together with proofs §6 and\n"
-"§7.\n"
-"In other words, it picks out a witness for each element of §8.\n"
-"\n"
-"Note that §9 is defined on all of §10, not just on §11; outside of §12 its values are\n"
-"arbitrary, and the two proofs say nothing about them.\n"
-"\n"
-"You have also been provided with the theorem §13, which states that the image\n"
-"of a finite set is finite."
-msgstr ""
-
 #. §0: `P ∨ Q`
 #. §1: `P`
 #. §2: `Q`
@@ -2957,10 +3041,6 @@ msgid "Image of a set under a function. Can be written as §0 or §1.\n"
 "The theorem §15 rewrite a hypothesis §16 into §17, and vice versa."
 msgstr ""
 
-#: Game.Levels.Compact.L08_compact_closed_subset
-msgid "Closed subset of a compact set"
-msgstr ""
-
 #. §0: `finite_empty`
 #: Game.Levels.Compact.L02_compact_empty
 msgid "This is §0, which you were given in the last level."
@@ -2975,6 +3055,10 @@ msgstr ""
 #: Game.Levels.Inter.L08inter_assoc
 msgid "Since your goal is an \"if-then\" statement, a good next step\n"
 "is §0."
+msgstr ""
+
+#: Game.Levels.FamCombo
+msgid "Family Combination World"
 msgstr ""
 
 #. §0: $A$
@@ -3036,6 +3120,10 @@ msgid "If §0 and §1, then the image of §2 under §3 is the set\n"
 "In this level, we prove the following property of images: If §20, then §21."
 msgstr ""
 
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "It remains to show preconnectedness. Introduce the two open sets and all the hypotheses about them."
+msgstr ""
+
 #. §0: `rewrite`
 #. §1: `rewrite`
 #: Game.Levels.Inter.L06inter_sub_swap
@@ -3048,6 +3136,11 @@ msgstr ""
 
 #: Game.Levels.Comp.L03compsub
 msgid "Now your goal is a negative statement, so try proof by contradiction."
+msgstr ""
+
+#: Game.Levels.FamCombo.L02compinter
+msgid "Perhaps you have already guessed that there is a theorem about the complement\n"
+"of an intersection of a family that is similar to the theorem in the last level."
 msgstr ""
 
 #: Game.Levels.FamInter.L06eltwiseunion
@@ -3110,6 +3203,15 @@ msgstr ""
 #: Game.Levels.Compact.L04_compact_finite
 msgid "§0 now assigns a member of §1 to every point.  Which subfamily of §2 should\n"
 "you use?"
+msgstr ""
+
+#. §0: $F$
+#. §1: $(\\bigcup F)^c = \\bigcap \\{s \\mid s^c \\in F\\}$
+#: Game.Levels.FamCombo.L01compunion
+#: Game.Levels.FamCombo.L01compunion
+#: Game.Levels.FamCombo.L02compinter
+#: Game.Levels.FamCombo.L02compinter
+msgid "For any family of sets §0, §1."
 msgstr ""
 
 #. §0: `«{h3}»`
@@ -3187,6 +3289,12 @@ msgstr ""
 msgid "The union over the empty family of sets is the empty set."
 msgstr ""
 
+#. §0: `⋃₀ («{G}» ∪ «{H}»)`
+#: Game.Levels.Compact.L05_compact_union
+msgid "The goal is about §0.  A theorem from Family Union World rewrites\n"
+"that as a union of two unions."
+msgstr ""
+
 #. §0: $x = y$
 #. §1: $f(x) = f(y)$
 #: Game.Levels.Functions.L01_functions
@@ -3205,6 +3313,10 @@ msgid "Notice that Lean has written the goal as §0, with no\n"
 "To start this proof, use the tactic §2."
 msgstr ""
 
+#: Game.Levels.Compact.L08_compact_closed_subset
+msgid "Case closed"
+msgstr ""
+
 #. §0: `rw [← isOpen_compl_iff]`
 #. §1: `IsClosed U`
 #. §2: `IsOpen Uᶜ`
@@ -3216,17 +3328,17 @@ msgstr ""
 msgid "Show that the union of two compact sets is compact."
 msgstr ""
 
+#: Game.Levels.FamCombo.L03singleton
+msgid "Congratulations!  You have completed the Set Theory Game!\n"
+"\n"
+"If you want to learn more about Lean, check out the [Lean Community](https://leanprover-community.github.io)."
+msgstr ""
+
 #. §0: `A ∪ B ∪ C`
 #. §1: `(A ∪ B) ∪ C`
 #: Game.Levels.Union.L06union_assoc
 msgid "Notice that, as with intersections, Lean groups unions to the left, so\n"
 "§0 means §1."
-msgstr ""
-
-#: Game.Levels.FamUnion.L08singleton
-msgid "Congratulations!  You have completed the Set Theory Game!\n"
-"\n"
-"If you want to learn more about Lean, check out the [Lean Community](https://leanprover-community.github.io)."
 msgstr ""
 
 #. §0: `ext x`
@@ -3332,6 +3444,10 @@ msgstr ""
 
 #: Game.Levels.Union.L02subunion
 msgid "Subset of a union"
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "In this level, we show that a one-element set is connected."
 msgstr ""
 
 #. §0: `«{ht}»`
@@ -3577,6 +3693,12 @@ msgstr ""
 msgid "Level finished! Well done!"
 msgstr ""
 
+#. §0: `use «{x}»`
+#. §1: `rfl`
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "§0, and then §1 finishes it."
+msgstr ""
+
 #: Game.Levels.Combo.L02compint
 msgid "Do you see how you can now use the theorem from the previous level?"
 msgstr ""
@@ -3621,13 +3743,6 @@ msgstr ""
 #: Game.Levels.Inter.L05subint
 msgid "Your immediate goal now is to prove that §0.  Once you close that goal,\n"
 "you'll be asked to prove the second goal, §1."
-msgstr ""
-
-#. §0: `rintro A (rfl | rfl)`
-#. §1: `A`
-#: Game.Levels.Spaces.L06_pairopen
-msgid "§0 will automatically introduce §1\n"
-"and split the statement `A ∈ {U, V} into two cases."
 msgstr ""
 
 #. §0: `s`
@@ -3741,6 +3856,7 @@ msgstr ""
 #. §2: $\\bigcup (F \\cup G) =
 #. (\\bigcup F) \\cup (\\bigcup G)$
 #: Game.Levels.FamUnion.L05unionunion
+#: Game.Levels.FamUnion.L05unionunion
 msgid "Suppose §0 and §1 are families of sets.  Then §2."
 msgstr ""
 
@@ -3838,7 +3954,7 @@ msgstr ""
 #. §2: `mem_singleton_iff`
 #. §3: `mem_singleton_iff`
 #. §4: `x ∈ {a} ↔ x = a`
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "The notation §0 denotes a set whose only element is §1; such a set is called a *singleton*\n"
 "set.  The theorem §2 expresses the definition of singleton sets: §3 is\n"
 "a proof of any statement of the form §4."
@@ -3929,6 +4045,47 @@ msgstr ""
 msgid "The empty set is open"
 msgstr ""
 
+#. §0: `t`
+#. §1: `P ↔ Q`
+#. §2: `rewrite [t]`
+#. §3: `P`
+#. §4: `Q`
+#. §5: `Q`
+#. §6: `P`
+#. §7: `rewrite [← t]`
+#. §8: `\\l`
+#. §9: `←`
+#. §10: `h`
+#. §11: `rewrite [t] at h`
+#. §12: `rewrite`
+#. §13: `t`
+#. §14: `p = q`
+#. §15: `rewrite [t]`
+#. §16: `p`
+#. §17: `q`
+#. §18: `rewrite [← t]`
+#. §19: `q`
+#. §20: `p`
+#. §21: `rewrite [t1, t2]`
+#. §22: `rw`
+#. §23: `rewrite`
+#. §24: `rfl`
+#: Game.Levels.Comp.L03compsub
+msgid "If the expression §0 is a proof of a statement of the form §1, then the tactic\n"
+"§2 will replace §3 anywhere that it occurs in the goal with §4.  If you want to\n"
+"replace §5 with §6, use §7.  (Type §8 to enter the symbol §9.)  To do the\n"
+"replacement in an assumption §10, use §11.\n"
+"\n"
+"The §12 tactic can also be used with equations.  If §13 is a proof of an equation\n"
+"§14, then §15 will replace §16 with §17 wherever it appears, and §18\n"
+"will replace §19 with §20.\n"
+"\n"
+"To do multiple replacements, one after another, put a list of proofs inside the brackets, like\n"
+"this:  §21.\n"
+"\n"
+"The tactic §22 does the same as §23, and then tries to close the goal with §24."
+msgstr ""
+
 #. §0: `A ∪ B = B ∪ A`
 #. §1: `A ∪ B ⊆ B ∪ A`
 #: Game.Levels.Union.L04union_sub_swap
@@ -3971,7 +4128,7 @@ msgid "We have given this theorem the name §0.  Thus, from now on, for\n"
 "any sets §1 and §2, §3 is a proof of §4."
 msgstr ""
 
-#. §0: `preimage_complement`
+#. §0: `preimage_compl`
 #: Game.Levels.Continuous.L03_closed_preimage
 msgid "The theorem §0 from the Functions world can be useful in this level."
 msgstr ""
@@ -4111,8 +4268,25 @@ msgid "Step 3.  Every member of §0 is the preimage of some member of §1.  Stat
 "as a single §2, then feed it to §3."
 msgstr ""
 
-#: Game.Levels.Connected.L03_connected_image
+#. §0: `rcases`
+#. §1: `rcases «{hA}» with rfl | rfl`
+#. §2: $U$
+#. §3: $V$
+#: Game.Levels.Spaces.L06_pairopen
+msgid "Use §0 to decompose «{hA}». Using §1\n"
+"will automatically replace «{A}» with §2 and §3 respectively without adding an extra hypothesis."
+msgstr ""
+
+#: Game.Levels.Connected.L04_connected_image
 msgid "The continuous image of a connected set is connected"
+msgstr ""
+
+#. §0: `obtain ⟨a, haX, hau⟩ := «{hxu}»`
+#. §1: `a`
+#. §2: `«{u}»`
+#. §3: `{«{x}»}`
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Writing §0 gives you an element §1 contained in both §2 and §3."
 msgstr ""
 
 #: Game.Levels.Subset.L06subtrans
@@ -4242,6 +4416,11 @@ msgid "§0 means \"if §1 then §2\".  You can enter the symbol §3 by typing §
 "If you also have §11, then §12 is a proof of §13."
 msgstr ""
 
+#. §0: `«{A}» = U ∨ «{A}» ∈ {V}`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "Lean interprets «{hA}» as §0."
+msgstr ""
+
 #. §0: `exact ⟨«{x}», «{hxAB}».left, rfl⟩`
 #. §1: `«{hxAB}».right`
 #: Game.Levels.Functions.L04_image_intersection
@@ -4262,52 +4441,12 @@ msgstr ""
 msgid "Family Union World"
 msgstr ""
 
-#: Game.Levels.Connected.L03_connected_image
+#: Game.Levels.Connected.L04_connected_image
 msgid "Continuous image of a connected set"
 msgstr ""
 
 #: Game.Levels.Empty
 msgid "This module introduces the empty set."
-msgstr ""
-
-#. §0: `s`
-#. §1: `s`
-#. §2: ```
-#. def IsCompact {X : Type} [TopologicalSpace X] (s : Set X) : Prop :=
-#.   ∀ F : Set (Set X), (∀ U ∈ F, IsOpen U) → s ⊆ ⋃₀ F →
-#.     ∃ G ⊆ F, G.Finite ∧ s ⊆ ⋃₀ G
-#. ```
-#. §3: `F`
-#. §4: `s ⊆ ⋃₀ F`
-#. §5: `G ⊆ F`
-#. §6: `s ⊆ ⋃₀ G`
-#. §7: `⋃₀`
-#. §8: `\\U0`
-#. §9: `∅`
-#. §10: `\\empty`
-#. §11: `IsConnected`
-#. §12: `IsCompact`
-#. §13: `rw [IsCompact]`
-#. §14: `∀`
-#. §15: `intro`
-#: Game.Levels.Compact.L02_compact_empty
-msgid "Now we can define compact sets.\n"
-"\n"
-"A *cover* of a set §0 is a family of sets whose union contains §1.  A set is *compact* if\n"
-"every open cover of it has a finite subcover.  In Lean:\n"
-"\n"
-"§2\n"
-"\n"
-"In words: for every family §3 of open sets with §4, there is a subfamily\n"
-"§5 which is finite and still satisfies §6.\n"
-"\n"
-"Recall that you can enter the symbol §7 by typing §8, and §9 by typing §10.\n"
-"\n"
-"As with §11, you can treat §12 as a theorem: typing §13 will\n"
-"unfold the definition.  You don't have to, though — since the definition begins with a §14,\n"
-"you can go straight in with §15.\n"
-"\n"
-"To warm up, let's show that the empty set is compact."
 msgstr ""
 
 #: Game.Levels.Spaces
@@ -4329,6 +4468,31 @@ msgstr ""
 
 #: Game.Levels.Inter.L03inter_sub_left
 msgid "You should be able to combine ideas from previous levels to solve this one."
+msgstr ""
+
+#. §0: `f ⁻¹' (A ∪ B) = f ⁻¹' A ∪ f ⁻¹' B`
+#. §1: `⋃₀ F`
+#. §2: `F`
+#. §3: `F`
+#. §4: ```
+#. {B | ∃ U ∈ F, B = f ⁻¹' U}
+#. ```
+#. §5: `B`
+#. §6: `U`
+#. §7: `F`
+#. §8: `B = f ⁻¹' U`
+#: Game.Levels.Compact.L06_preimage_sUnion
+msgid "This level is about how preimages interact with unions of families.  We need it for the\n"
+"main theorem of this world.\n"
+"\n"
+"Back in Functions World you showed that §0.  The same is\n"
+"true for a whole family of sets at once: the preimage of §1 is the union of the\n"
+"preimages of the members of §2.\n"
+"\n"
+"To write \"the family of all preimages of members of §3\" in Lean we use set-builder\n"
+"notation, just as you did in Spaces World for families of complements:\n"
+"§4\n"
+"Read this as \"those sets §5 for which there is some §6 in §7 with §8\"."
 msgstr ""
 
 #. §0: `choose! g hg using «{h}»`
@@ -4395,7 +4559,7 @@ msgstr ""
 #. §0: `Continuous`
 #. §1: `h : Continuous f`
 #. §2: `h.isOpen_preimage`
-#. §3: `preimage_complement`
+#. §3: `preimage_compl`
 #. §4: `f⁻¹' (Uᶜ)`
 #. §5: `(f⁻¹' U)ᶜ`
 #: Game.Levels.Continuous.L01_continuous
@@ -4524,42 +4688,6 @@ msgstr ""
 msgid "Union subset of swap"
 msgstr ""
 
-#. §0: `t`
-#. §1: `P ↔ Q`
-#. §2: `rewrite [t]`
-#. §3: `P`
-#. §4: `Q`
-#. §5: `Q`
-#. §6: `P`
-#. §7: `rewrite [← t]`
-#. §8: `\\l`
-#. §9: `←`
-#. §10: `h`
-#. §11: `rewrite [t] at h`
-#. §12: `rewrite`
-#. §13: `t`
-#. §14: `p = q`
-#. §15: `rewrite [t]`
-#. §16: `p`
-#. §17: `q`
-#. §18: `rewrite [← t]`
-#. §19: `q`
-#. §20: `p`
-#. §21: `rewrite [t1, t2]`
-#: Game.Levels.Comp.L03compsub
-msgid "If the expression §0 is a proof of a statement of the form §1, then the tactic\n"
-"§2 will replace §3 anywhere that it occurs in the goal with §4.  If you want to\n"
-"replace §5 with §6, use §7.  (Type §8 to enter the symbol §9.)  To do the\n"
-"replacement in an assumption §10, use §11.\n"
-"\n"
-"The §12 tactic can also be used with equations.  If §13 is a proof of an equation\n"
-"§14, then §15 will replace §16 with §17 wherever it appears, and §18\n"
-"will replace §19 with §20.\n"
-"\n"
-"To do multiple replacements, one after another, put a list of proofs inside the brackets, like\n"
-"this:  §21."
-msgstr ""
-
 #: Game.Levels.Empty.L04_nonempty
 msgid "A set is nonempty if and only if it is not equal to the empty set."
 msgstr ""
@@ -4683,6 +4811,56 @@ msgid "Welcome to Subset World! In this world you will learn about sets and\n"
 "to get started."
 msgstr ""
 
+#. §0: `TopologicalSpace`
+#. §1: `TopologicalSpace X`
+#. §2: `X`
+#. §3: `TopologicalSpace`
+#. §4: ```
+#. class TopologicalSpace (X : Type u) where
+#.   protected IsOpen : Set X → Prop
+#.   protected isOpen_univ : IsOpen univ
+#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
+#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
+#. ```
+#. §5: `U : Set X`
+#. §6: `IsOpen U`
+#. §7: `U`
+#. §8: `x ∈ U`
+#. §9: `A ⊆ B`
+#. §10: `U`
+#. §11: `isOpen_univ`
+#. §12: `isOpen_inter hU hV`
+#. §13: `IsOpen (U ∩ V)`
+#. §14: `hU : IsOpen U`
+#. §15: `hV : IsOpen V`
+#. §16: `isOpen_sUnion`
+#: Game.Levels.Spaces.L01_spaces
+msgid "In this level, we introduce the §0 typeclass.\n"
+"The statement §1 means that §2 is a topological space.\n"
+"The §3 typeclass is defined as follows:\n"
+"§4\n"
+"It's okay if you don't understand all of this.\n"
+"We will only focus on some of it now, and get to the rest in later worlds.\n"
+"\n"
+"The first line says which sets are open.  For a set §5, the statement §6\n"
+"says that §7 is open.  Like §8 or §9, this is a *statement*: it is either true or\n"
+"false, and it is something you prove.  You never have to say *which* topology you mean —\n"
+"Lean works that out from the type of §10.\n"
+"\n"
+"The other three lines are the axioms of a topological space, and you can use them as\n"
+"theorems:\n"
+"* §11 is a proof that the whole space is open.\n"
+"* §12 is a proof of §13, given §14 and\n"
+"  §15.\n"
+"* §16 says that a union of a family of open sets is open.\n"
+"\n"
+"Observe that It's not explicitly stated in the axioms that the empty set is open,\n"
+"because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
+"We will prove this in a later level!\n"
+"\n"
+"We start with a warm-up exercise."
+msgstr ""
+
 #. §0: `empty_inter`
 #. §1: `«{V}» ∩ ∅ = ∅`
 #: Game.Levels.Connected.L01_preconnected
@@ -4726,6 +4904,15 @@ msgstr ""
 msgid "Pick and choose"
 msgstr ""
 
+#. §0: `rcases`
+#. §1: `x ∈ s ∪ t`
+#. §2: `«{hGcov}»`
+#. §3: `«{hHcov}»`
+#: Game.Levels.Compact.L05_compact_union
+msgid "Now §0 the assumption §1; each case is closed by\n"
+"§2 or §3 in one step."
+msgstr ""
+
 #. §0: `have`
 #: Game.Levels.Compact.L07_compact_image
 msgid "This is the main theorem of this world: the continuous image of a compact set is compact.\n"
@@ -4755,15 +4942,6 @@ msgstr ""
 msgid "In this level, we show that the preimage of the empty set under any function is the empty set."
 msgstr ""
 
-#. §0: `have key : ∀ V, V ∈ «{G}» → ∃ U, U ∈ «{F}» ∧ f ⁻¹' U = V`
-#. §1: `intro`
-#. §2: `obtain`
-#. §3: `use`
-#: Game.Levels.Compact.L07_compact_image
-msgid "§0, proved with\n"
-"§1, §2 and §3."
-msgstr ""
-
 #: Game.Levels.Spaces.L02_closed
 msgid "Closed sets"
 msgstr ""
@@ -4775,17 +4953,6 @@ msgstr ""
 msgid "The sets picked out by §0, one for each point of §1: §2."
 msgstr ""
 
-#. §0: `s`
-#. §1: `t`
-#. §2: `s ∪ t`
-#. §3: `Finite.union`
-#: Game.Levels.Compact.L05_compact_union
-msgid "Now let's show that if §0 and §1 are compact, then so is §2.\n"
-"\n"
-"You have been provided with another theorem, §3, which states that\n"
-"the union of two finite sets is finite."
-msgstr ""
-
 #. §0: $S$
 #. §1: $x$
 #. §2: $x ∈ S$
@@ -4794,7 +4961,7 @@ msgid "A set §0 is nonempty if and only if there exists an element §1 such tha
 msgstr ""
 
 #: Game.Levels.FamInter.L03interpair
-#: Game.Levels.Spaces.L05_interclosed
+#: Game.Levels.FamCombo
 msgid ""
 msgstr ""
 
@@ -4915,6 +5082,43 @@ msgid "Lean will recognize §0 as a proof of any statement of the form\n"
 "§1.  In Mathlib, the name of this theorem is §2."
 msgstr ""
 
+#. §0: `h : ∀ x, ∃ y, P x y`
+#. §1: `choose! g hg using h`
+#. §2: `g`
+#. §3: `hg : ∀ x, P x (g x)`
+#. §4: `y`
+#. §5: `x`
+#. §6: `g x`
+#. §7: `h : ∀ x ∈ A, ∃ y, P x y`
+#. §8: `hg : ∀ x ∈ A, P x (g x)`
+#. §9: `g`
+#. §10: `choose!`
+#. §11: `y`
+#. §12: `h : ∀ x ∈ A, ∃ y ∈ B, P x y`
+#. §13: `choose! g hgB hgP using h`
+#. §14: `g`
+#. §15: `hgB : ∀ x ∈ A, g x ∈ B`
+#. §16: `hgP : ∀ x ∈ A, P x (g x)`
+#. §17: `obtain`
+#. §18: `∃`
+#. §19: `choose!`
+#: Game.Levels.Compact.L03_choose
+msgid "If you have an assumption §0, then §1 introduces a\n"
+"function §2 together with an assumption §3.  In other words, it picks\n"
+"such a §4 for every §5 at once, and names it §6.\n"
+"\n"
+"It also works if the assumption only holds on a set, as in §7; then\n"
+"§8.  Either way §9 is defined on the whole type, so §10\n"
+"needs the type of §11 to be nonempty — it has to send the remaining inputs somewhere.\n"
+"\n"
+"If the existential statement has several parts, you supply one name for each of them.  For\n"
+"instance from §12 the tactic §13 produces\n"
+"§14 together with two proofs, §15 and §16.\n"
+"\n"
+"Compare this with §17, which unpacks a single §18 statement.  Use §19 when you\n"
+"need a witness for every element at once, not just for one."
+msgstr ""
+
 #: Game.Levels.Empty.L02_empty_union
 msgid "We show that the union over the empty family of sets is the empty set.\n"
 "\n"
@@ -5022,18 +5226,18 @@ msgstr ""
 msgid "In this level, we show that the intersection of any set with the empty set is empty."
 msgstr ""
 
-#: Game.Levels.Comp.L04compcomp
-msgid "The proof of the second goal is similar."
-msgstr ""
-
 #. §0: `h1`
 #. §1: `A`
 #. §2: `A`
 #. §3: `A`
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "You need to apply §0 to a family of sets with two\n"
 "properties: the union of the family must be §1, and knowing that §2 belongs to the\n"
 "family must help you prove that §3 is a singleton."
+msgstr ""
+
+#: Game.Levels.Comp.L04compcomp
+msgid "The proof of the second goal is similar."
 msgstr ""
 
 #. §0: `¬P`
@@ -5090,9 +5294,13 @@ msgstr ""
 msgid "Now combine §0 and §1."
 msgstr ""
 
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Singletons are connected"
+msgstr ""
+
 #. §0: `have h2 := h1 {s | ...}`
 #. §1: `...`
-#: Game.Levels.FamUnion.L08singleton
+#: Game.Levels.FamCombo.L03singleton
 msgid "Start with §0.  The hard part is figuring out\n"
 "how to fill in the §1."
 msgstr ""
@@ -5104,6 +5312,12 @@ msgstr ""
 #. §0: `constructor`
 #: Game.Levels.Compact.L04_compact_finite
 msgid "Split the three remaining goals with §0."
+msgstr ""
+
+#. §0: `use`
+#. §1: `{«{x}»} ∩ («{u}» ∩ «{v}»)`
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Which element can you §0 to show that §1 is nonempty?"
 msgstr ""
 
 #. §0: `And.intro`
@@ -5142,6 +5356,11 @@ msgstr ""
 
 #: Game.Levels.Subset.L01exact
 msgid "The exact tactic"
+msgstr ""
+
+#. §0: `intro`
+#: Game.Levels.Spaces.L06_pairopen
+msgid "Since the goal starts with a universal quantifier, you should use §0."
 msgstr ""
 
 #. §0: `P ↔ Q`
@@ -5324,10 +5543,6 @@ msgstr ""
 msgid "Show that §0."
 msgstr ""
 
-#: Game.Levels.Continuous.L03_closed_preimage
-msgid "Continuity via closed sets"
-msgstr ""
-
 #. §0: `constructor`
 #: Game.Levels.Compact.L02_compact_empty
 msgid "Split them apart with §0."
@@ -5446,6 +5661,10 @@ msgstr ""
 msgid "In this level, you can use the theorem §0, which you proved in the functions world."
 msgstr ""
 
+#: Game.Levels.Spaces.L05_interclosed
+msgid "Level Completed!"
+msgstr ""
+
 #: Game.Levels.Inter.L04proveand
 msgid "Writing out the meaning of intersection in the goal will help you see what to do to\n"
 "complete this level."
@@ -5468,6 +5687,10 @@ msgid "As with complements and intersections, one of the key tools for proving t
 "§6 if it appears in any assumption or the goal.  (The similar theorem about intersections\n"
 "was called §7.  Why isn't this one called §8?  I don't know.  The\n"
 "naming of theorems in Lean is systematic, but there are occasional surprises.)"
+msgstr ""
+
+#: Game.Levels.FamCombo.L02compinter
+msgid "Complement of a family intersection"
 msgstr ""
 
 #. §0: `Aᶜᶜ = A`
@@ -5545,6 +5768,10 @@ msgid "In the last level, you proved the theorem §0.  If you have §1 and §2,\
 "used to perform such replacements.  You'll get to try out the §9 tactic in this level."
 msgstr ""
 
+#: Game.Levels.Connected.L02_connected
+msgid "It's all connected"
+msgstr ""
+
 #. §0: $f : X \\to Y$
 #. §1: $g : Y \\to Z$
 #. §2: $g \\circ f : X \\to Z$
@@ -5574,6 +5801,10 @@ msgstr ""
 #. §1: `obtain ⟨U, hUF, hxU⟩ := «{hcover}» hx`
 #: Game.Levels.Compact.L04_compact_finite
 msgid "§0, then §1."
+msgstr ""
+
+#: Game.Levels.Connected.L04_connected_image
+msgid "Well done. You have now mastered connectedness in Lean."
 msgstr ""
 
 #. §0: $x$
@@ -5834,69 +6065,8 @@ msgid "How do you prove that one set is a subset of another?  To prove that §0,
 "to show that if §6 is a set, then §7."
 msgstr ""
 
-#. §0: `x ∈ s ∪ t`
-#. §1: `rcases`
-#: Game.Levels.Compact.L05_compact_union
-msgid "Take §0 and §1 it.  In each case the corresponding\n"
-"subfamily already covers that part."
-msgstr ""
-
 #: Game.Levels.Spaces.L05_interclosed
 msgid "The intersection of a family of closed sets is closed."
-msgstr ""
-
-#. §0: `TopologicalSpace`
-#. §1: `TopologicalSpace X`
-#. §2: `X`
-#. §3: `TopologicalSpace`
-#. §4: ```
-#. class TopologicalSpace (X : Type u) where
-#.   protected IsOpen : Set X → Prop
-#.   protected isOpen_univ : IsOpen univ
-#.   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
-#.   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
-#. ```
-#. §5: `U : Set X`
-#. §6: `IsOpen U`
-#. §7: `U`
-#. §8: `x ∈ U`
-#. §9: `A ⊆ B`
-#. §10: `U`
-#. §11: `isOpen_univ`
-#. §12: `isOpen_inter hU hV`
-#. §13: `IsOpen (U ∩ V)`
-#. §14: `hU : IsOpen U`
-#. §15: `hV : IsOpen V`
-#. §16: `isOpen_sUnion`
-#: Game.Levels.Spaces.L01_spaces
-msgid "In this level, we introduce the §0 typeclass.\n"
-"The statement §1 means that §2 is a topological space.\n"
-"\n"
-"The §3 typeclass is defined as follows:\n"
-"\n"
-"§4\n"
-"\n"
-"It's okay if you don't understand all of this.\n"
-"We will only focus on some of it now, and get to the rest in later worlds.\n"
-"\n"
-"The first line says which sets are open.  For a set §5, the statement §6\n"
-"says that §7 is open.  Like §8 or §9, this is a *statement*: it is either true or\n"
-"false, and it is something you prove.  You never have to say *which* topology you mean —\n"
-"Lean works that out from the type of §10.\n"
-"\n"
-"The other three lines are the axioms of a topological space, and you can use them as\n"
-"theorems:\n"
-"\n"
-"* §11 is a proof that the whole space is open.\n"
-"* §12 is a proof of §13, given §14 and\n"
-"  §15.\n"
-"* §16 says that a union of a family of open sets is open.\n"
-"\n"
-"Observe that It's not explicitly stated in the axioms that the empty set is open,\n"
-"because this follows from the fact that a union of open sets is open, applied to the empty union.\n"
-"We will prove this in a later level!\n"
-"\n"
-"We start with a warm-up exercise."
 msgstr ""
 
 #. §0: `s`
@@ -6011,6 +6181,10 @@ msgstr ""
 #. §0: `h1`
 #: Game.Levels.FamInter.L06eltwiseunion
 msgid "Now use §0."
+msgstr ""
+
+#: Game.Levels.Connected.L03_connected_singleton
+msgid "Goal defeated! The singleton space never stood a chance."
 msgstr ""
 
 #: Game.Levels.Empty.L04_nonempty

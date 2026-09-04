@@ -21,14 +21,16 @@ Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y)
   open set."
   rw [continuous_def]
   intro U hU
-  Hint (hidden:=true) "The theorem `preimage_complement` from the Functions world can be useful in this level."
+  Hint (hidden:=true) "What happens if you write `have hc := {h} {U}ᶜ`?"
+  have hc := h Uᶜ
+  Hint (hidden:=true) "The theorem `preimage_compl` from the Functions world can be useful in this level."
   Hint (hidden:=true) "In the right column, you can also look up the theorem `isOpen_compl_iff` (in the `topology` tab), as well as the theorem `compl_compl` (in the `ᶜ` tab)."
   have huc : IsClosed Uᶜ := by
     rw [← isOpen_compl_iff]
     rw [compl_compl]
     exact hU
-  have hfuc := h Uᶜ huc
-  rw [preimage_complement] at hfuc
+  have hfuc := hc huc
+  rw [preimage_compl] at hfuc
   rw [← isOpen_compl_iff] at hfuc
   rw [compl_compl] at hfuc
   exact hfuc
