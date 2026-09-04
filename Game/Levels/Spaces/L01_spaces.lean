@@ -41,6 +41,8 @@ We will prove this in a later level!
 We start with a warm-up exercise.
 "
 
+TheoremTab "topology"
+
 /-- If `U` and `V` are open, then so is `U ∩ V`.  This is one of the axioms of a
 topological space, restated so that you can use it without a prefix. -/
 theorem isOpen_inter {X : Type} [TopologicalSpace X] {U V : Set X}

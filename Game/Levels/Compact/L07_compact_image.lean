@@ -23,6 +23,8 @@ Some general tips for this level:
 Good luck!
 "
 
+TheoremTab "Compact"
+
 /-- The continuous image of a compact set is compact. -/
 TheoremDoc TTG.compact_image as "compact_image" in "Compact"
 

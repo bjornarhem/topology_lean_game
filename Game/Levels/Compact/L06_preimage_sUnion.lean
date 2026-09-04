@@ -23,6 +23,8 @@ notation, just as you did in Spaces World for families of complements:
 Read this as \"those sets `B` for which there is some `U` in `F` with `B = f ⁻¹' U`\".
 "
 
+TheoremTab "⋂₀⋃₀"
+
 /-- The theorem $f^{-1}(\bigcup F) = \bigcup \{f^{-1}(U) : U \in F\}$. -/
 TheoremDoc TTG.preimage_sUnion as "preimage_sUnion" in "⋂₀⋃₀"
 

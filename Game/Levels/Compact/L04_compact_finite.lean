@@ -25,6 +25,8 @@ You have also been provided with the theorem `Finite.image`, which states that t
 of a finite set is finite.
 "
 
+TheoremTab "Finite"
+
 /-- Every finite set is compact. -/
 TheoremDoc TTG.finite_compact as "finite_compact" in "Compact"
 

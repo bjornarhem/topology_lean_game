@@ -15,6 +15,8 @@ the union of two finite sets is finite.  It may also be useful to apply `sUnion_
 which you proved back in Family Union World.
 "
 
+TheoremTab "Finite"
+
 /-- The union of two compact sets is compact. -/
 TheoremDoc TTG.compact_union as "compact_union" in "Compact"
 
