@@ -5,7 +5,7 @@ namespace TTG
 
 World "Continuous"
 Level 3
-Title "Continuity via closed sets"
+Title "Closing time"
 
 Introduction "
 In the first level of this world, you showed that if a function `f` is

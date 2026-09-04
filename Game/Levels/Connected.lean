@@ -1,4 +1,4 @@
-import Game.Levels.Connected.L03_connected_image
+import Game.Levels.Connected.L04_connected_image -- it imports all previous levels
 
 World "Connected"
 Title "Connected sets"

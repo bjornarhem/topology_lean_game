@@ -5,7 +5,7 @@ namespace TTG
 
 World "Compact"
 Level 8
-Title "Closed subset of a compact set"
+Title "Case closed"
 
 Introduction "
 For the final level of this world, we prove that a closed subset of a compact set is compact.
