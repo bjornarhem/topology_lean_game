@@ -1,10 +1,10 @@
-import Game.Levels.Spaces.L07_pairclosed
+import Game.Levels.Spaces.L05_pairclosed
 
 open Set
 namespace TTG
 
 World "Spaces"
-Level 8
+Level 6
 Title "Openness as a Local Property"
 
 Introduction"

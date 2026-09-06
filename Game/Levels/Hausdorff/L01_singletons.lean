@@ -22,6 +22,8 @@ An important thing to notice is that `T2Space` does not rehash the properties of
 Also, the predicate `[TopologicalSpace X]` appears in its sequence of arguments.
 Thus, we can only say `X` is a `T2Space` when we already know it is a `TopologicalSpace`.
 
+If you have a hypothesis `T2 : T2Space X`, you can access the definition by writing `T2.t2`.
+
 Note also that we call Hausdorff spaces `T2Spaces`.
 This is a mathematical convention that exists outside of Lean to describe several separation axioms:
 
@@ -49,7 +51,7 @@ NewDefinition T2Space
 class T2Space (X : Type u) [TopologicalSpace X] : Prop where
   t2 : ∀ x y : X, x ≠ y → ∃ (u : Set X) (v : Set X), IsOpen u ∧ IsOpen v ∧ x ∈ u ∧ y ∈ v ∧ u ∩ v = ∅
 
-Statement {X : Type} [TopologicalSpace X] [T2 : T2Space X] (U V : Set X) : ∀ x : X, IsClosed {x} := by
+Statement {X : Type} [TopologicalSpace X] [T2 : T2Space X] : ∀ x : X, IsClosed {x} := by
   intro x
   rw [←isOpen_compl_iff]
   Hint "You can use `isOpen_iff_forall_mem_open`."

@@ -1,11 +1,11 @@
-import Game.Levels.Spaces.L06_pairopen
+import Game.Levels.Spaces.L04_pairopen
 
 open Set
 
 namespace TTG
 
 World "Spaces"
-Level 7
+Level 5
 Title "Intersection of Two Closed Sets"
 
 Introduction "

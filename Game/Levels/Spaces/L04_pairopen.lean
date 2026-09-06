@@ -1,11 +1,11 @@
-import Game.Levels.Spaces.L05_interclosed
+import Game.Levels.Spaces.L03_interclosed
 
 open Set
 
 namespace TTG
 
 World "Spaces"
-Level 6
+Level 4
 Title "Union of Two Open Sets"
 
 Introduction "
