@@ -5,7 +5,7 @@ namespace TTG
 
 World "Connected"
 Level 2
-Title "Connected sets"
+Title "It's all connected"
 
 Introduction "
 In this level, we introduce connected sets.

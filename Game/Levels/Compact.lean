@@ -1,4 +1,4 @@
-import Game.Levels.Compact.L07_compact_image -- imports all previous levels
+import Game.Levels.Compact.L08_compact_closed_subset -- imports all previous levels
 
 World "Compact"
 Title "Compact sets"

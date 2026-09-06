@@ -19,6 +19,8 @@ To write the symbols `⟨` and `⟩`, you can write \\langle and \\rangle, respe
 In this level, we prove the following property of images: If $A ⊆ B$, then $f(A) ⊆ f(B)$.
 "
 
+TheoremTab "function"
+
 /--
 If A ⊆ B, then $f(A) ⊆ f(B)$.
 -/

@@ -1,10 +1,10 @@
-import Game.Levels.Connected.L02_connected
+import Game.Levels.Connected.L03_connected_singleton
 
 open Set
 namespace TTG
 
 World "Connected"
-Level 3
+Level 4
 Title "Continuous image of a connected set"
 
 Introduction "
@@ -67,3 +67,7 @@ Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (
   exact ⟨x, hxA, rfl⟩
   rw [← preimage_intersection] at hxVW_preim
   exact hxVW_preim
+
+Conclusion "
+Well done. You have now mastered connectedness in Lean.
+"

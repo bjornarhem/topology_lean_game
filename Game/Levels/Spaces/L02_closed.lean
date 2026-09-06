@@ -25,7 +25,7 @@ Statement {X : Type} [TopologicalSpace X] (U V : Set X) : (IsClosed U) → (IsCl
   Hint "Here it would be a good idea to use the theorem `compl_union`."
   rw [compl_union]
   rw [← isOpen_compl_iff] at hU hV
-
+  Hint (hidden:=true) "The goal can now be closed with `isOpen_inter hU hV`"
   exact isOpen_inter hU hV
 
 /-- $U^c$ is open if and only if $U$ is closed. -/

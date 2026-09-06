@@ -19,7 +19,11 @@ to `⋃₀ F` and `⋃₀ G`.
 
 /-- Suppose $F$ and $G$ are families of sets.  Then $\bigcup (F \cup G) =
 (\bigcup F) \cup (\bigcup G)$. -/
-Statement (F G : Set (Set U)) : ⋃₀ (F ∪ G) = (⋃₀ F) ∪ (⋃₀ G) := by
+TheoremDoc TTG.sUnion_union as "sUnion_union" in "⋂₀⋃₀"
+
+/-- Suppose $F$ and $G$ are families of sets.  Then $\bigcup (F \cup G) =
+(\bigcup F) \cup (\bigcup G)$. -/
+Statement sUnion_union (F G : Set (Set U)) : ⋃₀ (F ∪ G) = (⋃₀ F) ∪ (⋃₀ G) := by
   ext x
   apply Iff.intro
   intro h1

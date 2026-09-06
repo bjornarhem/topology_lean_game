@@ -10,28 +10,22 @@ Title "Pick and choose"
 Introduction "
 In this level, we introduce a new tactic, `choose!`,
 which will be useful when working with compact sets.
-
 While `obtain` is a tactic to extract a witness from a statement of the form `∃ x, P x`,
 `choose!` is a tactic to extract several witnesses from a statement of the form
 `∀ y, ∃ x, P x y`.
 
 The tactic `obtain` unpacks a single `∃` statement, while `choose!` unpacks many `∃`
 statements at once.
-
-Suppose you have a hypothesis `h : ∀ y, ∃ x, P x y`. Writing
-
+Suppose you have a hypothesis:
+```h : ∀ y, ∃ x, P x y```
+Writing
 ```
 choose! g hg using h
 ```
-
 gives a function `g : Y → X` together with a proof `hg : ∀ y, P (g y) y`.
 
 In this level, we apply `choose!` to prove that if a function is surjective, then it has a
 right inverse.
-
-(The assumption `[Nonempty X]` says that `X` has at least one element.  The tactic `choose!`
-always builds a function defined on all of `Y`, so it needs somewhere to send the elements
-it has no witness for.)
 "
 
 /-- If $f$ is a surjective function from a nonempty set, then $f$ has a right inverse. -/
@@ -60,6 +54,10 @@ such a `y` for every `x` at once, and names it `g x`.
 It also works if the assumption only holds on a set, as in `h : ∀ x ∈ A, ∃ y, P x y`; then
 `hg : ∀ x ∈ A, P x (g x)`.  Either way `g` is defined on the whole type, so `choose!`
 needs the type of `y` to be nonempty — it has to send the remaining inputs somewhere.
+
+If the existential statement has several parts, you supply one name for each of them.  For
+instance from `h : ∀ x ∈ A, ∃ y ∈ B, P x y` the tactic `choose! g hgB hgP using h` produces
+`g` together with two proofs, `hgB : ∀ x ∈ A, g x ∈ B` and `hgP : ∀ x ∈ A, P x (g x)`.
 
 Compare this with `obtain`, which unpacks a single `∃` statement.  Use `choose!` when you
 need a witness for every element at once, not just for one.

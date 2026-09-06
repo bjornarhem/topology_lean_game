@@ -15,19 +15,21 @@ Given a proposition `h : Continuous f`, you can use `h.isOpen_preimage` to prove
 
 Let's warm up by proving that the continuous preimage of a closed set is closed.
 
-In this level, you can use the theorem `preimage_complement`, which you proved in the functions world,
+In this level, you can use the theorem `preimage_compl`, which you proved in the functions world,
 to rewrite `f⁻¹' (Uᶜ)` as `(f⁻¹' U)ᶜ`.
 "
 
-/-- If $f \colon X \to Y$ and $U \subset Y$ is closed, then $f^{-1}(U)$ is closed. -/
+TheoremTab "topology"
+
+/-- If $f \colon X \to Y$ is continuous and $U \subset Y$ is closed, then $f^{-1}(U)$ is closed. -/
 Statement {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (hf: Continuous f) (U : Set Y) : (IsClosed U) → (IsClosed (f⁻¹' U)) := by
   Hint "As always, start with `intro h`."
   intro h
   Hint "Recall the theorem `isOpen_compl_iff`. You can rewrite the statements in terms of open sets by writing `rw [← isOpen_compl_iff]` and `rw [← isOpen_compl_iff] at {h}`."
   rw [← isOpen_compl_iff] at h
   rw [← isOpen_compl_iff]
-  Hint "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing `rw [← preimage_complement]`."
-  rw [← preimage_complement]
+  Hint "Remember in the functions world, we proved that the preimage of a complement is the complement of the preimage. You can use the theorem in this level, by writing `rw [← preimage_compl]`."
+  rw [← preimage_compl]
   Hint "Now you can use `{hf}.isOpen_preimage` to finish the proof."
   apply hf.isOpen_preimage
   exact h

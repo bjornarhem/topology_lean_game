@@ -11,9 +11,7 @@ Title "Introduction to topological spaces"
 Introduction "
 In this level, we introduce the `TopologicalSpace` typeclass.
 The statement `TopologicalSpace X` means that `X` is a topological space.
-
 The `TopologicalSpace` typeclass is defined as follows:
-
 ```
 class TopologicalSpace (X : Type u) where
   protected IsOpen : Set X → Prop
@@ -21,7 +19,6 @@ class TopologicalSpace (X : Type u) where
   protected isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
   protected isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
 ```
-
 It's okay if you don't understand all of this.
 We will only focus on some of it now, and get to the rest in later worlds.
 
@@ -32,18 +29,19 @@ Lean works that out from the type of `U`.
 
 The other three lines are the axioms of a topological space, and you can use them as
 theorems:
-
 * `isOpen_univ` is a proof that the whole space is open.
 * `isOpen_inter hU hV` is a proof of `IsOpen (U ∩ V)`, given `hU : IsOpen U` and
   `hV : IsOpen V`.
 * `isOpen_sUnion` says that a union of a family of open sets is open.
 
-Observe that It's not explcitly stated in the axioms that the empty set is open,
+Observe that It's not explicitly stated in the axioms that the empty set is open,
 because this follows from the fact that a union of open sets is open, applied to the empty union.
 We will prove this in a later level!
 
 We start with a warm-up exercise.
 "
+
+TheoremTab "topology"
 
 /-- If `U` and `V` are open, then so is `U ∩ V`.  This is one of the axioms of a
 topological space, restated so that you can use it without a prefix. -/

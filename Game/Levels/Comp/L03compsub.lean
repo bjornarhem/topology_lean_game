@@ -30,7 +30,9 @@ The `rewrite` tactic can also be used with equations.  If `t` is a proof of an e
 will replace `q` with `p`.
 
 To do multiple replacements, one after another, put a list of proofs inside the brackets, like
-this:  `rewrite [t1, t2]`. -/
+this:  `rewrite [t1, t2]`.
+
+The tactic `rw` does the same as `rewrite`, and then tries to close the goal with `rfl`. -/
 TacticDoc rewrite
 
 NewTactic rewrite

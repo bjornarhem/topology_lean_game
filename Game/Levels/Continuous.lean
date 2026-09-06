@@ -1,4 +1,4 @@
-import Game.Levels.Continuous.L02_is_continuous -- it imports all previous levels
+import Game.Levels.Continuous.L03_closed_preimage -- it imports all previous levels
 
 World "Continuous"
 Title "Continuous functions"
