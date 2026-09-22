@@ -21,14 +21,14 @@ TheoremDoc Set.finite_singleton as "Set.finite_singleton" in "Finite"
 NewTheorem Set.finite_singleton
 
 /--
-If $s_n$ is a sequence that converges to $t$, then the set ${t} ∪ \{s_n | n} is compact.$
+If $s_n$ is a sequence that converges to $t$, then the set $\{t\} ∪ \{s_n | n\}$ is compact.
 -/
 Statement {X : Type} [TopologicalSpace X] (s : ℕ → X) (t : X) (hst : ConvergesTo s t) : IsCompact ({t} ∪ {s n | n}) := by
-  Hint (hidden := true) "Consider $F$ an arbitrary open cover of $\{t} ∪ \{s_n | n}$.
+  Hint (hidden := true) "Consider $F$ an arbitrary open cover of $\\\{t\\} ∪ \\\{s_n | n\\}$.
   In particular, there must exist an open $U ∈ F$ such that $t$ in $U$.
   Since $s_n ⟶ t$, by the previous exercise, $s_n ∈ U$ for all but finitely many $n$."
   Hint (hidden := true) "Construct a finite subcover as follows:
-  For each element $s_n$ such that $s_n ∉ U$, add an open $V_x ∈ F$ for which $x ∈ V x$.
+  For each element $s_n$ such that $s_n ∉ U$, add an open $V_\{s_n} ∈ F$ for which $s_n ∈ V_\{s_n}$.
   Then add $U$. Why is this a finite subcover of $F$?
   "
   intro F Fopen Fcover
@@ -40,7 +40,7 @@ Statement {X : Type} [TopologicalSpace X] (s : ℕ → X) (t : X) (hst : Converg
     exact this
   obtain ⟨U, UinF, tinU⟩ := this
   Hint "Now prove `\{x | ∃ n, s n ∉ U ∧ s n = x} ⊆ ⋃₀ F`, i.e.
-  that $F$ covers all the elements $s_n$ for which $s_n ∉ U.
+  that $F$ covers all the elements $s_n$ for which $s_n ∉ U$.
   Look back on the proof - why do we care about these elements specifically?"
   have Fcover' : {x | ∃ n, s n ∉ U ∧ s n = x} ⊆ ⋃₀ F := by
     Hint "Keep in mind that
@@ -89,9 +89,9 @@ Statement {X : Type} [TopologicalSpace X] (s : ℕ → X) (t : X) (hst : Converg
       apply Finite.union
       · exact Set.finite_singleton U
       · apply Finite.image
-        Hint "This part is trickier. Our goal basically says that $\{{s}_n | {s}_n ∉ {U}}$ is finite,
-        `ConvergesTo.finite_setOf_notMem` tells use that $\{n |{s}_n ∉ {U}} is finite. Notice the difference between the two sets.
-        You can solve this by stating that $$\{n | {s}_n ∉ {U}}$ is the image of $\{{s}_n | {s}_n ∉ {U}}$ under $s$."
+        Hint "This part is trickier. Our goal basically says that $\\\{{s}_n | {s}_n ∉ {U}\\}$ is finite,
+        `ConvergesTo.finite_setOf_notMem` tells us that $\\\{n | {s}_n ∉ {U}\\}$ is finite. Notice the difference between the two sets.
+        You can solve this by stating that $\\\{{s}_n | {s}_n ∉ {U}\\}$ is the image of $\\\{n | {s}_n ∉ {U}\\}$ under ${s}$."
         Hint (hidden := true) "Prove: `\{x | ∃ n, {s} n ∉ {U} ∧ {s} n = x} = {s} '' \{n | {s} n ∉ {U}}`"
         have : {x | ∃ n, s n ∉ U ∧ s n = x} = s '' {n | s n ∉ U} := by
           rfl

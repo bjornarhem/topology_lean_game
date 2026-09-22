@@ -14,7 +14,7 @@ Here you will prove an auxiliary lemma that will help you in the next level.
 
 /--
 If a sequence $(s_n)_n$ converges to $x$, then for any open neighbourhood $U$ of $x$,
-all but finitely many elements belong of $(s_n)_n$ to $U$.
+all but finitely many elements of $(s_n)_n$ belong to $U$.
 -/
 TheoremDoc TTG.ConvergesTo.finite_setOf_notMem as "ConvergesTo.finite_setOf_notMem" in "topology"
 
@@ -29,10 +29,14 @@ TheoremDoc le_of_lt as "le_of_lt" in "ℕ"
 
 NewTheorem Set.finite_le_nat le_of_lt
 
+/--
+If a sequence $(s_n)_n$ converges to $x$, then for any open neighbourhood $U$ of $x$,
+all but finitely many elements of $(s_n)_n$ belong to $U$.
+-/
 Statement ConvergesTo.finite_setOf_notMem {X : Type} [TopologicalSpace X] (s : ℕ → X) (t : X) (hst : ConvergesTo s t) :
     ∀ U, IsOpen U → t ∈ U → Set.Finite {n | s n ∉ U} := by
   intro U Uopen tinU
-  Hint "Apply {hst} to {U} and extract a suitable {U}."
+  Hint "Apply {hst} to {U} and extract a suitable `N`."
   obtain ⟨N, hN⟩ := hst U Uopen tinU
   Hint "Try to guess the next step while keeping in mind that eventually you
   will have to use `Set.finite_le_nat`."

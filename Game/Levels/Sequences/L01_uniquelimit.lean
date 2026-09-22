@@ -19,16 +19,16 @@ For that, you consider two limits $x$ and $y$ and prove they are equal.
 
 We introduce only the facts about the implementation of the natural integers that are relevant to this game.
 The operands `≤` (typed \"le\" or \"<=\") and `≥` (typed \"ge\" or \">=\")
-have their natural meaning. The propositions `m < n` and ` n > m` are definitionally equivalent,
+have their natural meaning. The propositions `m < n` and `n > m` are definitionally equivalent,
 as well as `m ≤ n` and `n ≥ m`, but Lean usually prefers to use `<` and `≤`.
 
 The maximum of two natural integers is typed as `max m n`, and the theorems that state
 `m ≤ max m n` and `n ≤ max m n` are called `le_max_left` and `le_max_right` respectively.
 
-Write out you proof by pen before attempting to type it out in Lean.
+Write out your proof by pen before attempting to type it out in Lean.
 "
 
-/--A sequence $(s_n)_n$ converges to $x$ if for any $U$ an open neighbourhood of $x$.
+/--A sequence $(s_n)_n$ converges to $x$ if for any $U$ an open neighbourhood of $x$,
 there exists $N ∈ ℕ$ such that $∀ n ≥ N, s_n ∈ U$.
 -/
 DefinitionDoc ConvergesTo as "ConvergesTo"
@@ -47,7 +47,8 @@ If $X$ is a Hausdorff space and $(s_n)_n$ is a sequence of points in $X$ that co
 to two points $x$ and $y$ in $X$, then $x=y$.
 -/
 Statement {X : Type} [TopologicalSpace X] [T2 : T2Space X] (s : ℕ → X) (x y : X) (hx : ConvergesTo s x) (hy: ConvergesTo s y) : x = y := by
-  Hint "Use reductio ad absurdum."
+  Hint "You could try a proof by contradiction."
+  Hint (hidden := true) "Use `by_contra`."
   by_contra xney
   Hint (hidden := true) "Don't forget to use `push_neg` after `by_contra`."
   push_neg at xney
@@ -57,7 +58,7 @@ Statement {X : Type} [TopologicalSpace X] [T2 : T2Space X] (s : ℕ → X) (x y 
   Hint "Extract two natural integers `Nx` and `Ny` from each respective convergence hypothesis."
   obtain ⟨Nx, hNx⟩ := hx U Uopen xinU
   obtain ⟨Ny, hNy⟩ := hy V Vopen yinV
-  Hint "Prove that `{s} (max {Nx} {Ny}) ∈ {U} ∩ {V}` and show this contraditcs `{UVdisj}`"
+  Hint "Prove that `{s} (max {Nx} {Ny}) ∈ {U} ∩ {V}` and show this contradicts `{UVdisj}`."
   have : s (max Nx Ny) ∈ U ∩ V := by
     constructor
     · apply hNx; apply le_max_left

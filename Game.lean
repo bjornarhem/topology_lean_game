@@ -51,6 +51,7 @@ Dependency FamInter → FamUnion
 Dependency FamUnion → FamCombo
 Dependency Continuous → Empty
 Dependency Empty → Connected
+Dependency Hausdorff → Sequences
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame
